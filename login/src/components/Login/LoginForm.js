@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import './LoginForm.css';
-import NewPass from './NewPass';  // اضافه کردن import برای استفاده از تابع NewPass
 
 function LoginForm() {
     const [username, setUsername] = useState('');
@@ -55,8 +54,13 @@ function LoginForm() {
                 setErrors({
                     username: '',
                     password: '',
-                    general: 'متاسفانه کاربری با نام کاربری و رمز عبور وارد شده در سامانه یافت نشد.',
-                });
+                    general: (
+            <>
+                متاسفانه کاربری با نام کاربری و رمز عبور وارد شده در سامانه
+                <br />
+                یافت نشد.
+            </>
+      
             }
         }
     };
@@ -75,11 +79,6 @@ function LoginForm() {
             alert('کد تایید با موفقیت تایید شد!');
             setVerificationError(false);
         }
-
-        // بعد از تایید کد تایید، تابع NewPass برای تغییر رمز عبور فراخوانی می‌شود
-        if (enteredCode === correctCode) {
-            NewPass();
-        }
     };
 
     const renderLoginForm = () => (
@@ -94,7 +93,7 @@ function LoginForm() {
 
                 <p className="para-username">نام کاربری</p>
                 <input
-                    className={`input-username ${errors.username ? 'input-error' : ''}`}
+                    className={input-username ${errors.username ? 'input-error' : ''}}
                     type="text"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
@@ -103,7 +102,7 @@ function LoginForm() {
 
                 <p className="para-password">رمز عبور</p>
                 <input
-                    className={`input-password ${errors.password ? 'input-error' : ''}`}
+                    className={input-password ${errors.password ? 'input-error' : ''}}
                     type="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
@@ -117,7 +116,7 @@ function LoginForm() {
                     مرا به خاطر بسپار
                 </label>
                 <p className="para-forgot-password" onClick={() => setIsForgotPassword(true)}>
-                    رمز عبور خود را فراموش کرده‌ام.
+                    رمز عبور خود را فراموش کرده ام.
                 </p>
             </div>
 
