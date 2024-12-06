@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./NewPass.css";
-import "./SuccessPass.css";
+import SuccessMessage from "./SuccessMessage";
 
 function NewPass() {
     const [newPassword, setNewPassword] = useState("");
@@ -48,20 +48,7 @@ function NewPass() {
     return (
         <div>
             {isSuccess ? (
-                <div className="success-container">
-                    <div className="success-header">
-                        <p className="success-title">پروژه نگار</p>
-                    </div>
-                    <div className="success-content">
-                        <div className="success-icon">
-                            <i className="fas fa-check"></i>
-                        </div>
-                        <p className="success-message">رمز عبور شما با موفقیت تغییر یافت.</p>
-                        <button className="success-button" onClick={handleLoginRedirect}>
-                            ورود به حساب کاربری
-                        </button>
-                    </div>
-                </div>
+                <SuccessMessage onRedirect={handleLoginRedirect} />
             ) : (
                 <div className="div-frame1">
                     <div className="div-project-title">
