@@ -1,12 +1,13 @@
 import React, { useState } from "react";
+import "./NewPass.css";
 import SuccessMessage from "./SuccessMessage";
 
-function usePasswordChange() {
+function NewPass() {
     const [newPassword, setNewPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [errors, setErrors] = useState({ newPassword: "", confirmPassword: "" });
     const [isPasswordMismatch, setIsPasswordMismatch] = useState(false);
-    const [isSuccess, setIsSuccess] = useState(false);
+    const [isSuccess, setIsSuccess] = useState(false); // برای نمایش پیام موفقیت
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -36,39 +37,13 @@ function usePasswordChange() {
 
         if (valid) {
             console.log("Sending data...");
-            setIsSuccess(true);
+            setIsSuccess(true); // نمایش پیام موفقیت
         }
     };
 
     const handleLoginRedirect = () => {
         console.log("Redirecting to login page...");
     };
-
-    return {
-        newPassword,
-        setNewPassword,
-        confirmPassword,
-        setConfirmPassword,
-        errors,
-        isPasswordMismatch,
-        isSuccess,
-        handleSubmit,
-        handleLoginRedirect
-    };
-}
-
-function NewPass() {
-    const {
-        newPassword,
-        setNewPassword,
-        confirmPassword,
-        setConfirmPassword,
-        errors,
-        isPasswordMismatch,
-        isSuccess,
-        handleSubmit,
-        handleLoginRedirect
-    } = usePasswordChange();
 
     return (
         <div>
@@ -88,13 +63,15 @@ function NewPass() {
                             <div className="div-change-pass">
                                 <label
                                     htmlFor="newPassword"
-                                    className={isPasswordMismatch ? "error-label" : ""}
+                                    className={para-username ${isPasswordMismatch ? "error-label" : ""}}
                                 >
                                     رمز عبور جدید
                                 </label>
                                 <input
                                     id="newPassword"
-                                    className={errors.newPassword || isPasswordMismatch ? "input-error" : ""}
+                                    className={input-new-pass ${
+                                        errors.newPassword || isPasswordMismatch ? "input-error" : ""
+                                    }}
                                     type="password"
                                     value={newPassword}
                                     onChange={(e) => setNewPassword(e.target.value)}
@@ -103,13 +80,15 @@ function NewPass() {
 
                                 <label
                                     htmlFor="confirmPassword"
-                                    className={isPasswordMismatch ? "error-label" : ""}
+                                    className={para-username ${isPasswordMismatch ? "error-label" : ""}}
                                 >
                                     تکرار رمز عبور جدید
                                 </label>
                                 <input
                                     id="confirmPassword"
-                                    className={errors.confirmPassword || isPasswordMismatch ? "input-error" : ""}
+                                    className={input-conf-pass ${
+                                        errors.confirmPassword || isPasswordMismatch ? "input-error" : ""
+                                    }}
                                     type="password"
                                     value={confirmPassword}
                                     onChange={(e) => setConfirmPassword(e.target.value)}
