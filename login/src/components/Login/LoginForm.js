@@ -1,110 +1,6 @@
-// import React, { useState } from 'react';
-// import './Login-Style.css';
-
-// function LoginForm() {
-//     const [username, setUsername] = useState('');
-//     const [password, setPassword] = useState('');
-//     const [errors, setErrors] = useState({ username: '', password: '', general: '' });
-
-//     const handleSubmit = (event) => {
-//         event.preventDefault();
-
-//         let valid = true;
-//         const newErrors = { username: '', password: '', general: '' };
-
-//         // بررسی خالی بودن فیلد نام کاربری
-//         if (!username) {
-//             newErrors.username = 'وارد کردن این فیلد الزامی است.';
-//             valid = false;
-//         }
-
-//         // بررسی خالی بودن فیلد رمز عبور
-//         if (!password) {
-//             newErrors.password = 'وارد کردن این فیلد الزامی است.';
-//             valid = false;
-//         }
-
-//         setErrors(newErrors);
-
-//         if (valid) {
-//             // شبیه‌سازی پاسخ از سرور
-//             const users = require('./users.json').users;
-//             const user = users.find(u => u.username === username);
-
-//             if (user && user.password === password) {
-//                 // اگر نام کاربری و رمز صحیح باشند
-//                 alert('ورود با موفقیت انجام شد');
-//             } else {
-//                 // اگر هر دو نام کاربری یا پسورد اشتباه باشند
-//                 setErrors({
-//                     username: '',
-//                     password: '',
-//                     general: 'کاربری پیدا نشد'
-//                 });
-//             }
-//         }
-//     };
-
-//     return (
-//         <div className="div-frame1">
-//             <div className="div-project-title">
-//                 <p className="para-title">پروژه نگار</p>
-//             </div>
-
-//             <div className="div-login-form">
-//                 <div className="div-group-content">
-//                     <div className="div-welcome">
-//                         <p className="para-enter-account">ورود به حساب کاربری</p>
-//                         <p className="para-welcome">
-//                             به سامانه <span className="span-project-name">پروژه نگار </span> خوش آمدید.
-//                         </p>
-//                     </div>
-
-//                     <form onSubmit={handleSubmit}>
-//                         <div className="div-user-info">
-//                             <p className="para-username">نام کاربری</p>
-//                             <input
-//                                 className={`input-username ${errors.username ? 'input-error' : ''}`}
-//                                 type="text"
-//                                 value={username}
-//                                 onChange={(e) => setUsername(e.target.value)}
-//                             />
-//                             {errors.username && <p className="error-message">{errors.username}</p>}
-
-//                             <p className="para-password">رمز عبور</p>
-//                             <input
-//                                 className={`input-password ${errors.password ? 'input-error' : ''}`}
-//                                 type="password"
-//                                 value={password}
-//                                 onChange={(e) => setPassword(e.target.value)}
-//                             />
-//                             {errors.password && <p className="error-message">{errors.password}</p>}
-//                         </div>
-
-//                         <div className="div-rememeber-me">
-//                             <input className="checkbox-remember-me" type="checkbox" id="remember" />
-//                             <label className="label-remember-me" htmlFor="remember">مرا به خاطر بسپار</label>
-//                             <p className="para-forgot-password">رمز عبور خود را فراموش کرده ام.</p>
-//                         </div>
-
-//                         {/* پیام خطای عمومی */}
-//                         {errors.general && (
-//                             <div className="div-general-error">
-//                                 <p>{errors.general}</p>
-//                             </div>
-//                         )}
-
-//                         <button type="submit" className="btn-login">ورود</button>
-//                     </form>
-//                 </div>
-//             </div>
-//         </div>
-//     );
-// }
-
-// export default LoginForm;
 import React, { useState, useEffect } from 'react';
 import './LoginForm.css';
+import NewPass from './NewPass';  // اضافه کردن import برای استفاده از تابع NewPass
 
 function LoginForm() {
     const [username, setUsername] = useState('');
@@ -159,13 +55,8 @@ function LoginForm() {
                 setErrors({
                     username: '',
                     password: '',
-                    general: (
-            <>
-                متاسفانه کاربری با نام کاربری و رمز عبور وارد شده در سامانه
-                <br />
-                یافت نشد.
-            </>
-      
+                    general: 'متاسفانه کاربری با نام کاربری و رمز عبور وارد شده در سامانه یافت نشد.',
+                });
             }
         }
     };
@@ -183,6 +74,11 @@ function LoginForm() {
         } else {
             alert('کد تایید با موفقیت تایید شد!');
             setVerificationError(false);
+        }
+
+        // بعد از تایید کد تایید، تابع NewPass برای تغییر رمز عبور فراخوانی می‌شود
+        if (enteredCode === correctCode) {
+            NewPass();
         }
     };
 
@@ -221,7 +117,7 @@ function LoginForm() {
                     مرا به خاطر بسپار
                 </label>
                 <p className="para-forgot-password" onClick={() => setIsForgotPassword(true)}>
-                    رمز عبور خود را فراموش کرده ام.
+                    رمز عبور خود را فراموش کرده‌ام.
                 </p>
             </div>
 
@@ -318,4 +214,3 @@ function LoginForm() {
 }
 
 export default LoginForm;
-
