@@ -372,6 +372,26 @@ body, html {
   border: 2px solid red;
 }
 
+.input-error {
+  border: 1px solid red;
+}
+
+.error-container {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+  color: red;
+}
+
+.icon-warning {
+  margin-right: 5px;
+}
+
+.error-message {
+  font-size: 14px;
+  margin: 0;
+}
+
 @media (max-width: 768px) {
   .div-frame1 { 
       grid-template-columns: 1fr; /* Stacks columns vertically */
