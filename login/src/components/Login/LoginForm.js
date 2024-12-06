@@ -183,14 +183,14 @@ function LoginForm() {
 
     const renderLoginForm = () => (
         <form onSubmit={handleSubmit}>
-            <div classname = "div-user-info">
-            <div className="div-welcome">
-                         <p className="para-enter-account">ورود به حساب کاربری</p>
-                         <p className="para-welcome">
-                             به سامانه <span className="span-project-name">پروژه نگار </span> خوش آمدید.
-                         </p>
-                   </div>
-
+            <div className="div-user-info">
+                <div className="div-welcome">
+                    <p className="para-enter-account">ورود به حساب کاربری</p>
+                    <p className="para-welcome">
+                        به سامانه <span className="span-project-name">پروژه نگار </span> خوش آمدید.
+                    </p>
+                </div>
+    
                 <p className="para-username">نام کاربری</p>
                 <input
                     className={`input-username ${errors.username ? 'input-error' : ''}`}
@@ -199,7 +199,7 @@ function LoginForm() {
                     onChange={(e) => setUsername(e.target.value)}
                 />
                 {errors.username && <p className="error-message">{errors.username}</p>}
-
+    
                 <p className="para-password">رمز عبور</p>
                 <input
                     className={`input-password ${errors.password ? 'input-error' : ''}`}
@@ -209,7 +209,7 @@ function LoginForm() {
                 />
                 {errors.password && <p className="error-message">{errors.password}</p>}
             </div>
-
+    
             <div className="div-rememeber-me">
                 <input className="checkbox-remember-me" type="checkbox" id="remember" />
                 <label className="label-remember-me" htmlFor="remember">
@@ -219,19 +219,22 @@ function LoginForm() {
                     رمز عبور خود را فراموش کرده ام.
                 </p>
             </div>
-
+    
             {errors.general && (
                 <div className="div-general-error">
-                    <p>{errors.general}</p>
+                    <div className="div-verification-error">
+                        <i className="fas fa-exclamation-triangle icon-warning"></i>
+                        <p className="error-message">{errors.general}</p>
+                    </div>
                 </div>
             )}
-
+    
             <button type="submit" className="btn-login">
                 ورود
             </button>
         </form>
     );
-
+    
     const renderForgotPasswordForm = () => (
         <form onSubmit={handleSubmit}>
             <div className="div-welcome">
