@@ -1,0 +1,199 @@
+@font-face {
+  font-family: 'Saba'; 
+  src: url('../../Fonts/Saba-[@i_font].ttf') format('truetype'); 
+}
+
+@font-face {
+  font-family: 'W_hosseini'; 
+  src: url('../../Fonts/ArabicUIDisplayThin.otf') format('opentype');
+}
+
+* { 
+  margin: 0; padding: 0; box-sizing: border-box;
+} 
+
+body, html {
+  height: 100%;
+}
+
+.div-frame1 {
+  display: grid;
+  grid-template-columns: 720px 1fr;
+  column-gap: 10px;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+}
+
+.div-project-title {
+  background-color: #000B58;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  direction: rtl;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  height: 100%;
+}
+
+.para-prj-title {
+  font-size: 70px; /* اندازه عنوان پروژه نگار */
+  font-weight: 700;
+  font-family: 'Saba';
+  line-height: 126px;
+}
+
+.para-welcome {
+  font-size: 20px; /* اندازه عنوان تعریف رمز جدید */
+  font-family: 'W_hosseini';
+  line-height: 40px;
+  margin-top: 10px;
+  color: #1B1D1F;
+  text-align: center; /* وسط‌چین کردن متن */
+}
+
+.para-title {
+  font-size: 30px; /* اندازه عنوان تعریف رمز جدید */
+  font-family: 'Saba';
+  line-height: 40px;
+  margin-top: 10px;
+  color: #1B1D1F;
+  text-align: center; /* وسط‌چین کردن متن */
+}
+
+.div-new-pass-form {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  direction: rtl;
+  text-align: right;
+  flex-grow: 1;
+}
+
+.form-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.div-change-pass {
+  width: 100%;
+  max-width: 400px;
+  margin-top: 30px;
+}
+.para-username {
+  color: #495057;
+  font-family: 'W_hosseini';
+  font-size: 14px;
+  line-height: 23px;
+  margin-bottom: 7px;
+  margin-top: 20px; /* فاصله به بالای عبارات */
+}
+
+
+.input-new-pass,
+.input-conf-pass {
+  background-color: #F8F9FA;
+  border: solid;
+  border-radius: 5px;
+  border-color: #BBC1C7;
+  width: 100%;
+  height: 40px;
+  border-width: 1.5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 16px;
+ /* margin-top: 20px;  فاصله بین فیلدها */
+}
+
+.input-error {
+  border: 2px solid red;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.btn-change {
+  background-color: #000B58;
+  width: 100%;
+  max-width: 400px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #F8F9FA;
+  font-family: 'W_hosseini';
+  margin-top: 30px;
+}
+.input-error {
+  border: 2px solid red;
+}
+
+.error-container {
+  display: flex;
+  align-items: center;
+  margin-top: 5px; /* فاصله کمتر بین هشدار و فیلد */
+}
+
+.warning-icon {
+  color: red; /* رنگ آیکن هشدار */
+  font-size: 16px; /* اندازه آیکن هشدار */
+  margin-right: 5px; /* فاصله بین آیکن و متن هشدار */
+}
+
+.error-message {
+  color: red;
+  font-size: 12px; /* اندازه متن هشدار */
+  margin: 0; /* حذف فاصله اضافی متن هشدار */
+}
+
+
+.div-general-error {
+  display: flex;
+  align-items: center;
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.warning-icon {
+  font-size: 14px;
+  margin-right: 5px;
+  color: red;
+}
+
+
+.error-label {
+  color: red; /* تغییر رنگ عنوان به قرمز */
+}
+
+.input-error {
+  border: 2px solid red; /* قرمز کردن کادر فیلد */
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+  display: inline-block;
+}
+
+.div-general-error {
+  display: flex;
+  align-items: center;
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.warning-icon {
+  font-size: 14px;
+  margin-right: 5px;
+  color: red;
+}

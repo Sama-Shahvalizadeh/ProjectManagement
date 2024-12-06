@@ -1,0 +1,409 @@
+@font-face {
+  font-family: 'Saba'; 
+  src: url('../../Fonts/Saba-[@i_font].ttf') format('truetype'); 
+}
+
+@font-face {
+  font-family: 'W_hosseini'; 
+  src: url('../../Fonts/ArabicUIDisplayThin.otf') format('opentype');
+}
+
+* { 
+  margin: 0; padding: 0; box-sizing: border-box;
+} 
+
+body, html {
+   height: 100%;
+}
+.div-frame1 {
+  display: grid;
+  grid-template-columns: 720px 1fr;
+  column-gap: 10px;
+  width: 100%;
+  height: 100vh; /* تغییر به 100vh برای ارتفاع کل صفحه */
+}
+
+.div-project-title {
+  background-color: #000B58;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  direction: rtl;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  height: 100%; /* تغییر به 100% برای اشغال کردن تمام ارتفاع والد */
+}
+
+.div-login-form {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  direction: rtl;
+  text-align: right;
+  height: 100%; /* اطمینان از اینکه این بخش هم 100% ارتفاع خواهد داشت */
+}
+
+.div-group-content{
+  justify-content: center;
+  align-items: center;
+}
+
+.div-welcome{
+  padding-right: 70px;
+}
+
+.div-rememeber-me{
+  margin-bottom: 35px;
+  margin-top: 20px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+.para-title{
+  font-size: 70px;
+  font-weight: 700;
+  font-family: 'Saba';
+  line-height: 126px;
+}
+
+.para-enter-account{
+  font-size: 26px;
+  font-family: 'Saba';
+  font-weight: 700;
+  line-height: 47px;
+  margin-bottom: 0;
+  color: #101828;
+}
+
+.para-welcome{
+  font-size: 18px;
+  line-height: 26px;
+  font-family: 'W_hosseini';
+  margin-top: 30px;
+  margin-bottom: 0;
+  margin-right: 30px;
+  color: #1B1D1F;
+}
+
+.span-project-name{
+  color: rgb(51, 6, 51);
+}
+
+.span-project-name:hover{
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.para-username{
+  color: #495057;
+  font-family: 'W_hosseini';
+  size: 14px;
+  font-family: 'W_hosseini';
+  line-height: 23px;
+  margin-top: 60px;
+  margin-bottom: 7px;
+}
+
+.input-username{
+  background-color: #F8F9FA;
+  border: solid;
+  border-radius: 5px;
+  border-color: #BBC1C7;
+  width: 100%;
+  max-width: 400px;
+  height: 40px;
+  border-width: 1.5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 16px;
+}
+
+.para-email,
+.para-username,
+.para-password {
+   color: #495057;
+   font-family: 'W_hosseini';
+   size: 14px;
+   line-height: 23px;
+   margin-top: 20px;
+   margin-bottom: 7px;
+}
+
+.input-username,
+.input-password,
+.input-email {
+   background-color: #F8F9FA;
+   border: solid;
+   border-radius: 5px;
+   border-color: #BBC1C7;
+   width: 100%;
+   max-width: 400px;
+   height: 40px;
+   border-width: 1.5px;
+   padding-left: 10px;
+   padding-right: 10px;
+   font-size: 16px;
+}
+
+
+.checkbox-remember-me{
+  height: 15px;
+  width: 15px;
+  border: solid;
+  border-width: 2px;
+  border-radius: 3px;
+  border-color: #000B58;
+  margin-left: 5px;
+}
+
+.label-remember-me{
+  font-size: 14px;
+  line-height: 23px;
+  font-family: 'W_hosseini';
+  width: 87px;
+  height: 23px;
+}
+
+.para-forgot-password{
+  margin-right: 150px;
+  display: inline-block;
+  width: 159px;
+  height: 23px;
+  font-size: 14px;
+  line-height: 23px;
+  font-family: 'W_hosseini';
+  color: #1B02B7;
+}
+
+.btn-login{
+  background-color: #000B58;
+  width: 100%; /* Makes button responsive */
+  max-width: 400px;
+  height: 32px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #F8F9FA;
+  font-family: 'W_hosseini';
+  margin-top: 20px;
+}
+
+
+.para-verification-code {
+  color: #495057;
+  font-family: 'W_hosseini';
+  font-size: 16px;
+  line-height: 26px;
+  margin-top: 20px;
+  margin-bottom: 7px;
+  text-align: center;
+}
+
+.input-code-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.input-code {
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  width: 40px;
+  height: 40px;
+  border: 1.5px solid #BBC1C7;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 18px;
+  font-family: 'Saba';
+  background-color: #F8F9FA;
+  color: #000;
+}
+
+.input-code:focus {
+  border-color: #000B58;
+  outline: none;
+}
+
+.timer {
+  font-family: 'W_hosseini';
+  font-size: 12px;
+  color: #495057;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.para-resend {
+  font-family: 'W_hosseini';
+  font-size: 14px;
+  color: #0d19c0;
+  text-align: center;
+  margin-top: 10px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.para-resend:hover {
+  color: #000B58;
+}
+
+.para-email{
+  color: #495057;
+  font-family: 'W_hosseini';
+  size: 14px;
+  font-family: 'W_hosseini';
+  line-height: 23px;
+  margin-top: 20px;
+  margin-bottom: 7px;
+}
+.input-email{
+  background-color: #F8F9FA;
+  border: solid;
+  border-radius: 5px;
+  border-color: #BBC1C7;
+  width: 100%;
+  max-width: 400px;
+  height: 40px;
+  border-width: 1.5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 16px;
+}
+
+.para-enter-account{
+  font-size: 26px;
+  font-family: 'Saba';
+  font-weight: 700;
+  line-height: 47px;
+  margin-bottom: 0;
+  color: #101828;
+}
+
+.para-verification-code {
+  color: #495057;
+  font-family: 'W_hosseini';
+  font-size: 16px;
+  line-height: 26px;
+  margin-top: 20px;
+  margin-bottom: 7px;
+  text-align: center;
+}
+
+.para-email {
+   color: #495057;
+   font-family: 'W_hosseini';
+   size: 14px;
+   line-height: 23px;
+   margin-top: 20px;
+   margin-bottom: 7px;
+}
+
+.input-email {
+   background-color: #F8F9FA;
+   border: solid;
+   border-radius: 5px;
+   border-color: #BBC1C7;
+   width: 100%;
+   max-width: 400px;
+   height: 40px;
+   border-width: 1.5px;
+   padding-left: 10px;
+   padding-right: 10px;
+   font-size: 16px;
+}
+
+/* صفحه وارد کردن کد تایید*/
+.para-resend {
+   color: black;
+   text-decoration: none;
+   margin-bottom: 40px;
+}
+
+.timer {
+   font-family: 'W_hosseini';
+   font-size: 12px;
+   color: #495057;
+   margin-top: 15px;
+   text-align: center;
+   margin-bottom: 40px;
+}
+
+.para-resend .resend-link {
+   color: #000B58;
+   text-decoration: none;
+   margin-bottom: 40px;
+}
+
+.para-resend:hover .resend-link {
+   color: #000B58;
+   margin-bottom: 40px;
+}
+
+
+/* صفحه جدید برای تایید کد اشتباه*/
+.div-verification-error {
+  display: none;
+  background-color: #f8d7da;
+  color: red;
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid red;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.div-verification-error .error-icon {
+  margin-right: 15px;
+  font-size: 18px;
+  color: red;
+}
+
+.div-verification-error .error-message {
+  margin: 0;
+  font-size: 14px;
+  color: red;
+}
+
+.input-code.error {
+  border: 2px solid red;
+}
+
+@media (max-width: 768px) {
+  .div-frame1 { 
+      grid-template-columns: 1fr; /* Stacks columns vertically */
+  } 
+  
+  .div-project-title, .div-login-form {
+      width: 100%;
+  } 
+  
+  .div-welcome {
+      padding-right: 20px; /* Adjust padding as needed */ 
+  }
+
+  .para-title { 
+      font-size: 50px; /* Adjust font size for smaller screens */ line-height: 80px; 
+  } 
+  
+  .para-enter-account {
+       font-size: 22px; /* Adjust font size for smaller screens */ line-height: 40px;
+      }
+}
+
+@media (max-width: 480px) { 
+  .label-remember-me, .para-forgot-password {
+      font-size: 12px; /* Adjust font size for very small screens */
+  } 
+   
+   .para-title {
+      font-size: 40px; /* Adjust font size for smaller screens */ line-height: 60px;
+  } 
+  
+  .para-enter-account { 
+      font-size: 18px; /* Adjust font size for smaller screens */ line-height: 30px;
+  }
+}
