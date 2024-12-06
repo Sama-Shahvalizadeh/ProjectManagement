@@ -1,0 +1,109 @@
+@font-face {
+  font-family: 'Saba'; 
+  src: url('../../Fonts/Saba-[@i_font].ttf') format('truetype'); 
+}
+
+@font-face {
+  font-family: 'W_hosseini'; 
+  src: url('../../Fonts/ArabicUIDisplayThin.otf') format('opentype');
+}
+
+/* استایل پایه */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: "W_hosseini", Arial, sans-serif;
+}
+
+/* استایل کانتینر اصلی */
+.success-container {
+  display: grid;
+  grid-template-columns: 720px 1fr;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+}
+
+/* استایل بخش سمت چپ */
+.success-header {
+  background-color: #000B58;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+.success-title {
+  font-size: 70px;
+  font-weight: 700;
+  line-height: 126px;
+  font-family: 'Saba';
+}
+
+/* استایل بخش سمت راست */
+.success-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  direction: rtl;
+  color: #1B1D1F;
+}
+
+/* استایل آیکن موفقیت */
+.success-icon {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #000B58; /* حاشیه آبی */
+  border-radius: 50%; /* ایجاد دایره */
+  margin-bottom: 20px;
+}
+
+.success-icon .fa-check {
+  font-size: 60px;
+  color: #000B58; /* تیک آبی */
+}
+
+
+.success-icon .fa-check-circle {
+  font-size: 100px;
+  color: #000B58;
+}
+
+/* پیام موفقیت */
+.success-message {
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  line-height: 1.5;
+  font-family: 'W_hosseini';
+}
+
+/* دکمه */
+.success-button {
+  background-color: #000B58;
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: 'W_hossein';
+}
+
+.success-button:hover {
+  background-color: #003399;
+}
