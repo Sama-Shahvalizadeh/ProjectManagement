@@ -103,11 +103,14 @@
 // }
 
 // export default LoginForm;
+
+
 import React, { useState, useEffect } from 'react';
-import  './LoginForm.css' ;
+import styles from './LoginForm.module.css' ;
+import { Link } from 'react-router-dom';
 
 
-function LoginForm() {
+export default function LoginForm() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [errors, setErrors] = useState({ username: '', password: '', general: '' });
@@ -165,6 +168,10 @@ function LoginForm() {
         }
     };
 
+    const handleSignupClick = (event) => {
+        event.preventDefault(); // جلوگیری از ارسال فرم
+        window.location.href = '/signup'; // انتقال به صفحه signup
+    };
 
     const handleVerificationSubmit = (event) => {
         event.preventDefault();
@@ -184,68 +191,74 @@ function LoginForm() {
 
     const renderLoginForm = () => (
         <form onSubmit={handleSubmit}>
-            <div className="div-user-info">
-                <div className="div-welcome">
-                    <p className="para-enter-account">ورود به حساب کاربری</p>
-                    <p className="para-welcome">
-                        به سامانه <span className="span-project-name">پروژه نگار </span> خوش آمدید.
+            <div className={styles.div_user_info}>
+                <div className={styles.div_welcome}>
+                <p className={styles.para_enter_account}>ورود به حساب کاربری</p>
+                    <p className={styles.para_welcome}>
+                        به سامانه <span className={styles.span_project_name}>پروژه نگار </span> خوش آمدید.
                     </p>
                 </div>
-    
-                <p className="para-username">نام کاربری</p>
-                <div className="input-wrapper">
+
+                <button type="button" onClick={handleSignupClick} className={styles.btn_signup}>
+                ثبت نام کنید
+                </button>
+
+                <p className={styles.para_username}>نام کاربری</p>
+                <div className={styles.input_wrapper}>
                     <input
-                        className={`input-username ${errors.username ? 'input-error' : ''}`}
+                        className={`${styles.input_username} ${errors.username ? styles.input_error : ''}`}
                         type="text"
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
                     />
                     {errors.username && (
-                        <div className="error-container">
+                        <div className={styles.error_container}>
                             <i className="fas fa-exclamation-triangle icon-warning"></i>
-                            <p className="error-message">{errors.username}</p>
+                            <p className={styles.error_message}>{errors.username}</p>
                         </div>
                     )}
                 </div>
     
-                <p className="para-password">رمز عبور</p>
-                <div className="input-wrapper">
+                <p className={styles.para_password}>رمز عبور</p>
+                <div className={styles.input_wrapper}>
                     <input
-                        className={`input-password ${errors.password ? 'input-error' : ''}`}
+                        className={`${styles.input_password} ${errors.password ? styles.input_error : ''}`}
                         type="password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                     />
                     {errors.password && (
-                        <div className="error-container">
+                        <div className={styles.error_container}>
                             <i className="fas fa-exclamation-triangle icon-warning"></i>
-                            <p className="error-message">{errors.password}</p>
+                            <p className={styles.error_message}>{errors.password}</p>
                         </div>
                     )}
                 </div>
             </div>
     
-            <div className="div-rememeber-me">
-                <input className="checkbox-remember-me" type="checkbox" id="remember" />
-                <label className="label-remember-me" htmlFor="remember">
+            <div className={styles.div_rememeber_me}>
+                <input className={styles.checkbox_remember_me} type="checkbox" id="remember" />
+                <label className={styles.label_remember_me} htmlFor="remember">
                     مرا به خاطر بسپار
                 </label>
-                <p className="para-forgot-password" onClick={() => setIsForgotPassword(true)}>
+                <p className={styles.para_forgot_password} onClick={() => setIsForgotPassword(true)}>
                     رمز عبور خود را فراموش کرده ام.
                 </p>
             </div>
     
             {errors.general && (
-                <div className="div-general-error">
-                    <div className="div-verification-error">
+                <div className={styles.div_general_error}>
+                    <div className={styles.div_verification_error}>
                         <i className="fas fa-exclamation-triangle icon-warning"></i>
-                        <p className="error-message">{errors.general}</p>
+                        <p className={styles.error_message}>{errors.general}</p>
                     </div>
                 </div>
             )}
     
-            <button type="submit" className="btn-login">
+            <button type="submit" className={styles.btn_login}>
                 ورود
+   {!errors && <Link to="/signup">
+    </Link>}
             </button>
         </form>
     );
@@ -284,35 +297,35 @@ function LoginForm() {
 
                 <div className="input-code-container">
                     {Array.from({ length: 6 }).map((_, index) => (
-                        <input key={index} className="input-code" type="text" maxLength="1" />
+                        <input key={index} className={styles.input_code} type="text" maxLength="1" />
                     ))}
                 </div>
 
-                <p className="timer">زمان باقی‌مانده: {Math.floor(timer / 60)}:{timer % 60 < 10 ? '0' : ''}{timer % 60}</p>
+                <p className={styles.timer}>زمان باقی‌مانده: {Math.floor(timer / 60)}:{timer % 60 < 10 ? '0' : ''}{timer % 60}</p>
 
                 {verificationError && (
-                    <div className="div-verification-error">
+                    <div className={styles.div_verification_error}>
                         <i className="fas fa-exclamation-triangle icon-warning"></i>
-                        <p className="error-message">کد تایید اشتباه است.</p>
+                        <p className={styles.error_message}>کد تایید اشتباه است.</p>
                     </div>
                 )}
 
-                <p className="para-resend">
-                    آیا هنوز کد تأیید را دریافت نکرده‌اید؟ <span className="resend-link">ارسال مجدد</span>
+                <p className={styles.para_resend}>
+                    آیا هنوز کد تأیید را دریافت نکرده‌اید؟ <span className={styles.resend_link}>ارسال مجدد</span>
                 </p>
-                <button type="submit" className="btn-login">احراز کد تایید</button>
+                <button type="submit" className={styles.btn_login}>احراز کد تایید</button>
             </div>
         </form>
     );
 
     return (
-        <div className="div-frame1">
-            <div className="div-project-title">
-                <p className="para-title">پروژه نگار</p>
+        <div className={styles.div_frame1}>
+            <div className={styles.div_project_title}>
+                <p className={styles.para_title}>پروژه نگار</p>
             </div>
 
-            <div className="div-login-form">
-                <div className="div-group-content">
+            <div className={styles.div_login_form}>
+                <div className={styles.div_group_content}>
                     {isVerificationPage
                         ? renderVerificationPage()
                         : isForgotPassword
@@ -324,4 +337,3 @@ function LoginForm() {
     );
 }
 
-export default LoginForm;

@@ -19,18 +19,7 @@
 // export default App;
 
 
-import React from 'react';
-import LoginForm from './components/Login/LoginForm';
 
-function App() {
-    return (
-        <div>
-            <LoginForm />
-        </div>
-    );
-}
-
-export default App;
 
 
 // import React from 'react';
@@ -51,17 +40,32 @@ export default App;
 // export default App;
 
 
-// import { Route, Routes } from "react-router-dom";
-// import { Home } from "./components/Home";
-// import LoginForm from "./components/Login/LoginForm";
+import { Route, Routes } from "react-router-dom";
+import { Home } from "./components/Home";
+import LoginForm from "./components/Login/LoginForm";
+import SignUp from "./components/SignUp/SignUp";
 
-// export default function App() {
-// 	return (
-// 		<div>
-// 			<Routes>
-// 				<Route path="/" element={<Home />} />
-// 				<Route path="/login" element={<LoginForm />} />
-// 			</Routes>
-// 		</div>
-// 	);
+export default function App() {
+	return (
+		<div>
+			<Routes>
+				<Route path="/" element={<Home />} />
+				<Route path="/login" element={<LoginForm />} />
+				<Route path="/signup" element={<SignUp />} />
+			</Routes>
+		</div>
+	);
+}
+
+// import React from 'react';
+// import LoginForm from './components/Login/LoginForm';
+
+// function App() {
+//     return (
+//         <div>
+//             <LoginForm />
+//         </div>
+//     );
 // }
+
+// export default App;

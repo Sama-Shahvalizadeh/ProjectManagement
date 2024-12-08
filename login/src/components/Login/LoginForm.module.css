@@ -12,10 +12,14 @@
   margin: 0; padding: 0; box-sizing: border-box;
 } 
 
+
 body, html {
    height: 100%;
 }
-.div-frame1 {
+
+
+
+.div_frame1 {
   display: grid;
   grid-template-columns: 720px 1fr;
   column-gap: 10px;
@@ -23,7 +27,7 @@ body, html {
   height: 100vh; /* تغییر به 100vh برای ارتفاع کل صفحه */
 }
 
-.div-project-title {
+.div_project_title {
   background-color: #000B58;
   color: white;
   display: flex;
@@ -35,7 +39,7 @@ body, html {
   height: 100%; /* تغییر به 100% برای اشغال کردن تمام ارتفاع والد */
 }
 
-.div-login-form {
+.div_login_form {
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -47,29 +51,29 @@ body, html {
   height: 100%; /* اطمینان از اینکه این بخش هم 100% ارتفاع خواهد داشت */
 }
 
-.div-group-content{
+.div_group_content{
   justify-content: center;
   align-items: center;
 }
 
-.div-welcome{
+.div_welcome{
   padding-right: 70px;
 }
 
-.div-rememeber-me{
+.div_rememeber_me{
   margin-bottom: 35px;
   margin-top: 20px;
   display: flex; align-items: center; justify-content: space-between;
 }
 
-.para-title{
+.para_title{
   font-size: 70px;
   font-weight: 700;
   font-family: 'Saba';
   line-height: 126px;
 }
 
-.para-enter-account{
+.para_enter_account{
   font-size: 26px;
   font-family: 'Saba';
   font-weight: 700;
@@ -78,7 +82,7 @@ body, html {
   color: #101828;
 }
 
-.para-welcome{
+.para_welcome{
   font-size: 18px;
   line-height: 26px;
   font-family: 'W_hosseini';
@@ -88,16 +92,16 @@ body, html {
   color: #1B1D1F;
 }
 
-.span-project-name{
+.span_project_name{
   color: rgb(51, 6, 51);
 }
 
-.span-project-name:hover{
+.span_project_name:hover{
   cursor: pointer;
   text-decoration: underline;
 }
 
-.para-username{
+.para_username{
   color: #495057;
   font-family: 'W_hosseini';
   size: 14px;
@@ -107,7 +111,7 @@ body, html {
   margin-bottom: 7px;
 }
 
-.input-username{
+.input_username{
   background-color: #F8F9FA;
   border: solid;
   border-radius: 5px;
@@ -121,9 +125,9 @@ body, html {
   font-size: 16px;
 }
 
-.para-email,
-.para-username,
-.para-password {
+.para_email,
+.para_username,
+.para_password {
    color: #495057;
    font-family: 'W_hosseini';
    size: 14px;
@@ -132,9 +136,9 @@ body, html {
    margin-bottom: 7px;
 }
 
-.input-username,
-.input-password,
-.input-email {
+.input_username,
+.input_password,
+.input_email {
    background-color: #F8F9FA;
    border: solid;
    border-radius: 5px;
@@ -149,7 +153,7 @@ body, html {
 }
 
 
-.checkbox-remember-me{
+.checkbox_remember_me{
   height: 15px;
   width: 15px;
   border: solid;
@@ -159,7 +163,7 @@ body, html {
   margin-left: 5px;
 }
 
-.label-remember-me{
+.label_remember_me{
   font-size: 14px;
   line-height: 23px;
   font-family: 'W_hosseini';
@@ -167,7 +171,7 @@ body, html {
   height: 23px;
 }
 
-.para-forgot-password{
+.para_forgot_password{
   margin-right: 150px;
   display: inline-block;
   width: 159px;
@@ -178,7 +182,7 @@ body, html {
   color: #1B02B7;
 }
 
-.btn-login{
+.btn_login{
   background-color: #000B58;
   width: 100%; /* Makes button responsive */
   max-width: 400px;
@@ -192,7 +196,7 @@ body, html {
 }
 
 
-.para-verification-code {
+.para_verification_code {
   color: #495057;
   font-family: 'W_hosseini';
   font-size: 16px;
@@ -202,14 +206,14 @@ body, html {
   text-align: center;
 }
 
-.input-code-container {
+.input_code_container {
   display: flex;
   justify-content: center;
   gap: 10px;
   margin-top: 20px;
 }
 
-.input-code {
+.input_code {
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
   width: 40px;
@@ -223,7 +227,7 @@ body, html {
   color: #000;
 }
 
-.input-code:focus {
+.input_code:focus {
   border-color: #000B58;
   outline: none;
 }
@@ -236,7 +240,7 @@ body, html {
   text-align: center;
 }
 
-.para-resend {
+.para_resend {
   font-family: 'W_hosseini';
   font-size: 14px;
   color: #0d19c0;
@@ -246,11 +250,11 @@ body, html {
   text-decoration: underline;
 }
 
-.para-resend:hover {
+.para_resend:hover {
   color: #000B58;
 }
 
-.para-email{
+.para_email{
   color: #495057;
   font-family: 'W_hosseini';
   size: 14px;
@@ -259,7 +263,7 @@ body, html {
   margin-top: 20px;
   margin-bottom: 7px;
 }
-.input-email{
+.input_email{
   background-color: #F8F9FA;
   border: solid;
   border-radius: 5px;
@@ -273,7 +277,7 @@ body, html {
   font-size: 16px;
 }
 
-.para-enter-account{
+.para_enter_account{
   font-size: 26px;
   font-family: 'Saba';
   font-weight: 700;
@@ -282,7 +286,7 @@ body, html {
   color: #101828;
 }
 
-.para-verification-code {
+.para_verification_code {
   color: #495057;
   font-family: 'W_hosseini';
   font-size: 16px;
@@ -292,7 +296,7 @@ body, html {
   text-align: center;
 }
 
-.para-email {
+.para_email {
    color: #495057;
    font-family: 'W_hosseini';
    size: 14px;
@@ -301,7 +305,7 @@ body, html {
    margin-bottom: 7px;
 }
 
-.input-email {
+.input_email {
    background-color: #F8F9FA;
    border: solid;
    border-radius: 5px;
@@ -316,7 +320,7 @@ body, html {
 }
 
 /* صفحه وارد کردن کد تایید*/
-.para-resend {
+.para_resend {
    color: black;
    text-decoration: none;
    margin-bottom: 40px;
@@ -331,20 +335,20 @@ body, html {
    margin-bottom: 40px;
 }
 
-.para-resend .resend-link {
+.para_resend .resend_link {
    color: #000B58;
    text-decoration: none;
    margin-bottom: 40px;
 }
 
-.para-resend:hover .resend-link {
+.para_resend:hover .resend_link {
    color: #000B58;
    margin-bottom: 40px;
 }
 
 
 /* صفحه جدید برای تایید کد اشتباه*/
-.div-verification-error {
+.div_verification_error {
   display: none;
   background-color: #f8d7da;
   color: red;
@@ -356,74 +360,74 @@ body, html {
   margin-top: 10px;
 }
 
-.div-verification-error .error-icon {
+.div_verification_error .error_icon {
   margin-right: 15px;
   font-size: 18px;
   color: red;
 }
 
-.div-verification-error .error-message {
+.div_verification_error .error_message {
   margin: 0;
   font-size: 14px;
   color: red;
 }
 
-.input-code.error {
+.input_code.error {
   border: 2px solid red;
 }
 
-.input-error {
+.input_error {
   border: 1px solid red;
 }
 
-.error-container {
+.error_container {
   display: flex;
   align-items: center;
   margin-top: 5px;
   color: red;
 }
 
-.icon-warning {
+.icon_warning {
   margin-right: 5px;
 }
 
-.error-message {
+.error_message {
   font-size: 14px;
   margin: 0;
 }
 
 @media (max-width: 768px) {
-  .div-frame1 { 
+  .div_frame1 { 
       grid-template-columns: 1fr; /* Stacks columns vertically */
   } 
   
-  .div-project-title, .div-login-form {
+  .div_project_title, .div_login_form {
       width: 100%;
   } 
   
-  .div-welcome {
+  .div_welcome {
       padding-right: 20px; /* Adjust padding as needed */ 
   }
 
-  .para-title { 
+  .para_title { 
       font-size: 50px; /* Adjust font size for smaller screens */ line-height: 80px; 
   } 
   
-  .para-enter-account {
+  .para_enter_account {
        font-size: 22px; /* Adjust font size for smaller screens */ line-height: 40px;
       }
 }
 
 @media (max-width: 480px) { 
-  .label-remember-me, .para-forgot-password {
+  .label_remember_me, .para_forgot_password {
       font-size: 12px; /* Adjust font size for very small screens */
   } 
    
-   .para-title {
+   .para_title {
       font-size: 40px; /* Adjust font size for smaller screens */ line-height: 60px;
   } 
   
-  .para-enter-account { 
+  .para_enter_account { 
       font-size: 18px; /* Adjust font size for smaller screens */ line-height: 30px;
   }
 }

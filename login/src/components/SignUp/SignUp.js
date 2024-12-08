@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import "./SignUp-Style.css";
+import styles from "./signup.module.css"
 
-const Login = () => {
+
+export default function SignUp  () {
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [password, setPassword] = useState(""); // برای ذخیره مقدار رمز عبور
   const [isPasswordEmpty, setIsPasswordEmpty] = useState(false); // کنترل وضعیت خالی بودن رمز عبور
@@ -27,8 +28,8 @@ const Login = () => {
         rel="stylesheet"
       />
 
-      <div className="div-frame1">
-        <div className="div-project-title">
+      <div className={styles["div-frame1"]}>
+        <div className={styles["div-project-title"]}>
           <p className="para-title">پروژه نگار</p>
         </div>
 
@@ -90,4 +91,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+
