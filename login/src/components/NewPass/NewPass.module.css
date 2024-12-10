@@ -16,7 +16,7 @@ body, html {
   height: 100%;
 }
 
-.div-frame1 {
+.div_frame1 {
   display: grid;
   grid-template-columns: 720px 1fr;
   column-gap: 10px;
@@ -25,7 +25,7 @@ body, html {
   min-height: 100vh;
 }
 
-.div-project-title {
+.div_project_title {
   background-color: #000B58;
   color: white;
   display: flex;
@@ -37,14 +37,14 @@ body, html {
   height: 100%;
 }
 
-.para-prj-title {
+.para_prj_title {
   font-size: 70px; /* اندازه عنوان پروژه نگار */
   font-weight: 700;
   font-family: 'Saba';
   line-height: 126px;
 }
 
-.para-welcome {
+.para_welcome {
   font-size: 20px; /* اندازه عنوان تعریف رمز جدید */
   font-family: 'W_hosseini';
   line-height: 40px;
@@ -53,7 +53,7 @@ body, html {
   text-align: center; /* وسط‌چین کردن متن */
 }
 
-.para-title {
+.para_title {
   font-size: 30px; /* اندازه عنوان تعریف رمز جدید */
   font-family: 'Saba';
   line-height: 40px;
@@ -62,7 +62,7 @@ body, html {
   text-align: center; /* وسط‌چین کردن متن */
 }
 
-.div-new-pass-form {
+.div_new_pass_form {
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -74,17 +74,17 @@ body, html {
   flex-grow: 1;
 }
 
-.form-title {
+.form_title {
   text-align: center;
   margin-bottom: 20px;
 }
 
-.div-change-pass {
+.div_change_pass {
   width: 100%;
   max-width: 400px;
   margin-top: 30px;
 }
-.para-username {
+.para_username {
   color: #495057;
   font-family: 'W_hosseini';
   font-size: 14px;
@@ -94,8 +94,8 @@ body, html {
 }
 
 
-.input-new-pass,
-.input-conf-pass {
+.input_new_pass,
+.input_conf_pass {
   background-color: #F8F9FA;
   border: solid;
   border-radius: 5px;
@@ -109,17 +109,17 @@ body, html {
  /* margin-top: 20px;  فاصله بین فیلدها */
 }
 
-.input-error {
+.input_error {
   border: 2px solid red;
 }
 
-.error-message {
+.error_message {
   color: red;
   font-size: 12px;
   margin-top: 5px;
 }
 
-.btn-change {
+.btn_change {
   background-color: #000B58;
   width: 100%;
   max-width: 400px;
@@ -131,30 +131,30 @@ body, html {
   font-family: 'W_hosseini';
   margin-top: 30px;
 }
-.input-error {
+.input_error {
   border: 2px solid red;
 }
 
-.error-container {
+.error_container {
   display: flex;
   align-items: center;
   margin-top: 5px; /* فاصله کمتر بین هشدار و فیلد */
 }
 
-.warning-icon {
+.warning_icon {
   color: red; /* رنگ آیکن هشدار */
   font-size: 16px; /* اندازه آیکن هشدار */
   margin-right: 5px; /* فاصله بین آیکن و متن هشدار */
 }
 
-.error-message {
+.error_message {
   color: red;
   font-size: 12px; /* اندازه متن هشدار */
   margin: 0; /* حذف فاصله اضافی متن هشدار */
 }
 
 
-.div-general-error {
+.div_general_error {
   display: flex;
   align-items: center;
   color: red;
@@ -162,29 +162,29 @@ body, html {
   margin-top: 5px;
 }
 
-.warning-icon {
+.warning_icon {
   font-size: 14px;
   margin-right: 5px;
   color: red;
 }
 
 
-.error-label {
+.error_label {
   color: red; /* تغییر رنگ عنوان به قرمز */
 }
 
-.input-error {
+.input_error {
   border: 2px solid red; /* قرمز کردن کادر فیلد */
 }
 
-.error-message {
+.error_message {
   color: red;
   font-size: 12px;
   margin-top: 5px;
   display: inline-block;
 }
 
-.div-general-error {
+.div_general_error {
   display: flex;
   align-items: center;
   color: red;
@@ -192,7 +192,7 @@ body, html {
   margin-top: 5px;
 }
 
-.warning-icon {
+.warning_icon {
   font-size: 14px;
   margin-right: 5px;
   color: red;

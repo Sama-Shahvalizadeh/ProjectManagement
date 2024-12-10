@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from './NewPass.module.css';
 
-function NewPass() {
+export default function NewPass() {
     const [newPassword, setNewPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [errors, setErrors] = useState({ newPassword: '', confirmPassword: '' });
@@ -44,50 +44,49 @@ function NewPass() {
     };
 
     return (
-        <div className="div-frame1">
-            <div className="div-project-title">
-                <p className="para-prj-title">پروژه نگار</p>
+        <div className={styles.div_frame1}>
+            <div className={styles.div_project_title}>
+                <p className={styles.para_prj_title}>پروژه نگار</p>
             </div>
 
-            <div className="div-new-pass-form">
+            <div className={styles.div_new_pass_form}>
                 <form onSubmit={handleSubmit}>
-                    <div className="form-title">
-                        <p className="para-title">تعریف رمز عبور جدید</p>
-                        <p className="para-welcome">رمز عبور جدید شما باید مغایر با رمز عبور قبلی باشد.</p>
+                    <div className={styles.form_title}>
+                        <p className={styles.para_title}>تعریف رمز عبور جدید</p>
+                        <p className={styles.para_welcome}>رمز عبور جدید شما باید مغایر با رمز عبور قبلی باشد.</p>
                     </div>
 
-                    <div className="div-change-pass">
-                        <label htmlFor="newPassword" className={`para-username ${isPasswordMismatch ? 'error-label' : ''}`}>رمز عبور جدید</label>
+                    <div className={styles.div_change_pass}>
+                        <label htmlFor="newPassword" className={`${styles.para_username} ${isPasswordMismatch ? styles.error_label : ''}`}>رمز عبور جدید</label>
                         <input
                             id="newPassword"
-                            className={`input-new-pass ${errors.newPassword || isPasswordMismatch ? 'input-error' : ''}`}
+                            className={`${styles.input_new_pass} ${errors.newPassword || isPasswordMismatch ? styles.input_error : ''}`}
                             type="password"
                             value={newPassword}
                             onChange={(e) => setNewPassword(e.target.value)}
                         />
-                        {errors.newPassword && <p className="error-message">{errors.newPassword}</p>}
+                        {errors.newPassword && <p className={styles.error_message}>{errors.newPassword}</p>}
 
-                        <label htmlFor="confirmPassword" className={`para-username ${isPasswordMismatch ? 'error-label' : ''}`}>تکرار رمز عبور جدید</label>
+                        <label htmlFor="confirmPassword" className={`${styles.para_username} ${isPasswordMismatch ? styles.error_label : ''}`}>تکرار رمز عبور جدید</label>
                         <input
                             id="confirmPassword"
-                            className={`input-conf-pass ${errors.confirmPassword || isPasswordMismatch ? 'input-error' : ''}`}
+                            className={`${styles.input_conf_pass} ${errors.confirmPassword || isPasswordMismatch ? styles.input_error : ''}`}
                             type="password"
                             value={confirmPassword}
                             onChange={(e) => setConfirmPassword(e.target.value)}
                         />
                         {errors.confirmPassword && (
-                            <div className="div-general-error">
+                            <div className={styles.div_general_error}>
                                 <i className="fas fa-exclamation-triangle warning-icon"></i>
                                 <p>{errors.confirmPassword}</p>
                             </div>
                         )}
                     </div>
 
-                    <button type="submit" className="btn-change" onClick={handleSuccessPass}>تغییر رمز عبور</button>
+                    <button type="submit" className={styles.btn_change} onClick={handleSuccessPass}>تغییر رمز عبور</button>
                 </form>
             </div>
         </div>
     );
 }
 
-export default NewPass;

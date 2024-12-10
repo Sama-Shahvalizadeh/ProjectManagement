@@ -42,17 +42,17 @@ const handleVerificationSubmit = (event) => {
   }
   const renderVerificationPage = () => (
     <form onSubmit={handleVerificationSubmit}>
-        <div className="div-verification-container">
-            <div className="div-welcome">
-                <p className="para-enter-account">وارد کردن کد تایید</p>
+        <div className={styles.div_verification_container}>
+            <div className={styles.div_welcome}>
+                <p className={styles.para_enter_account}>وارد کردن کد تایید</p>
             </div>
 
-            <p className="para-verification-code">
+            <p className={styles.para_verification_code}>
                 لطفاً کد تأییدی که به ایمیل 
                 ارسال شد را وارد نمایید.
             </p>
 
-            <div className="input-code-container">
+            <div className={styles.input_code_container}>
                 {Array.from({ length: 6 }).map((_, index) => (
                     <input key={index} className={styles.input_code} type="text" maxLength="1" />
                 ))}

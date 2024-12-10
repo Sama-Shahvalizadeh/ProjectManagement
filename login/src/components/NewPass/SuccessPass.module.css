@@ -21,7 +21,7 @@ body, html {
 }
 
 /* استایل کانتینر اصلی */
-.success-container {
+.success_container {
   display: grid;
   grid-template-columns: 720px 1fr;
   width: 100%;
@@ -30,7 +30,7 @@ body, html {
 }
 
 /* استایل بخش سمت چپ */
-.success-header {
+.success_header {
   background-color: #000B58;
   color: white;
   display: flex;
@@ -40,7 +40,7 @@ body, html {
   border-bottom-right-radius: 50px;
 }
 
-.success-title {
+.success_title {
   font-size: 70px;
   font-weight: 700;
   line-height: 126px;
@@ -48,7 +48,7 @@ body, html {
 }
 
 /* استایل بخش سمت راست */
-.success-content {
+.success_content {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -60,7 +60,7 @@ body, html {
 }
 
 /* استایل آیکن موفقیت */
-.success-icon {
+.success_icon {
   width: 120px;
   height: 120px;
   display: flex;
@@ -71,19 +71,18 @@ body, html {
   margin-bottom: 20px;
 }
 
-.success-icon .fa-check {
+.success_icon .fa_check {
   font-size: 60px;
   color: #000B58; /* تیک آبی */
 }
 
-
-.success-icon .fa-check-circle {
+.success_icon .fa_check_circle {
   font-size: 100px;
   color: #000B58;
 }
 
 /* پیام موفقیت */
-.success-message {
+.success_message {
   font-size: 20px;
   margin-bottom: 20px;
   font-weight: bold;
@@ -92,7 +91,7 @@ body, html {
 }
 
 /* دکمه */
-.success-button {
+.success_button {
   background-color: #000B58;
   color: white;
   font-size: 16px;
@@ -101,9 +100,9 @@ body, html {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  font-family: 'W_hossein';
+  font-family: 'W_hosseini';
 }
 
-.success-button:hover {
+.success_button:hover {
   background-color: #003399;
 }
