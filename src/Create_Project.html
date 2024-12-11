@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!--Note*: to run the project, go to the projct folder in terminal and run this command: npm run dev, then open in browser -->
+
+    <!-- افزودن فایل مربوط بهtailwind -->
+    <!--to do by sama: ایجاد یک فایل جدید برای مرتب کردن کدهای tailwind -->
+    <link rel="stylesheet" href="./output.css">
+    <title>Create Project</title>
+
+    <style>
+        body {
+            direction: rtl;
+        }
+        
+    </style>
+
+</head>
+
+<body class="flex items-center justify-center h-screen bg-gray-100">
+
+    <!-- Modal -->
+
+    <div id="modal">
+        <div class="bg-white rounded-lg shadow-lg  w-[800px] h-[900px]">
+
+            <!-- افزودن باتن خروج -->
+            <div>
+                <button class="mr-[30px] mt-[110px] bg-white">
+                    <img src="icons/close.png"  class="h-[32px] w-[32px]"> 
+                </button>
+            </div>
+
+
+            <!--   افزودن پروژه جدید  -->
+            <div class="mt-[32px] mr-[41px]">
+                <h2 class="block font-arabic-bold antialiased text-[20px] text-[#495057] w-[150px] h-[24px]">
+                    افزودن پروژه جدید
+                </h2>
+            </div>
+                
+
+            <!-- افزودن فرم پر کردن اطلاعات پروژه جدید -->
+            <div class="w-[701px] h-[496px] mt-[72px]">
+
+                <!-- div مربوط به عنوان پروژه -->
+                <div class="w-[701px] h-[40px] flex items-center text-[#495057] mr-[48px] mb-[16px]">
+
+                    <!--لیبل مربوط به عنوان پروژه-->
+                    <label class="w-[38px] h-[24px] block font-arabic-bold antialiased text-[16px] text-[#495057]" for="title">عنوان</label>
+        
+                    <!-- فیلد مربوط به عنوان پروژه -->
+                    <input class="w-[475px] h-[40px] mr-[188px] pr-[8.5px] pl-[8.5px] border-[2px] border-[#BBC1C7] rounded-[5px] border-solid shadow-none font-arabic-medium antialiased font-normal text-[16px] text-[#1B02B7] " id="title" type="text">
+        
+            </div>
+        
+            <!-- div مربوط به وضعیت پروژه -->
+            <div class="w-[701px] h-[40px] flex items-center mb-[16px] mr-[48px]">
+        
+                <!-- افزودن لیبل مربوط به وضعیت پروژه -->
+                <label class="w-[52px] h-[24px] block text-[#495057] font-arabic-bold antialiased text-[16px]" for="status">وضعیت</label>
+        
+                <!-- افزودن فیلد مربوط به وضعیت پروژه -->
+                <select class="w-[475px] h-[40px] mr-[174px] border-[2px] pr-[8.5px] pl-[8.5px] border-[#BBC1C7] rounded-[5px] border-solid shadow-none font-arabic-medium antialiased font-normal text-[16px] text-[#1B02B7]" id="status">
+                    <option>انتخاب کنید</option>
+                    <option>فعال</option>
+                    <option>غیرفعال</option>
+                </select>
+                    
+            </div>
+
+            <!-- div مربوط به مالک پروژه -->
+            <div class="w-[701px] h-[40px] flex items-center mb-[16px] mr-[48px]">
+        
+                <!-- افزودن لیبل مربوط به مالک پروژه -->
+                <label class="w-[34px] h-[24px] block text-[#495057] font-arabic-bold antialiased text-[16px]" for="owner">مالک</label>
+        
+                <!-- افزودن فیلد مربوط به مالک پروژه -->
+                <input class="w-[475px] h-[40px] mr-[192px] border-[2px] pr-[8.5px] pl-[8.5px] border-[#BBC1C7] rounded-[5px] shadow-none font-arabic-medium antialiased font-normal text-[16px] text-[#1B02B7]" id="owner" type="text" >
+                    
+            </div>
+        
+            <!-- div مربوط به مدیر پروژه -->
+            <div class="w-[701px] h-[40px] flex items-center mb-[16px] mr-[48px]">
+        
+                <!-- افزودن لیبل مربوط به مدیر پروژه -->
+                <label class="w-[68px] h-[24px] block text-[#495057] font-arabic-bold antialiased text-[16px]" for="manager">مدیر پروژه</label>
+        
+                <!-- افزودن فیلد مربوط به مدیر پروژه -->
+                <select class="w-[475px] h-[40px] mr-[158px] border-[2px] pr-[8.5px] pl-[8.5px] border-[#BBC1C7] rounded-[5px] shadow-none font-arabic-medium antialiased font-normal text-[16px] text-[#1B02B7]" id="manager">
+                    <option>انتخاب کنید</option>
+                    <option>مدیر1</option>
+                    <option>مدیر2</option>
+                </select>
+                    
+            </div>
+        
+            <!-- div مربوط به موعود انجام پروژه -->
+            <!--to do: تقویم باید شمسی شده و اعداد نیز فارسی نشان داده شوند -->
+            <div class="w-[701px] h-[40px] flex items-center mb-[16px] mr-[48px]">
+        
+                <!-- افزودن لیبل مربوط به موعود انجام پروژه -->
+                <label class="w-[73px] h-[24px] block text-[#495057] font-arabic-bold antialiased text-[16px]" for="due-date">موعد انجام</label>
+        
+                <!-- افزودن فیلد مربوط به موعود انجام پروژه -->
+                <input class="w-[475px] h-[40px] mr-[153px] pr-[8.5px] pl-[8.5px] border-[2px] border-[#BBC1C7] rounded-[5px] shadow-none font-arabic-medium antialiased font-normal text-[16px] text-[#1B02B7]" id="due-date" type="date" onkeydown="return false">
+                    
+            </div>
+        
+            <!-- div مربوط به اولویت پروژه -->
+            <div class="w-[701px] h-[40px] flex items-center mb-[16px] mr-[48px]">
+        
+                <!-- افزودن لیبل مربوط به اولویت پروژه -->
+                <label class="w-[46px] h-[24px] block text-[#495057] font-arabic-bold antialiased text-[16px]" for="importance">اولویت</label>
+        
+                <!-- افزودن فیلد مربوط به اولویت پروژه -->
+                <select class="w-[475px] h-[40px] mr-[180px] pr-[8.5px] pl-[8.5px] border-[2px] border-[#BBC1C7] rounded-[5px] shadow-none font-arabic-medium antialiased font-normal text-[16px] text-[#1B02B7]" id="importance">
+                    <option class="font-arabic-medium font-normal text-[14px]">انتخاب کنید</option>
+                    <option class="font-arabic-medium font-normal text-[14px]">بالا</option>
+                    <option class="font-arabic-medium font-normal text-[14px]">متوسط</option>
+                    <option class="font-arabic-medium font-normal text-[14px]">پایین</option>
+                </select>
+                    
+            </div>
+        
+            <!-- div مربوط به توضیحات پروژه -->
+            <div class="w-[701px] h-[160px] flex items-center justify-between mr-[48px]">
+
+                <!-- افزودن لیبل مربوط به توضیحات -->
+                <label class="w-[65px] h-[24px] block text-[#495057] font-arabic-bold antialiased text-[16px] pb-[140px]" for="explaining">توضیحات</label>
+        
+                <!-- افزودن فیلد مربوط به توضیحات -->
+                <textarea class="w-[475px] h-[160px] mr-[161px] pr-[15px] pt-[8.5px] border-[2px] border-[#BBC1C7] rounded-[5px] shadow-none font-arabic-medium antialiased font-normal text-[16px] text-[#1B02B7] resize-none overflow-y-auto" id="explaining" type="text" rows="5" style="text-align: right;"></textarea>
+        
+            </div>
+            
+            </div>
+            
+            <!-- افزودن باتن ذخیره پروژه -->
+            <div class="mt-[40px] mr-[629px]">
+                <button class="bg-[#000B58] w-[120px] h-[40px] border-none rounded-[5px] text-white font-arabic-medium antialiased text-[16px]">
+                    افزودن پروژه
+                </button>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
+
+
