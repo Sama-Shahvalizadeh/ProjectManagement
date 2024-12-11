@@ -32,7 +32,7 @@
 
 /* استایل‌های مربوط به کامپوننت AddMember */
 .container {
-  @apply flex items-center justify-center h-screen bg-gray-100;
+  @apply flex items-center justify-center h-screen;
 }
 
 .modal {

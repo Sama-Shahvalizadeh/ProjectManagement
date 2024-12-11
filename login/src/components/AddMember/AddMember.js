@@ -1,7 +1,45 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styles from './AddMember.module.css';
 
 export default function AddMember() {
+
+
+  // مدیریت state فرم
+  const [formData, setFormData] = useState({
+    coworker: '',
+    responsibility: '',
+    explaining: '',
+  });
+
+  // مدیریت تغییرات در فیلدها
+  const handleInputChange = (event) => {
+    const { id, value } = event.target;
+    setFormData({ ...formData, [id]: value });
+  };
+
+  // ارسال داده‌ها به بک‌اند
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const response = await fetch('https://your-backend-api.com/add-member', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        alert('اطلاعات با موفقیت ارسال شد!');
+        setFormData({ coworker: '', responsibility: '', explaining: '' }); // پاک کردن فرم
+      } else {
+        alert('خطا در ارسال اطلاعات!');
+      }
+    } catch (error) {
+      console.error('خطا:', error);
+      alert('ارتباط با سرور برقرار نشد.');
+    }
+  };
   return (
   
     <div className={styles.container} style={{ direction: 'rtl' }}>
@@ -50,6 +88,7 @@ export default function AddMember() {
                 id="explaining"
                 type="text"
                 rows="5"
+                
                 style={{ textAlign: 'right' }}
               ></textarea>
             </div>
@@ -57,7 +96,7 @@ export default function AddMember() {
 
           {/* افزودن باتن ذخیره همکار */}
           <div className={styles.saveButtonContainer}>
-            <button className={styles.saveButton}>افزودن عضو</button>
+            <button className={styles.saveButton} onClick={handleSubmit}>افزودن عضو</button>
           </div>
         </div>
       </div>
