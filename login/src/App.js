@@ -48,6 +48,7 @@ import Email from "./components/Email/Email"
 import Verify from "./components/VerificationCode/Verify"
 import NewPass from "./components/NewPass/NewPass"
 import SuccessPass from "./components/NewPass/SuccessPass"
+import AddMember from "./components/AddMember/AddMember";
 
 
 export default function App() {
@@ -61,6 +62,7 @@ export default function App() {
 				<Route path="/verify" element={<Verify/>}/>
 				<Route path="/newpass" element={<NewPass/>}/>
 				<Route path="/successpass" element={<SuccessPass/>}/>
+				<Route path="/addmember" element={<AddMember/>}/>
 
 
 			</Routes>
