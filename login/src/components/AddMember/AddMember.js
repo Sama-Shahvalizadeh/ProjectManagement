@@ -3,8 +3,9 @@ import styles from './AddMember.module.css';
 
 export default function AddMember() {
   return (
-    <div className={styles.container}>
-      {/* Modal */}
+  
+    <div className={styles.container} style={{ direction: 'rtl' }}>
+        {/* Modal */}
       <div id="modal">
         <div className={styles.modal}>
           {/* باتن خروج از برنامه */}
