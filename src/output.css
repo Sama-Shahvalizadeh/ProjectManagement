@@ -810,9 +810,9 @@ video {
   background-color: rgb(0 11 88 / var(--tw-bg-opacity, 1));
 }
 
-.bg-gray-100 {
+.bg-\[\#F8F9FA\] {
   --tw-bg-opacity: 1;
-  background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1));
+  background-color: rgb(248 249 250 / var(--tw-bg-opacity, 1));
 }
 
 .bg-white {
@@ -828,16 +828,16 @@ video {
   padding-left: 8.5px;
 }
 
+.pr-\[15px\] {
+  padding-right: 15px;
+}
+
 .pr-\[8\.5px\] {
   padding-right: 8.5px;
 }
 
 .pt-\[8\.5px\] {
   padding-top: 8.5px;
-}
-
-.pr-\[15px\] {
-  padding-right: 15px;
 }
 
 .font-arabic-bold {
