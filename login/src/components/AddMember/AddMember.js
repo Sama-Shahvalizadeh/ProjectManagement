@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import styles from './AddMember.module.css';
+import myicon from './icons/close.png'
 
 export default function AddMember() {
 
@@ -47,9 +48,13 @@ export default function AddMember() {
       <div id="modal">
         <div className={styles.modal}>
           {/* باتن خروج از برنامه */}
+          <p>          .</p>
+          <p>          .</p>
+          <p>          .</p>
+
           <div>
             <button className={styles.closeButton}>
-              <img src="./icons/close.png" className={styles.closeIcon} alt="close" />
+              <img src={myicon} className={styles.closeIcon} alt="close" />
             </button>
           </div>
 
@@ -63,7 +68,7 @@ export default function AddMember() {
             {/* div مربوط به همکار */}
             <div className={styles.field}>
               <label className={styles.label} htmlFor="coworker">همکار</label>
-              <select className={styles.select} id="coworker">
+              <select className={styles.select} name='انتخاب کنید' id="coworker">
                 <option>انتخاب کنید</option>
                 <option>همکار1</option>
                 <option>همکار2</option>
@@ -73,7 +78,7 @@ export default function AddMember() {
             {/* div مربوط به سمت همکار */}
             <div className={styles.field}>
               <label className={styles.label} htmlFor="responsibility">سمت</label>
-              <select className={styles.select} id="responsibility">
+              <select className={styles.select} name='انتخاب کنید' id="responsibility">
                 <option>انتخاب کنید</option>
                 <option>سمت1</option>
                 <option>سمت2</option>

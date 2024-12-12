@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import styles from './CreateProject.module.css';
 import '@majidh1/jalalidatepicker/dist/jalalidatepicker.min.css';
 import "@majidh1/jalalidatepicker";
+import myicon from './icons/close.png';
 
 export default function CreateProject() {
   useEffect(() => {
@@ -18,10 +19,13 @@ export default function CreateProject() {
         <div className={styles.modal}>
           {/* باتن خروج */}
           <p>          .</p>
+          <p>          .</p>
+          <p>          .</p>
+
           <div>
             <button type="button" className={styles.closeButton}>
-              <img src="./icons/close.png" className={styles.closeIcon} alt="close" />
-              خروج
+              <img src={myicon} className={styles.closeIcon} alt="close" />
+              
             </button>
             
           </div>
@@ -49,6 +53,7 @@ export default function CreateProject() {
               <select
                 className={styles.status_select}
                 id="status"
+                name='انتخاب کنید' 
                 // value={formData.status}
                 // onChange={handleInputChange}
               >
@@ -74,6 +79,7 @@ export default function CreateProject() {
               <select
                 className={styles.manager_select}
                 id="manager"
+                name='انتخاب کنید' 
                 // value={formData.manager}
                 // onChange={handleInputChange}
               >
@@ -99,6 +105,7 @@ export default function CreateProject() {
               <select
                 className={styles.prior_select}
                 id="importance"
+                name='انتخاب کنید' 
                 // value={formData.importance}
                 // onChange={handleInputChange}
               >
