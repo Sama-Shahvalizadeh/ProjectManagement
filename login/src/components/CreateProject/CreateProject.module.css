@@ -32,11 +32,11 @@
 
 /* تنظیمات اصلی */
 .container {
-  @apply flex items-center justify-center h-screen bg-gray-100;
+  @apply flex items-center justify-center h-screen;
 }
 
 .modal {
-  @apply bg-white rounded-lg shadow-lg  w-[800px] h-[900px];
+  @apply bg-[#F8F9FA] rounded-lg shadow-lg  w-[800px] h-[900px];
 }
 
 .closeButton {
@@ -98,15 +98,15 @@
 }
 
 .input {
-  @apply w-[475px] h-[40px] mr-[188px] pr-[8.5px] pl-[8.5px] border-[2px] border-[#BBC1C7] rounded-[5px] border-solid shadow-none font-arabic-medium antialiased font-normal text-[16px] text-[#1B02B7] ;
+  @apply w-[475px] h-[40px] mr-[188px] pr-[8.5px] pl-[8.5px] border-[2px] border-[#BBC1C7] rounded-[5px] border-solid shadow-none font-arabic-medium antialiased font-normal text-[16px] text-[#1B02B7] bg-[#F8F9FA] ;
 }
 
 .owner_input{
-  @apply w-[475px] h-[40px] mr-[192px] border-[2px] pr-[8.5px] pl-[8.5px] border-[#BBC1C7] rounded-[5px] shadow-none font-arabic-medium antialiased font-normal text-[16px] text-[#1B02B7];
+  @apply w-[475px] h-[40px] mr-[192px] border-[2px] pr-[8.5px] pl-[8.5px] border-[#BBC1C7] rounded-[5px] shadow-none font-arabic-medium antialiased font-normal text-[16px] text-[#1B02B7] bg-[#F8F9FA];
 }
 
 .duedate_input{
-  @apply w-[475px] h-[40px] mr-[153px] pr-[8.5px] pl-[8.5px] border-[2px] border-[#BBC1C7] rounded-[5px] shadow-none font-arabic-medium antialiased font-normal text-[16px] text-[#1B02B7];
+  @apply w-[475px] h-[40px] mr-[153px] pr-[8.5px] pl-[8.5px] border-[2px] border-[#BBC1C7] rounded-[5px] shadow-none font-arabic-medium antialiased font-normal text-[16px] text-[#1B02B7] bg-[#F8F9FA];
 }
 
 .input-title {
@@ -118,15 +118,15 @@
 }
 
 .status_select{
-  @apply w-[475px] h-[40px] mr-[174px] border-[2px] pr-[8.5px] pl-[8.5px] border-[#BBC1C7] rounded-[5px] border-solid shadow-none font-arabic-medium antialiased font-normal text-[16px] text-[#1B02B7];
+  @apply w-[475px] h-[40px] mr-[174px] border-[2px] pr-[8.5px] pl-[8.5px] border-[#BBC1C7] rounded-[5px] border-solid shadow-none font-arabic-medium antialiased font-normal text-[16px] text-[#1B02B7] bg-[#F8F9FA];
 }
 
 .manager_select{
-  @apply w-[475px] h-[40px] mr-[158px] border-[2px] pr-[8.5px] pl-[8.5px] border-[#BBC1C7] rounded-[5px] shadow-none font-arabic-medium antialiased font-normal text-[16px] text-[#1B02B7];
+  @apply w-[475px] h-[40px] mr-[158px] border-[2px] pr-[8.5px] pl-[8.5px] border-[#BBC1C7] rounded-[5px] shadow-none font-arabic-medium antialiased font-normal text-[16px] text-[#1B02B7] bg-[#F8F9FA];
 }
 
 .prior_select{
-  @apply w-[475px] h-[40px] mr-[180px] pr-[8.5px] pl-[8.5px] border-[2px] border-[#BBC1C7] rounded-[5px] shadow-none font-arabic-medium antialiased font-normal text-[16px] text-[#1B02B7];
+  @apply w-[475px] h-[40px] mr-[180px] pr-[8.5px] pl-[8.5px] border-[2px] border-[#BBC1C7] rounded-[5px] shadow-none font-arabic-medium antialiased font-normal text-[16px] text-[#1B02B7] bg-[#F8F9FA];
 }
 
 .prior_option{
@@ -154,7 +154,7 @@
 }
 
 .textarea {
-  @apply w-[475px] h-[160px] pr-[15px] pt-[8.5px] border-[2px] border-[#BBC1C7] rounded-[5px] shadow-none font-arabic-medium antialiased font-normal text-[16px] text-[#1B02B7] resize-none overflow-y-auto;
+  @apply w-[475px] h-[160px] pr-[15px] pt-[8.5px] border-[2px] border-[#BBC1C7] rounded-[5px] shadow-none font-arabic-medium antialiased font-normal text-[16px] text-[#1B02B7] resize-none overflow-y-auto bg-[#F8F9FA];
 }
 
 /* دکمه‌ها */
