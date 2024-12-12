@@ -49,6 +49,7 @@ import Verify from "./components/VerificationCode/Verify"
 import NewPass from "./components/NewPass/NewPass"
 import SuccessPass from "./components/NewPass/SuccessPass"
 import AddMember from "./components/AddMember/AddMember";
+import CreateProject from "./components/CreateProject/CreateProject";
 
 
 export default function App() {
@@ -63,6 +64,7 @@ export default function App() {
 				<Route path="/newpass" element={<NewPass/>}/>
 				<Route path="/successpass" element={<SuccessPass/>}/>
 				<Route path="/addmember" element={<AddMember/>}/>
+				<Route path="/createproject" element={<CreateProject/>}/>
 
 
 			</Routes>

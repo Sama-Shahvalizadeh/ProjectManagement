@@ -49,7 +49,7 @@ export default function AddMember() {
           {/* باتن خروج از برنامه */}
           <div>
             <button className={styles.closeButton}>
-              <img src="icons/close.png" className={styles.closeIcon} alt="close" />
+              <img src="./icons/close.png" className={styles.closeIcon} alt="close" />
             </button>
           </div>
 

@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .font-arabic-bold {
+    font-family: 'ArabicDisplayBold';
+  }
+  .font-arabic-medium {
+    font-family: 'ArabicDisplayMedium';
+  }
+}
+
+/* استایل‌ها */
+.container {
+  @apply flex items-center justify-center h-screen bg-gray-100;
+}
+
+.modal {
+  @apply bg-white rounded-lg shadow-lg w-[800px] h-[900px];
+}
+
+.closeButton {
+  @apply mr-[30px] mt-[110px] bg-white;
+}
+
+.closeIcon {
+  @apply h-[32px] w-[32px];
+}
+
+.titleContainer {
+  @apply mt-[32px] mr-[41px];
+}
+
+.title {
+  @apply block font-arabic-bold antialiased text-[20px] text-[#495057] w-[150px] h-[24px];
+}
+
+.formContainer {
+  @apply w-[701px] h-[496px] mt-[72px];
+}
+
+.field {
+  @apply w-[701px] h-[40px] flex items-center mb-[16px] mr-[48px];
+}
+
+.label {
+  @apply block text-[#495057] font-arabic-bold antialiased text-[16px];
+}
+
+.input, .select {
+  @apply w-[475px] h-[40px] pr-[8.5px] pl-[8.5px] border-[2px] border-[#BBC1C7] rounded-[5px] shadow-none font-arabic-medium antialiased font-normal text-[16px] text-[#1B02B7];
+}
+
+.textareaField {
+  @apply w-[701px] h-[160px] flex items-center justify-between mr-[48px];
+}
+
+.textareaLabel {
+  @apply block text-[#495057] font-arabic-bold antialiased text-[16px] pb-[140px];
+}
+
+.textarea {
+  @apply w-[475px] h-[160px] pr-[15px] pt-[8.5px] border-[2px] border-[#BBC1C7] rounded-[5px] shadow-none font-arabic-medium antialiased font-normal text-[16px] text-[#1B02B7] resize-none overflow-y-auto;
+}
+
+.saveButtonContainer {
+  @apply mt-[40px] mr-[629px];
+}
+
+.saveButton {
+  @apply bg-[#000B58] w-[120px] h-[40px] border-none rounded-[5px] text-white font-arabic-medium antialiased text-[16px];
+}
