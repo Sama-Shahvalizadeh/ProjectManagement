@@ -3,58 +3,57 @@ import styles from './CreateProject.module.css'
 
 export default function CreateProject(){
 
-  // مدیریت state برای فرم
-  const [formData, setFormData] = useState({
-    title: '',
-    status: '',
-    owner: '',
-    manager: '',
-    dueDate: '',
-    importance: '',
-    explaining: '',
-  });
+  // // مدیریت state برای فرم
+  // const [formData, setFormData] = useState({
+  //   title: '',
+  //   status: '',
+  //   owner: '',
+  //   manager: '',
+  //   dueDate: '',
+  //   importance: '',
+  //   explaining: '',
+  // });
 
-  // مدیریت تغییرات در فیلدها
-  const handleInputChange = (event) => {
-    const { id, value } = event.target;
-    setFormData({ ...formData, [id]: value });
-  };
+  // // مدیریت تغییرات در فیلدها
+  // const handleInputChange = (event) => {
+  //   const { id, value } = event.target;
+  //   setFormData({ ...formData, [id]: value });
+  // };
 
-  // ارسال داده‌ها به بک‌اند
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    try {
-      const response = await fetch('https://your-backend-api.com/create-project', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+  // // ارسال داده‌ها به بک‌اند
+  // const handleSubmit = async (event) => {
+  //   event.preventDefault();
+  //   try {
+  //     const response = await fetch('https://your-backend-api.com/create-project', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify(formData),
+  //     });
 
-      if (response.ok) {
-        alert('پروژه با موفقیت ثبت شد!');
-        setFormData({
-          title: '',
-          status: '',
-          owner: '',
-          manager: '',
-          dueDate: '',
-          importance: '',
-          explaining: '',
-        });
-      } else {
-        alert('خطا در ثبت پروژه!');
-      }
-    } catch (error) {
-      console.error('خطا:', error);
-      alert('ارتباط با سرور برقرار نشد.');
-    }
-  };
-  
+  //     if (response.ok) {
+  //       alert('پروژه با موفقیت ثبت شد!');
+  //       setFormData({
+  //         title: '',
+  //         status: '',
+  //         owner: '',
+  //         manager: '',
+  //         dueDate: '',
+  //         importance: '',
+  //         explaining: '',
+  //       });
+  //     } else {
+  //       alert('خطا در ثبت پروژه!');
+  //     }
+  //   } catch (error) {
+  //     console.error('خطا:', error);
+  //     alert('ارتباط با سرور برقرار نشد.');
+  //   }
+  // };
+
   return (
     <div className={styles.container} style={{ direction: 'rtl' }}>
-      <form onSubmit={handleSubmit}>
         <div id="modal">
           <div className={styles.modal}>
             {/* باتن خروج */}
@@ -71,24 +70,24 @@ export default function CreateProject(){
 
             {/* فرم اطلاعات پروژه */}
             <div className={styles.formContainer}>
-              <div className={styles.field}>
-                <label className={styles.label} htmlFor="title">عنوان</label>
+              <div className={styles.title_field}>
+                <label className={styles.title_label} htmlFor="title">عنوان</label>
                 <input
                   className={styles.input}
                   id="title"
                   type="text"
-                  value={formData.title}
-                  onChange={handleInputChange}
+                  // value={formData.title}
+                  // onChange={handleInputChange}
                 />
               </div>
 
-              <div className={styles.field}>
-                <label className={styles.label} htmlFor="status">وضعیت</label>
+              <div className={styles.status_field}>
+                <label className={styles.status_label} htmlFor="status">وضعیت</label>
                 <select
-                  className={styles.select}
+                  className={styles.status_select}
                   id="status"
-                  value={formData.status}
-                  onChange={handleInputChange}
+                  // value={formData.status}
+                  // onChange={handleInputChange}
                 >
                   <option value="">انتخاب کنید</option>
                   <option value="فعال">فعال</option>
@@ -99,21 +98,21 @@ export default function CreateProject(){
               <div className={styles.field}>
                 <label className={styles.label} htmlFor="owner">مالک</label>
                 <input
-                  className={styles.input}
+                  className={styles.owner_input}
                   id="owner"
                   type="text"
-                  value={formData.owner}
-                  onChange={handleInputChange}
+                  // value={formData.owner}
+                  // onChange={handleInputChange}
                 />
               </div>
 
               <div className={styles.field}>
-                <label className={styles.label} htmlFor="manager">مدیر پروژه</label>
+                <label className={styles.manager_label} htmlFor="manager">مدیر پروژه</label>
                 <select
-                  className={styles.select}
+                  className={styles.manager_select}
                   id="manager"
-                  value={formData.manager}
-                  onChange={handleInputChange}
+                  // value={formData.manager}
+                  // onChange={handleInputChange}
                 >
                   <option value="">انتخاب کنید</option>
                   <option value="مدیر1">مدیر1</option>
@@ -122,29 +121,29 @@ export default function CreateProject(){
               </div>
 
               <div className={styles.field}>
-                <label className={styles.label} htmlFor="dueDate">موعد انجام</label>
+                <label className={styles.duedate_label} htmlFor="dueDate">موعد انجام</label>
                 <input
-                  className={styles.input}
+                  className={styles.duedate_input}
                   id="dueDate"
                   type="date"
-                  value={formData.dueDate}
-                  onChange={handleInputChange}
+                  // value={formData.dueDate}
+                  // onChange={handleInputChange}
                   onKeyDown={(e) => e.preventDefault()}
                 />
               </div>
 
               <div className={styles.field}>
-                <label className={styles.label} htmlFor="importance">اولویت</label>
+                <label className={styles.prior_label} htmlFor="importance">اولویت</label>
                 <select
-                  className={styles.select}
+                  className={styles.prior_select}
                   id="importance"
-                  value={formData.importance}
-                  onChange={handleInputChange}
+                  // value={formData.importance}
+                  // onChange={handleInputChange}
                 >
-                  <option value="">انتخاب کنید</option>
-                  <option value="بالا">بالا</option>
-                  <option value="متوسط">متوسط</option>
-                  <option value="پایین">پایین</option>
+                  <option className={styles.prior_option} >انتخاب کنید</option>
+                  <option className={styles.prior_option} >بالا</option>
+                  <option className={styles.prior_option} >متوسط</option>
+                  <option className={styles.prior_option} >پایین</option>
                 </select>
               </div>
 
@@ -153,8 +152,8 @@ export default function CreateProject(){
                 <textarea
                   className={styles.textarea}
                   id="explaining"
-                  value={formData.explaining}
-                  onChange={handleInputChange}
+                  // value={formData.explaining}
+                  // onChange={handleInputChange}
                   rows="5"
                 ></textarea>
               </div>
@@ -166,7 +165,6 @@ export default function CreateProject(){
             </div>
           </div>
         </div>
-      </form>
     </div>
   );
 
