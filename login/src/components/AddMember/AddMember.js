@@ -1,9 +1,9 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import styles from './AddMember.module.css';
-import myicon from './icons/close.png'
+import myicon from './icons/close.png';
+import { addMember } from '../../Services/AddMemberAPI'; 			// استفاده از API برای افزودن عضو
 
 export default function AddMember() {
-
 
   // مدیریت state فرم
   const [formData, setFormData] = useState({
@@ -22,17 +22,12 @@ export default function AddMember() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch('https://your-backend-api.com/add-member', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+      // ارسال داده‌ها به سرور از طریق API
+      const response = await addMember(formData);
 
-      if (response.ok) {
+      if (response.success) {
         alert('اطلاعات با موفقیت ارسال شد!');
-        setFormData({ coworker: '', responsibility: '', explaining: '' }); // پاک کردن فرم
+        setFormData({ coworker: '', responsibility: '', explaining: '' }); 	// پاک کردن فرم
       } else {
         alert('خطا در ارسال اطلاعات!');
       }
@@ -41,8 +36,8 @@ export default function AddMember() {
       alert('ارتباط با سرور برقرار نشد.');
     }
   };
+
   return (
-  
     <div className={styles.container} style={{ direction: 'rtl' }}>
         {/* Modal */}
       <div id="modal" className={styles.modal_style}>
@@ -64,7 +59,7 @@ export default function AddMember() {
             {/* div مربوط به همکار */}
             <div className={styles.field}>
               <label className={styles.label} htmlFor="coworker">همکار</label>
-              <select className={styles.select} name='انتخاب کنید' id="coworker">
+              <select className={styles.select} name='انتخاب کنید' id="coworker" value={formData.coworker} onChange={handleInputChange}>
                 <option>انتخاب کنید</option>
                 <option>همکار1</option>
                 <option>همکار2</option>
@@ -74,7 +69,7 @@ export default function AddMember() {
             {/* div مربوط به سمت همکار */}
             <div className={styles.field}>
               <label className={styles.label} htmlFor="responsibility">سمت</label>
-              <select className={styles.select} name='انتخاب کنید' id="responsibility">
+              <select className={styles.select} name='انتخاب کنید' id="responsibility" value={formData.responsibility} onChange={handleInputChange}>
                 <option>انتخاب کنید</option>
                 <option>سمت1</option>
                 <option>سمت2</option>
@@ -89,7 +84,8 @@ export default function AddMember() {
                 id="explaining"
                 type="text"
                 rows="5"
-                
+                value={formData.explaining}
+                onChange={handleInputChange}
                 style={{ textAlign: 'right' }}
               ></textarea>
             </div>
