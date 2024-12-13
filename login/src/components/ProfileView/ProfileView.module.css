@@ -162,47 +162,73 @@
 }
 
 .navbar {
-  @apply h-[80px] w-full flex items-center justify-between bg-[#F8F9FA] mr-[240px] pr-[24px] py-[21px];
-}
-.navbar{
-  @apply h-[80px] w-full flex flex-row row-2 gap-[450px] items-center bg-[#F8F9FA] mr-[240px] pr-[24px] my-auto font-arabic-medium;
+  @apply h-[80px] w-full flex flex-row gap-[450px] items-center bg-[#F8F9FA] mr-[240px] pr-[24px] my-auto font-arabic-medium;
 }
 
+
 .searchBar {
-  display: flex;
-  align-items: center;
+  @apply relative flex items-center my-auto text-[#787486] text-[14px];
 }
 
 .search_btn {
-  position: absolute;
-  left: 10px;
+  @apply absolute left-2 top-1/2 transform -translate-y-1/2;
 }
 
 .search_icon{
-
+   @apply h-[22px] w-[22px];
 }
 
 .searchInput {
-  width: 470px;
-  height: 38px;
-  background-color: #e2e5e9;
-  border-radius: 5px;
-  padding: 16px;
-  color: #000b58;
+  @apply w-[470px] h-[38px] rounded-[5px] bg-[#E2E5E9] focus:outline-none focus:ring focus:ring-[#000B58] px-[16px] text-[#000B58] whitespace-nowrap;
 }
 
-.navIcons {
-  display: flex;
-  align-items: center;
+.icon_grp{
+  @apply flex flex-row justify-end items-center;
 }
 
-.userName {
-  margin-left: 16px;
-  color: #495057;
-  font-size: 16px;
-  font-weight: bold;
+.icon_style{
+  @apply bg-[#F8F9FA];
 }
 
-.nav_icon{
+.btn1_style{
+  @apply h-[25px] w-[25px] ml-[16px];
+}
 
+.chat{
+  @apply h-[25px] w-[25px] ml-[32px];
+}
+
+.user_name{
+  @apply whitespace-nowrap text-[#495057] text-[16px] font-semibold ml-[32px] whitespace-nowrap;
+}
+
+.profile{
+  @apply h-[18px] w-[18px];
+}
+
+.main_div{
+  /* @apply flex flex-col cols-2 w-full h-auto; */
+  @apply flex flex-col  w-full h-auto;
+
+}
+
+.sub_navbar{
+  @apply flex flex-row gap-[10px] w-[291px] h-[24px] items-center mr-[268px] mt-[112px] font-arabic-medium font-semibold;
+  
+}
+
+.home{
+  @aply w-[24px] h-[24px] text-[16px];
+}
+
+.left{
+  @apply w-[18px] h-[18px];
+}
+
+.account{
+  @apply text-[#B2B9C0]  whitespace-nowrap;
+}
+
+.personal_info{
+  @apply text-[#495057] whitespace-nowrap;
 }
