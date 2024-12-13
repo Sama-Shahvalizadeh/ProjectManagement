@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
 import styles from './NewPass.module.css';
+import { changePassword } from '../../Services/NewPassAPI'; 				// وارد کردن API مربوط به تغییر رمز عبور
 
 export default function NewPass() {
     const [newPassword, setNewPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [errors, setErrors] = useState({ newPassword: '', confirmPassword: '' });
-    const [isPasswordMismatch, setIsPasswordMismatch] = useState(false); // برای بررسی مغایرت
+    const [isPasswordMismatch, setIsPasswordMismatch] = useState(false); 		// برای بررسی مغایرت
 
-    const handleSuccessPass = (event) =>{
+    const handleSuccessPass = (event) => {
         event.preventDefault();
-        window.location.href = 'successpass'
+        window.location.href = 'successpass'; 						// انتقال به صفحه موفقیت
+    };
 
-    }
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
 
         let valid = true;
@@ -39,7 +40,14 @@ export default function NewPass() {
         setErrors(newErrors);
 
         if (valid) {
-            console.log('Sending data...');
+            try {
+                const passwordData = { newPassword, confirmPassword };
+                const response = await changePassword(passwordData); 			// فراخوانی API برای تغییر رمز عبور
+                console.log('Password change response:', response);
+                handleSuccessPass(event); 						// اگر تغییر رمز عبور موفقیت‌آمیز بود، به صفحه موفقیت برو
+            } catch (error) {
+                console.error('Error changing password:', error);
+            }
         }
     };
 
@@ -83,10 +91,9 @@ export default function NewPass() {
                         )}
                     </div>
 
-                    <button type="submit" className={styles.btn_change} onClick={handleSuccessPass}>تغییر رمز عبور</button>
+                    <button type="submit" className={styles.btn_change}>تغییر رمز عبور</button>
                 </form>
             </div>
         </div>
     );
 }
-
