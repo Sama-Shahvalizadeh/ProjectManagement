@@ -35,6 +35,10 @@
   @apply flex items-center justify-center h-screen;
 }
 
+.modal_style{
+
+}
+
 .modal {
   @apply bg-[#F8F9FA] rounded-lg shadow-lg w-[800px] h-[900px];
 }

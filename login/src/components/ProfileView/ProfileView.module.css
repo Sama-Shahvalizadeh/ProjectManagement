@@ -1,0 +1,203 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'ArabicDisplayBlack';
+  src: url(font/ARABICUIDISPLAYBLACK.OTF) format('opentype');
+}
+@font-face {
+  font-family: 'ArabicDisplayBold';
+  src: url(font/ARABICUIDISPLAYBOLD.OTF) format('opentype');
+}
+@font-face {
+  font-family: 'ArabicDisplayHeavy';
+  src: url(font/ARABICUIDISPLAYHEAVY.OTF) format('opentype');
+}
+@font-face {
+  font-family: 'ArabicDisplayLight';
+  src: url(font/ARABICUIDISPLAYLIGHT.OTF) format('opentype');
+}
+@font-face {
+  font-family: 'ArabicDisplayMedium';
+  src: url(font/ARABICUIDISPLAYMEDIUM.OTF) format('opentype');
+}
+@font-face {
+  font-family: 'ArabicDisplaySemiBold';
+  src: url(font/ARABICUIDISPLAYSEMIBOLD.OTF) format('opentype');
+}
+@font-face {
+  font-family: 'ArabicDisplayThin';
+  src: url(font/ARABICUIDISPLAYTHIN.OTF) format('opentype');
+}
+@font-face {
+  font-family: 'ArabicDisplayUltraLight';
+  src: url(font/ARABICUIDISPLAYULTRALIGHT.OTF) format('opentype');
+}
+@font-face {
+  font-family: 'Saba';
+  src: url(font/SABA-[@I_FONT].TTF) format('truetype');
+}
+
+/* تعریف کلاس‌های سفارشی */
+@layer utilities {
+  .font-arabic-bold {
+    font-family: 'ArabicDisplayBold';
+  }
+  .font-arabic-medium {
+    font-family: 'ArabicDisplayMedium';
+  }
+  .font-saba {
+    font-family: 'Saba';
+  }
+  .font-semibold{
+    font-family: 'ArabicDisplaySemiBold'
+  }
+}
+
+.container {
+  @apply flex;
+}
+
+/* In your tailwind.css or custom CSS file */
+.sidebar {
+  @apply bg-[#F8F9FA] shadow-none h-screen border-l-[1px] border-[#B2B9C0] w-[240px] fixed right-0 top-0;
+}
+
+
+.sidebarHeader {
+  @apply mt-[48px] ml-[57px] text-[24px] text-[#000B58] mr-[29px] font-saba font-semibold flex items-center whitespace-nowrap;
+}
+
+.icon {
+  @apply w-[30px] h-[30px] ml-[20px];
+}
+
+.menu {
+  @apply mr-[36px] text-[#495057] text-[16px] font-arabic-bold;
+}
+
+.dashboard_item{
+  @apply flex items-center mt-[54px] ml-[119px] hover:bg-gray-700 rounded;
+}
+
+.dashboard_icon{
+  @apply w-[16px] h-[18px] ml-[16px];
+}
+
+.projects_item{
+  @apply flex items-center whitespace-nowrap mt-[34px] ml-[122px] text-[#495057];
+}
+
+.projects_icon{
+  @apply w-[16px] h-[16px] ml-[16px];
+}
+
+.tasks_item{
+  @apply flex items-center whitespace-nowrap mt-[34px] ml-[127px];
+}
+
+.tasks_icon{
+  @apply w-[16px] h-[16px] ml-[16px];
+}
+
+.users_item{
+  
+}
+
+.users_icon{
+
+}
+
+.report_item{
+  
+}
+
+.report_icon{
+
+}
+
+.calendar_item{
+
+}
+
+.calendar_icon{
+
+}
+
+.userCard {
+  display: flex;
+  align-items: center;
+  background-color: #000b58;
+  color: #fff;
+  border-radius: 5px;
+  width: 205px;
+  height: 90px;
+  margin: 150px auto;
+}
+
+.userImageWrapper {
+  position: relative;
+  margin-right: 8px;
+}
+
+.userImage {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 6px solid #000b58;
+}
+
+.status {
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: green;
+}
+
+.navbar {
+  width: calc(100% - 240px);
+  height: 80px;
+  background-color: #f8f9fa;
+  margin-right: 240px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 21px 24px;
+  position: fixed;
+  top: 0;
+}
+
+.searchBar {
+  display: flex;
+  align-items: center;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 10px;
+}
+
+.searchInput {
+  width: 470px;
+  height: 38px;
+  background-color: #e2e5e9;
+  border-radius: 5px;
+  padding: 16px;
+  color: #000b58;
+}
+
+.navIcons {
+  display: flex;
+  align-items: center;
+}
+
+.userName {
+  margin-left: 16px;
+  color: #495057;
+  font-size: 16px;
+  font-weight: bold;
+}

@@ -50,6 +50,7 @@ import NewPass from "./components/NewPass/NewPass"
 import SuccessPass from "./components/NewPass/SuccessPass"
 import AddMember from "./components/AddMember/AddMember";
 import CreateProject from "./components/CreateProject/CreateProject";
+import ProfileView from "./components/ProfileView/ProfileView";
 
 
 export default function App() {
@@ -65,7 +66,7 @@ export default function App() {
 				<Route path="/successpass" element={<SuccessPass/>}/>
 				<Route path="/addmember" element={<AddMember/>}/>
 				<Route path="/createproject" element={<CreateProject/>}/>
-
+				<Route path="/profileview" element={<ProfileView/>}/>
 
 			</Routes>
 		</div>

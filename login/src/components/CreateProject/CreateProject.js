@@ -15,7 +15,7 @@ export default function CreateProject() {
 
   return (
     <div className={styles.container} style={{ direction: 'rtl' }}>
-      <div id="modal">
+      <div id="modal" className={styles.modal_style}>
         <div className={styles.modal}>
           {/* باتن خروج */}
           <p>          .</p>

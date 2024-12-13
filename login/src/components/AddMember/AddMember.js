@@ -45,7 +45,7 @@ export default function AddMember() {
   
     <div className={styles.container} style={{ direction: 'rtl' }}>
         {/* Modal */}
-      <div id="modal">
+      <div id="modal" className={styles.modal_style}>
         <div className={styles.modal}>
           {/* باتن خروج از برنامه */}
           <p>          .</p>
