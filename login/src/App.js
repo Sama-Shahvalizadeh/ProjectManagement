@@ -43,7 +43,7 @@
 import { Route, Routes } from "react-router-dom";
 import { Home } from "./components/Home";
 import LoginForm from "./components/Login/LoginForm";
-import SignUp from "./components/SignUp/SignUp";
+// import SignUp from "./components/SignUp/SignUp";
 import Email from "./components/Email/Email"
 import Verify from "./components/VerificationCode/Verify"
 import NewPass from "./components/NewPass/NewPass"
@@ -59,7 +59,7 @@ export default function App() {
 			<Routes>
 				<Route path="/" element={<Home />} />
 				<Route path="/login" element={<LoginForm />} />
-				<Route path="/signup" element={<SignUp />} />
+				{/* <Route path="/signup" element={<SignUp />} /> */}
 				<Route path="/email" element={<Email/>}/>
 				<Route path="/verify" element={<Verify/>}/>
 				<Route path="/newpass" element={<NewPass/>}/>

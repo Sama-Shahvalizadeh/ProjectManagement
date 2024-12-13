@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {verifyCode, resendVerificationCode} from '../../Services/VerifyAPI';
+import {verifyCode, resendVerificationCode} from '../../Services/VerificationCodeAPI';
 import styles from './Verify.module.css';
 
 export default function Verify() {

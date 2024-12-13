@@ -11,6 +11,8 @@ import userImg from "./icons/0df984f5b0ca214b6596dd91ef682411.jfif";
 import search from "./icons/search-normal.png";
 import navIcon from "./icons/Group 33651.png";
 import chat from "./icons/chat.png";
+import status from "./icons/status.png";
+import hamburger_icon from "./icons/Frame 1000001439.png";
 
 export default function ProfileView(){
   return (
@@ -25,6 +27,8 @@ export default function ProfileView(){
           />
           پروژه نگار
         </h2>
+
+
         <ul className={styles.menu}>
 
           <li className={styles.dashboard_item}>
@@ -52,47 +56,70 @@ export default function ProfileView(){
             تقویم
           </li>
         </ul>
+
+        {/* <!-- کارت زیر منوی سمت راست --> */}
         <div className={styles.userCard}>
           <div className={styles.userImageWrapper}>
+
+          {/* <!-- عکس پروفایل --> */}
             <img
               src={userImg}
-              alt="User"
+              alt="icon"
               className={styles.userImage}
             />
-            <div className={styles.status}></div>
+
+            {/* <!-- وضعیت آنلاین بودن --> */}
+            <div class={styles.status}><img src={status} alt="icon" className={styles.status_icon}/></div>
           </div>
-          <div>
-            <span>بیتا جوان</span>
-            <span>Bitaj@gmail.com</span>
+          
+          {/* <!-- ایمیل و نام کاربر به صورت span تعریف شده --> */}
+          <div class={styles.div_span}>
+                <div class={styles.name_span}>
+                    <span>بیتا جوان</span>
+                </div>
+
+                <div class={styles.email_span}>
+                    <span>Bitaj@gmail.com</span>
+                </div>
           </div>
+          {/* <!-- منوی همبرگر --> */}
+            <div class={styles.hamburger_menu}>
+                <button>
+                    <img src={hamburger_icon} alt="icon"/>
+                </button>
+            </div>
         </div>
       </div>
 
       {/* Navigation Bar */}
-      <nav className={styles.navbar}>
-        <div className={styles.searchBar}>
-          <button className={styles.search_btn}>
-            <img src={search} alt="Search" className={styles.search_icon}/>
-          </button>
-          <input
-            type="text"
-            placeholder="اینجا جست و جو کنید...."
-            className={styles.searchInput}
-          />
-        </div>
-        <div className={styles.navIcons}>
-          <button>
-            <img src={navIcon} alt="Icon" className={styles.nav_icon}/>
-          </button>
-          <button>
-            <img src={chat} alt="Chat" className={styles.chat} />
-          </button>
-          <span className={styles.userName}>بیتا جوان</span>
-          <button>
-            <img src="icons/profile dropdown.png" alt="Dropdown" />
-          </button>
-        </div>
-      </nav>
+      <nav class={styles.navbar} style={{ position: "fixed", top: "0", zIndex: 1000}}>
+
+
+{/* <!-- کد مربوط به نوار جست و جو --> */}
+<div class="relative flex items-center my-auto text-[#787486] text-[14px]">
+    <button class="absolute left-2 top-1/2 transform -translate-y-1/2">
+        <img src="icons/search-normal.png" class="h-[22px] w-[22px]"/>
+    </button>
+    <input type="text" placeholder="اینجا جست و جو کنید...." class="w-[470px] h-[38px] rounded-[5px] bg-[#E2E5E9] focus:outline-none focus:ring focus:ring-[#000B58] px-[16px] text-[#000B58] whitespace-nowrap" />
+</div>
+
+{/* <!-- کد مربوط به آیکونهای سمت راست برنامه --> */}
+<div class="flex flex-row row-4 justify-end items-center">
+    <button class="bg-[#F8F9FA]">
+        <img src="icons/Group 33651.png" alt="Icon" class="h-[25px] w-[25px] ml-[16px]"/> 
+    </button>
+
+    <button class="bg-[#F8F9FA]">
+        <img src="icons/chat.png" alt="Icon" class="h-[25px] w-[25px] ml-[32px]"/>
+    </button>
+     
+    <span class="whitespace-nowrap text-[#495057] text-[16px] font-semibold ml-[32px] whitespace-nowrap">بیتا جوان</span>
+
+    <button class="bg-[#F8F9FA]">
+        <img src="icons/profile dropdown.png" alt="Icon" class="h-[18px] w-[18px]"/> 
+    </button>
+</div>
+</nav>
     </div>
   );
 };

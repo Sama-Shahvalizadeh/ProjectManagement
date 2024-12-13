@@ -61,12 +61,12 @@
 
 /* In your tailwind.css or custom CSS file */
 .sidebar {
-  @apply bg-[#F8F9FA] shadow-none h-screen border-l-[1px] border-[#B2B9C0] w-[240px] fixed right-0 top-0;
+  @apply bg-[#F8F9FA] shadow-none h-screen border-l-[1px] border-[#B2B9C0] w-[240px] fixed right-0 top-0 z-10;
 }
 
 
 .sidebarHeader {
-  @apply mt-[48px] ml-[57px] text-[24px] text-[#000B58] mr-[29px] font-saba font-semibold flex items-center whitespace-nowrap;
+  @apply mt-[48px] ml-[57px] mr-[29px] text-[24px] text-[#000B58] font-saba font-bold flex items-center whitespace-nowrap;
 }
 
 .icon {
@@ -74,11 +74,11 @@
 }
 
 .menu {
-  @apply mr-[36px] text-[#495057] text-[16px] font-arabic-bold;
+  @apply mx-auto my-auto mr-[36px] text-[#495057] text-[16px] font-normal font-arabic-bold;
 }
 
 .dashboard_item{
-  @apply flex items-center mt-[54px] ml-[119px] hover:bg-gray-700 rounded;
+  @apply flex items-center whitespace-nowrap mt-[54px] hover:bg-gray-700 rounded;
 }
 
 .dashboard_icon{
@@ -86,7 +86,7 @@
 }
 
 .projects_item{
-  @apply flex items-center whitespace-nowrap mt-[34px] ml-[122px] text-[#495057];
+  @apply flex items-center whitespace-nowrap mt-[34px] text-[#495057];
 }
 
 .projects_icon{
@@ -94,7 +94,7 @@
 }
 
 .tasks_item{
-  @apply flex items-center whitespace-nowrap mt-[34px] ml-[127px];
+  @apply flex items-center whitespace-nowrap mt-[34px];
 }
 
 .tasks_icon{
@@ -102,64 +102,70 @@
 }
 
 .users_item{
-  
+  @apply flex items-center whitespace-nowrap mt-[34px];
 }
 
 .users_icon{
-
+  @apply w-[16px] h-[16px] ml-[16px];
 }
 
 .report_item{
-  
+  @apply flex items-center whitespace-nowrap mt-[34px];
 }
 
 .report_icon{
-
+  @apply w-[16px] h-[16px] ml-[16px];
 }
 
 .calendar_item{
-
+  @apply flex items-center whitespace-nowrap mt-[34px];
 }
 
 .calendar_icon{
-
+  @apply w-[16px] h-[16px] ml-[16px];
 }
 
 .userCard {
-  display: flex;
-  align-items: center;
-  background-color: #000b58;
-  color: #fff;
-  border-radius: 5px;
-  width: 205px;
-  height: 90px;
-  margin: 150px auto;
+  @apply flex flex-row items-center w-[205px] h-[90px] mt-[150px] mx-auto bg-[#000B58] rounded-[5px] text-[#FFFFFF] text-[10px] font-arabic-medium;
 }
 
 .userImageWrapper {
-  position: relative;
-  margin-right: 8px;
+  @apply relative inline-block mr-[8px];
 }
 
 .userImage {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 6px solid #000b58;
+  @apply h-auto max-w-full w-[40px] h-[40px] rounded-full border-[6px] border-[#000B58];
 }
 
 .status {
-  position: absolute;
-  bottom: 6px;
-  right: 6px;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: green;
+  @apply absolute bottom-1.5 right-1 rounded-full;
+}
+
+.status_icon{
+  @apply w-[8px] h-[8px];
+}
+
+.div_span{
+  @apply mr-[8px];
+}
+
+.name_span{
+  @apply whitespace-nowrap;
+}
+
+.email_span{
+  @apply mt-[16px] whitespace-nowrap;
+}
+
+.hamburger_menu{
+  @apply fixed ml-[16px] mr-[185px];
 }
 
 .navbar {
   @apply h-[80px] w-full flex items-center justify-between bg-[#F8F9FA] mr-[240px] pr-[24px] py-[21px];
+}
+.navbar{
+  @apply h-[80px] w-full flex flex-row row-2 gap-[450px] items-center bg-[#F8F9FA] mr-[240px] pr-[24px] my-auto font-arabic-medium;
 }
 
 .searchBar {

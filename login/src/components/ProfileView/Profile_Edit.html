@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>پنل کاربری</title>
+    <title>ادیت پروفایل</title>
     <link rel="stylesheet" href="./output.css">
     <style>
         body {
@@ -60,7 +60,7 @@
 
             <!-- ایمیل و نام کاربر به صورت span تعریف شده -->
             <div class="mr-[8px]">
-                <div class="whitespace-nowrap">
+                <div class=" whitespace-nowrap">
                     <span>بیتا جوان</span>
                 </div>
 
@@ -101,7 +101,7 @@
                 <img src="icons/chat.png" alt="Icon" class="h-[25px] w-[25px] ml-[32px]">
             </button>
              
-            <span class="whitespace-nowrap text-[#495057] text-[16px] font-semibold ml-[32px] whitespace-nowrap">بیتا جوان</span>
+            <span class="whitespace-nowrap text-[#495057] text-[16px] font-semibold ml-[32px]  whitespace-nowrap">بیتا جوان</span>
 
             <button class="bg-[#F8F9FA]">
                 <img src="icons/profile dropdown.png" alt="Icon" class="h-[18px] w-[18px]"> 
@@ -110,7 +110,7 @@
     </nav>
 
     <!--  محتوای اصلی برنامه div -->
-    <div class="flex flex-col cols-2 w-full h-auto">
+    <div class="flex flex-col cols-3 ml-[240px] w-full h-auto">
 
         <!-- navigation bar منوی زیر  -->
         <div class="flex flex-row gap-[10px] w-[291px] h-[24px] items-center mr-[268px] mt-[112px] font-arabic-medium font-semibold">
@@ -120,152 +120,118 @@
             </button>
     
             <img class="w-[18px] h-[18px]" src="icons/chevron-left (1).png" alt="icon">
-
             <button class="text-[#B2B9C0]  whitespace-nowrap">
                 حساب کاربری
             </button>
-
             <img class="w-[18px] h-[18px]" src="icons/chevron-left (1).png" alt="icon">
-
-            <button class="text-[#495057] whitespace-nowrap">
+            <button class="text-[#495057]  whitespace-nowrap">
                 اطلاعات شخصی
             </button>
         </div>
-            
+
+
         <!-- فرم اطلاعات کاربر -->
-        <div class="flex flex-col w-[1140px] h-[480px] mt-[32px] mr-[268px] pr-[16px] border-[2px] rounded-[5px] border-[#E2E5E9] font-arabic-medium antialiased">
-
-            <!-- اطلاعات شخصی و دکمه ادیت div -->
-            <div class="flex items-center justify-between w-[1108px] h-[40px]">
-
-                <!-- اطلاعات شخصی div -->
-                <div class="flex items-center mt-[20px]">
-                    <div>
-                        <button>
-                            <img src="icons/maximise-frame.png"  class="h-[40px] w-[40px] ml-[16px]">
-                        </button>
-                    </div>
-            
-                    <div class="w-[222px] h-[40px] text-[24px] font-normal text-[#495057] ml-4 whitespace-nowrap">
-                        اطلاعات شخصی
-                    </div>
-                </div>
-
-                <!-- منوی سه نقطه و دکمه ادیت div -->
-                <div class="flex flex-col items-end space-y-1">
-
-                    <!-- دکمه سه نقطه  -->
-                    <button class="text-[#0D062D] text-[16px] mt-[64px]">
-                        ...
-                    </button>
-                        
-                    <!-- دکمه ادیت -->
-                    <button class="w-[200px] h-[60px] border-[2px] rounded-[5px] border-[#E2E5E9] text-[14px] text-[#495057] font-semibold whitespace-nowrap">ویرایش اطلاعات شخصی</button>
-                </div>
-            </div>
-        
-            <!-- عکس پروفایل و نام div -->
-            <div class="flex flex-row items-center gap-[32px] w-[1108px] mt-[40px] h-[138px]">
+        <div class="flex flex-col w-[1140px] h-screen mt-[32px] mr-[268px] pr-[16px] font-arabic-medium antialiased">
+    
+            <!-- عکس پروفایل -->
+            <div class="relative inline-block">
 
                 <!-- عکس پروفایل -->
-                <div>
-                    <img
-                        src="icons/0df984f5b0ca214b6596dd91ef682411.jfif"
-                        class="h-auto max-w-full w-[126px] h-[126px] rounded-full border-[6px] border-[#000B58] z-0 relative"
-                        alt="profile" />
-                </div>
-        
-                <!-- نام -->
-                <div class="w-[88px] h-[32px]">
-                    <span class="text-[24px] font-normal text-[#495057] whitespace-nowrap">
-                        بیتا جوان
-                    </span>
-                </div>
-            </div>
-        
+                <img
+                    src="icons/0df984f5b0ca214b6596dd91ef682411.jfif"
+                    class="h-auto max-w-full w-[126px] h-[126px] rounded-full border-[6px] border-[#000B58] z-0 relative"
+                    alt="profile" />
 
+                    <div class="absolute bottom-0 right-0.5 rounded-full">
+                        <button>
+                            <img src="icons/Group 33652.png" class="w-40px h-[40px]" alt="icon">
+                        </button>
+                    </div>
+
+            </div>
+    
             <!-- اطلاعات کاربر div -->
             <div class="flex flex-col gap-[16px] w-[1108px] h-[302px] mt-[12px]">
-        
+    
                 <!-- نام کاربر div -->
-                <div class="flex flex-row items-center">
+                <div class="flex items-center">
 
                     <!-- نام -->
-                    <div class="w-[19px] h-[24px] ml-[208px] font-bold text-[16px] text-[#495057] whitespace-nowrap">نام</div>
-        
-                    <!-- نام span -->
-                    <div class="h-[24px] font-light text-[#1B1D1F] text-[16px]">
-                        <span>بیتا</span>
-                    </div>
+                     <label class="w-[19px] h-[24px] ml-[208px] font-bold text-[16px] antialiased text-[#495057]  whitespace-nowrap" for="first-name">
+                        نام
+                     </label>
+                    
+                     <!--  نام input -->
+                     <input type="text" id="first-name" class="w-[320px] h-[40px] pl-[8px] pr-[8px] font-light text-[#000B58] text-[16px] bg-[#F8F9FA] border-[1.5px] rounded-[5px] border-[#BBC1C7]">
+    
                 </div>
-        
+    
                 <!-- نام خانوادگی div -->
-                <div class="flex flex-row items-center">
+                <div class="flex items-center">
 
                     <!-- نام خانوادگی -->
-                    <div class="w-[83px] h-[24px] ml-[143px] font-bold text-[16px] text-[#495057] whitespace-nowrap">نام خانوادگی</div>
-        
-                    <!-- نام خانوادگی span -->
-                    <div class="h-[30px] font-light text-[#1B1D1F] text-[16px]">
-                        <span>جوان</span>
-                    </div>
+                    <label class="w-[83px] h-[24px] ml-[143px] font-bold text-[16px] text-[#495057]  whitespace-nowrap" for="last-name">نام خانوادگی</label>
+    
+                    <!-- نام خانوادگی input -->
+                    <input class="w-[320px] h-[40px] pl-[8px] pr-[8px]  font-light text-[#000B58] text-[16px] bg-[#F8F9FA] border-[1.5px] rounded-[5px] border-[#BBC1C7]" id="last-name">
+                      
                 </div>
-        
+    
                 <!-- شماره موبایل div -->
-                <div class="flex flex-row items-center">
+                <div class="flex items-center">
 
                     <!-- شماره تلفن همراه -->
-                    <div class="w-[116px] h-[24px] ml-[110px] font-bold text-[16px] text-[#495057] whitespace-nowrap">شماره تلفن همراه </div>
-        
-                    <!-- شماره تلفن همراه  span -->
-                    <div class="h-[24px] font-light text-[#1B1D1F] text-[16px]">
-                        <span>09140000000</span>
-                    </div>
+                    <label class="w-[116px] h-[24px] ml-[110px] font-bold text-[16px] text-[#495057]  whitespace-nowrap" for="phone-number">شماره تلفن همراه </label>
+    
+                    <!-- شماره تلفن همراه  input -->
+                    <input class="w-[320px] h-[40px] pl-[8px] pr-[8px]  font-light text-[#000B58] text-[16px] bg-[#F8F9FA] border-[1.5px] rounded-[5px] border-[#BBC1C7]" id="phone-number">
                 </div>
-        
+    
                 <!-- ایمیل div -->
-                <div class="flex flex-row items-center">
+                <div class="flex items-center">
 
                     <!-- ایمیل -->
-                    <div class="w-[37px] h-[24px] ml-[189px] font-bold text-[16px] text-[#495057] whitespace-nowrap">ایمیل</div>
-        
-                    <!-- ایمیل  span -->
-                    <div class="h-[24px] font-light text-[#1B1D1F] text-[16px]">
-                        <span>Bitaj@gmail.com</span>
-                    </div>
+                    <label class="w-[37px] h-[24px] ml-[189px] font-bold text-[16px] text-[#495057] whitespace-nowrap" for="email-address">ایمیل</label>
+    
+                    <!-- ایمیل  input -->
+                    <input class="w-[320px] h-[40px] pl-[8px] pr-[8px]  font-light text-[#000B58] text-[16px] bg-[#F8F9FA] border-[1.5px] rounded-[5px] border-[#BBC1C7]" id="email-address">
                 </div>
-        
+    
 
                 <!-- تخصص div -->
-                <div class="flex flex-row items-center">
+                <div class="flex items-center">
 
                     <!-- تخصص -->
-                    <div class="w-[51px] h-[24px] ml-[175px] font-bold text-[16px] text-[#495057] whitespace-nowrap">تخصص</div>
-        
-                    <!-- تخصص  span -->
-                    <div class="h-[24px] font-light text-[#1B1D1F] text-[16px]">
-                        <span>مدیر پروژه</span>
-                    </div>
+                    <label class="w-[51px] h-[24px] ml-[175px] font-bold text-[16px] text-[#495057] whitespace-nowrap" for="profession">تخصص</label>
+
+                    <!-- تخصص  select -->
+                    <select class="w-[320px] h-[40px] pl-[8px] pr-[8px] font-light text-[#000B58] text-[16px] bg-[#F8F9FA] border-[1.5px] rounded-[5px] border-[#BBC1C7]" name="professions" id="profession">
+                        <option>انتخاب کنید</option>
+                        <option>تخصص1</option>
+                        <option>تخصص2</option>
+                    </select>
+    
                 </div>
-        
+    
                 <!-- توضیحات div -->
-                <div class="flex flex-row items-center">
+                <div class="flex items-center">
 
                     <!-- توضیحات -->
-                    <div class="w-[65px] h-[24px] ml-[161px] font-bold text-[16px] text-[#495057] whitespace-nowrap">توضیحات</div>
-        
-                    <!-- توضیحات  span -->
-                    <div class="h-[24px] font-light text-[#1B1D1F] text-[16px]">
-                        <span>این فیلد مربوط به توضیحات است</span>
-                    </div>
+                    <label class="w-[65px] h-[24px] ml-[161px] pb-[140px] block font-bold text-[16px] text-[#495057]  whitespace-nowrap" for="explaining">توضیحات</label>
+
+                    <textarea class="w-[320px] h-[160px] pr-[15px] pt-[8.5px] pt-[8.5px] font-light text-[#000B58] text-[16px] bg-[#F8F9FA] border-[1.5px] rounded-[5px] border-[#BBC1C7] resize-none overflow-y-auto" id="explaining" type="text" rows="5" style="text-align: right;"></textarea>
                 </div>
-        
             </div>
-        
+
+            <div class="flex items-center justify-end flex-row gap-2 font-arabic-medium mt-[200px] ml-[32px]">
+                <button class="bg-[#FFFFFF] text-[#000B58] w-[120px] h-[40px] rounded-[5px] border-[2px] border-[#000B58] text-[16px]  whitespace-nowrap">انصراف</button>
+                <button class="bg-[#000B58] text-[#F8F9FA] w-[120px] h-[40px] rounded-[5px] border-[2px] text-[14px] border-none  whitespace-nowrap">ثبت تغییرات</button>
+            </div>
+            
         </div>
+
     </div>
 
 </body>
 </html>
-
 
