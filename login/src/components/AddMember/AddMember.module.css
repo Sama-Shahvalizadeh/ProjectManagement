@@ -36,15 +36,15 @@
 }
 
 .modal_style{
-
+  @apply my-auto w-[800px] bg-[#F8F9FA]; 
 }
 
 .modal {
-  @apply bg-[#F8F9FA] rounded-lg shadow-lg w-[800px] h-[900px];
+  @apply pb-20;
 }
 
 .closeButton {
-  @apply mr-[30px] mt-[110px] bg-white;
+  @apply mr-[30px] mt-[30px];
 }
 
 .closeIcon {

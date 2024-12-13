@@ -18,10 +18,6 @@ export default function CreateProject() {
       <div id="modal" className={styles.modal_style}>
         <div className={styles.modal}>
           {/* باتن خروج */}
-          <p>          .</p>
-          <p>          .</p>
-          <p>          .</p>
-
           <div>
             <button type="button" className={styles.closeButton}>
               <img src={myicon} className={styles.closeIcon} alt="close" />

@@ -48,10 +48,6 @@ export default function AddMember() {
       <div id="modal" className={styles.modal_style}>
         <div className={styles.modal}>
           {/* باتن خروج از برنامه */}
-          <p>          .</p>
-          <p>          .</p>
-          <p>          .</p>
-
           <div>
             <button className={styles.closeButton}>
               <img src={myicon} className={styles.closeIcon} alt="close" />
