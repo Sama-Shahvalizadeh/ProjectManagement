@@ -218,7 +218,7 @@
 }
 
 .home{
-  @aply w-[24px] h-[24px] text-[16px];
+  @apply w-[24px] h-[24px] text-[16px];
 }
 
 .left{
@@ -231,4 +231,20 @@
 
 .personal_info{
   @apply text-[#495057] whitespace-nowrap;
+}
+
+.personal_form{
+  @apply flex flex-col w-[1140px] h-[480px] mt-[32px] mr-[268px] pr-[16px] border-[2px] rounded-[5px] border-[#E2E5E9] font-arabic-medium antialiased;
+}
+
+.personal_div{
+  @apply flex items-center justify-between w-[1108px] h-[40px];
+}
+
+.personal_info{
+  @apply flex items-center mt-[20px];
+}
+
+.photo_frame{
+  @apply h-[40px] w-[40px] ml-[16px];
 }

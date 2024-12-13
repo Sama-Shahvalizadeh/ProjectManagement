@@ -17,6 +17,7 @@ import btn1 from "./icons/Group 33651.png";
 import profile from "./icons/profile dropdown.png";
 import home from "./icons/home-alt (1).png";
 import left from "./icons/chevron-left (1).png";
+import photo_frame from "./icons/maximise-frame.png";
 
 export default function ProfileView(){
   return (
@@ -157,16 +158,16 @@ export default function ProfileView(){
         </div>
             
         {/* <!-- فرم اطلاعات کاربر --> */}
-        <div class="flex flex-col w-[1140px] h-[480px] mt-[32px] mr-[268px] pr-[16px] border-[2px] rounded-[5px] border-[#E2E5E9] font-arabic-medium antialiased">
+        <div class={styles.personal_form}>
 
             {/* <!-- اطلاعات شخصی و دکمه ادیت div --> */}
-            <div class="flex items-center justify-between w-[1108px] h-[40px]">
+            <div class={styles.personal_div}>
 
                 {/* <!-- اطلاعات شخصی div --> */}
-                <div class="flex items-center mt-[20px]">
+                <div class={styles.personal_info}>
                     <div>
                         <button>
-                            <img src="icons/maximise-frame.png"  class="h-[40px] w-[40px] ml-[16px]"/>
+                            <img src={photo_frame}  class={styles.photo_frame}/>
                         </button>
                     </div>
             
