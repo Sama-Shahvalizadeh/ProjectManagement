@@ -162,12 +162,12 @@
 }
 
 .navbar {
-  @apply h-[80px] w-full flex flex-row gap-[450px] items-center bg-[#F8F9FA] mr-[240px] pr-[24px] my-auto font-arabic-medium;
+  @apply h-[80px] w-full flex flex-row gap-[450px] items-center bg-[#F8F9FA] mr-[240px] pr-[24px] pt-[21px] pb-[21px] font-arabic-medium;
 }
 
 
 .searchBar {
-  @apply relative flex items-center my-auto text-[#787486] text-[14px];
+  @apply relative flex items-center text-[#787486] text-[14px];
 }
 
 .search_btn {
