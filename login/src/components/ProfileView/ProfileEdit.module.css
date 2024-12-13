@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'ArabicDisplayBlack';
+  src: url(font/ARABICUIDISPLAYBLACK.OTF) format('opentype');
+}
+@font-face {
+  font-family: 'ArabicDisplayBold';
+  src: url(font/ARABICUIDISPLAYBOLD.OTF) format('opentype');
+}
+@font-face {
+  font-family: 'ArabicDisplayHeavy';
+  src: url(font/ARABICUIDISPLAYHEAVY.OTF) format('opentype');
+}
+@font-face {
+  font-family: 'ArabicDisplayLight';
+  src: url(font/ARABICUIDISPLAYLIGHT.OTF) format('opentype');
+}
+@font-face {
+  font-family: 'ArabicDisplayMedium';
+  src: url(font/ARABICUIDISPLAYMEDIUM.OTF) format('opentype');
+}
+@font-face {
+  font-family: 'ArabicDisplaySemiBold';
+  src: url(font/ARABICUIDISPLAYSEMIBOLD.OTF) format('opentype');
+}
+@font-face {
+  font-family: 'ArabicDisplayThin';
+  src: url(font/ARABICUIDISPLAYTHIN.OTF) format('opentype');
+}
+@font-face {
+  font-family: 'ArabicDisplayUltraLight';
+  src: url(font/ARABICUIDISPLAYULTRALIGHT.OTF) format('opentype');
+}
+@font-face {
+  font-family: 'Saba';
+  src: url(font/SABA-[@I_FONT].TTF) format('truetype');
+}
+
+/* تعریف کلاس‌های سفارشی */
+@layer utilities {
+  .font-arabic-bold {
+    font-family: 'ArabicDisplayBold';
+  }
+  .font-arabic-medium {
+    font-family: 'ArabicDisplayMedium';
+  }
+  .font-saba {
+    font-family: 'Saba';
+  }
+  .font-semibold{
+    font-family: 'ArabicDisplaySemiBold'
+  }
+}
+
+.container{
+  @apply flex;
+}
+
+.sidebar{
+  @apply bg-[#F8F9FA] shadow-none h-screen border-l-[1px] border-[#B2B9C0] w-[240px] fixed right-0 top-0 z-10;
+}
+
+.sidebar_header{
+  @apply mt-[48px] ml-[57px] mr-[29px] text-[24px] text-[#000B58] font-saba font-bold flex items-center whitespace-nowrap;
+}
+
+.sidebar_icon{
+  @apply w-[30px] h-[30px] ml-[20px];
+}
+
+.sidebar_list{
+  @apply mx-auto my-auto mr-[36px] text-[#495057] text-[16px] font-normal font-arabic-bold;
+}
+
+.sidebar_item{
+  @apply flex items-center whitespace-nowrap mt-[34px];
+}
+
+.sidebar_projects{
+  @apply flex items-center whitespace-nowrap mt-[34px] text-[#495057];
+}
+
+.sidebar_dashboard{
+  @apply flex items-center whitespace-nowrap mt-[54px] hover:bg-gray-700 rounded;
+}
+
+.sidebar_item_icon{
+ @apply w-[16px] h-[16px] ml-[16px];
+}
+
+.sidebar_dashboard_icon{
+  @apply w-[16px] h-[18px] ml-[16px];
+}
+
+.sidebar_card{
+  @apply flex flex-row items-center w-[205px] h-[90px] mt-[40px] mx-auto bg-[#000B58] rounded-[5px] text-[#FFFFFF] text-[10px] font-arabic-medium;
+}
+
+.profile_image_wrapper{
+  @apply relative inline-block mr-[8px];
+}
+
+.profile_image{
+  @apply h-auto max-w-full w-[40px] h-[40px] rounded-full border-[6px] border-[#000B58];
+} 
+
+.status_icon_wrapper{
+  @apply absolute bottom-1.5 right-1 rounded-full;
+}
+
+.status_icon{
+  @apply w-[8px] h-[8px];
+}
+
+.user_info{
+  @apply mr-[8px];
+}
+
+.menu_button{
+  @apply fixed ml-[16px] mr-[185px];
+}
+
+.navbar{
+  @apply h-[80px] w-full flex flex-row gap-[450px] items-center bg-[#F8F9FA] mr-[120px] pr-[24px] my-auto font-arabic-medium;
+}
+
+.search_wrapper{
+  @apply relative flex items-center my-auto text-[#787486] text-[14px];
+}
+
+.search_button{
+  @apply absolute left-2 top-1/2 transform -translate-y-1/2;
+}
+
+.search_icon{
+  @apply h-[22px] w-[22px];
+}
+
+.search_input{
+  @apply w-[470px] h-[38px] rounded-[5px] bg-[#E2E5E9] focus:outline-none focus:ring focus:ring-[#000B58] px-[16px] text-[#000B58] whitespace-nowrap;
+}
+
+.navbar_icons_wrapper{
+  @apply flex flex-row justify-end items-center;
+}
+
+.chat{
+  @apply h-[25px] w-[25px] ml-[32px];
+}
+
+.btn1{
+  @apply h-[25px] w-[25px] ml-[16px];
+}
+
+.user_name{
+
+}
+
+.navbar_dropdown_icon{
+
+}
+
+.btn_style{
+  @apply bg-[#F8F9FA];
+}
+
