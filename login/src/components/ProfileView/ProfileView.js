@@ -9,10 +9,12 @@ import report from "./icons/report.png";
 import calendar from "./icons/calendar.png";
 import userImg from "./icons/0df984f5b0ca214b6596dd91ef682411.jfif";
 import search from "./icons/search-normal.png";
+import navIcon from "./icons/Group 33651.png";
+import chat from "./icons/chat.png";
 
 export default function ProfileView(){
   return (
-    <div className={styles.container}>
+    <div className={styles.container} style={{ direction: 'rtl' }}>
       {/* Sidebar */}
       <div className={styles.sidebar}>
         <h2 className={styles.sidebarHeader}>
@@ -69,8 +71,8 @@ export default function ProfileView(){
       {/* Navigation Bar */}
       <nav className={styles.navbar}>
         <div className={styles.searchBar}>
-          <button className={styles.searchIcon}>
-            <img src={search} alt="Search" />
+          <button className={styles.search_btn}>
+            <img src={search} alt="Search" className={styles.search_icon}/>
           </button>
           <input
             type="text"
@@ -80,10 +82,10 @@ export default function ProfileView(){
         </div>
         <div className={styles.navIcons}>
           <button>
-            <img src="icons/Group 33651.png" alt="Icon" />
+            <img src={navIcon} alt="Icon" className={styles.nav_icon}/>
           </button>
           <button>
-            <img src="icons/chat.png" alt="Chat" />
+            <img src={chat} alt="Chat" className={styles.chat} />
           </button>
           <span className={styles.userName}>بیتا جوان</span>
           <button>
