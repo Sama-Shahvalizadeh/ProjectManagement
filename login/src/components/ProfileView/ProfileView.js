@@ -18,10 +18,13 @@ import profile from "./icons/profile dropdown.png";
 import home from "./icons/home-alt (1).png";
 import left from "./icons/chevron-left (1).png";
 import photo_frame from "./icons/maximise-frame.png";
+import profile_photo from "./icons/0df984f5b0ca214b6596dd91ef682411.jfif";
 
 export default function ProfileView(){
   return (
     <>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
     <link rel="stylesheet" href="./output.css"/>
 
     <div className={styles.container} style={{ direction: 'rtl' }}>
@@ -100,7 +103,7 @@ export default function ProfileView(){
       </div>
 
       {/* Navigation Bar */}
-      <nav class={styles.navbar} style={{position:'fixed', top:'0', zIndex: 1000}}>
+      <nav className={styles.navbar} style={{position:'fixed', top:0, zIndex: 1000}}>
 
       {/* <!-- کد مربوط به نوار جست و جو --> */}
         <div className={styles.searchBar}>
@@ -115,19 +118,19 @@ export default function ProfileView(){
         </div>
 
         {/* <!-- کد مربوط به آیکونهای سمت راست برنامه --> */}
-        <div class={styles.icon_grp}>
-            <button class={styles.icon_style}>
-                <img src={btn1} alt="Icon" class={styles.btn1_style}/> 
+        <div className={styles.icon_grp}>
+            <button className={styles.icon_style}>
+                <img src={btn1} alt="Icon" className={styles.btn1_style}/> 
             </button>
         
-            <button class={styles.icon_style}>
-                <img src={chat} alt="Icon" class={styles.chat}/>
+            <button className={styles.icon_style}>
+                <img src={chat} alt="Icon" className={styles.chat}/>
             </button>
              
-            <span class={styles.user_name}>بیتا جوان</span>
+            <span className={styles.user_name}>بیتا جوان</span>
 
-            <button class={styles.icon_style}>
-                <img src={profile} alt="Icon" class={styles.profile}/> 
+            <button className={styles.icon_style}>
+                <img src={profile} alt="Icon" className={styles.profile}/> 
             </button>
         </div>
         
@@ -135,74 +138,74 @@ export default function ProfileView(){
 
 
       {/* <!--  محتوای اصلی برنامه div --> */}
-    <div class={styles.main_div}>
+    <div className={styles.main_div}>
 
         {/* <!-- navigation bar منوی زیر  --> */}
-        <div class={styles.sub_navbar}>
+        <div className={styles.sub_navbar}>
 
             <button>
-                <img class={styles.home} src={home} alt="icon"/>
+                <img className={styles.home} src={home} alt="icon"/>
             </button>
     
-            <img class={styles.left} src={left} alt="icon"/>
+            <img className={styles.left} src={left} alt="icon"/>
 
-            <button class={styles.account}>
+            <button className={styles.account}>
                 حساب کاربری
             </button>
 
-            <img class={styles.left} src={left} alt="icon"/>
+            <img className={styles.left} src={left} alt="icon"/>
 
-            <button class={styles.personal_info}>
+            <button className={styles.personal_info_title}>
                 اطلاعات شخصی
             </button>
         </div>
             
         {/* <!-- فرم اطلاعات کاربر --> */}
-        <div class={styles.personal_form}>
+        <div className={styles.personal_form}>
 
             {/* <!-- اطلاعات شخصی و دکمه ادیت div --> */}
-            <div class={styles.personal_div}>
+            <div className={styles.personal_div}>
 
                 {/* <!-- اطلاعات شخصی div --> */}
-                <div class={styles.personal_info}>
+                <div className={styles.personal_info}>
                     <div>
                         <button>
                             <img src={photo_frame}  class={styles.photo_frame}/>
                         </button>
                     </div>
             
-                    <div class="w-[222px] h-[40px] text-[24px] font-normal text-[#495057] ml-4 whitespace-nowrap">
+                    <div class={styles.info_title}>
                         اطلاعات شخصی
                     </div>
                 </div>
 
                 {/* <!-- منوی سه نقطه و دکمه ادیت div --> */}
-                <div class="flex flex-col items-end space-y-1">
+                <div className={styles.edit_div}>
 
                     {/* <!-- دکمه سه نقطه  --> */}
-                    <button class="text-[#0D062D] text-[16px] mt-[64px]">
+                    <button className={styles.three_dots}>
                         ...
                     </button>
                         
                     {/* <!-- دکمه ادیت --> */}
-                    <button class="w-[200px] h-[60px] border-[2px] rounded-[5px] border-[#E2E5E9] text-[14px] text-[#495057] font-semibold whitespace-nowrap">ویرایش اطلاعات شخصی</button>
+                    <button className={styles.edit_btn}>ویرایش اطلاعات شخصی</button>
                 </div>
             </div>
         
             {/* <!-- عکس پروفایل و نام div --> */}
-            <div class="flex flex-row items-center gap-[32px] w-[1108px] mt-[40px] h-[138px]">
+            <div className={styles.photo_name_div}>
 
                 {/* <!-- عکس پروفایل --> */}
                 <div>
                     <img
-                        src="icons/0df984f5b0ca214b6596dd91ef682411.jfif"
-                        class="h-auto max-w-full w-[126px] h-[126px] rounded-full border-[6px] border-[#000B58] z-0 relative"
+                        src={profile_photo}
+                        className={styles.profile_photo}
                         alt="profile" />
                 </div>
         
                 {/* <!-- نام --> */}
-                <div class="w-[88px] h-[32px]">
-                    <span class="text-[24px] font-normal text-[#495057] whitespace-nowrap">
+                <div className={styles.fullname_div}>
+                    <span className={styles.fullname_title}>
                         بیتا جوان
                     </span>
                 </div>
@@ -210,77 +213,77 @@ export default function ProfileView(){
         
 
             {/* <!-- اطلاعات کاربر div --> */}
-            <div class="flex flex-col gap-[16px] w-[1108px] h-[302px] mt-[12px]">
+            <div className={styles.user_info_div}>
         
                 {/* <!-- نام کاربر div --> */}
-                <div class="flex flex-row items-center">
+                <div className={styles.info_div}>
 
                     {/* <!-- نام --> */}
-                    <div class="w-[19px] h-[24px] ml-[208px] font-bold text-[16px] text-[#495057] whitespace-nowrap">نام</div>
+                    <div className={styles.name_div}>نام</div>
         
                     {/* <!-- نام span --> */}
-                    <div class="h-[24px] font-light text-[#1B1D1F] text-[16px]">
+                    <div className={styles.info_title}>
                         <span>بیتا</span>
                     </div>
                 </div>
         
                 {/* <!-- نام خانوادگی div --> */}
-                <div class="flex flex-row items-center">
+                <div className={styles.info_div}>
 
                     {/* <!-- نام خانوادگی --> */}
-                    <div class="w-[83px] h-[24px] ml-[143px] font-bold text-[16px] text-[#495057] whitespace-nowrap">نام خانوادگی</div>
+                    <div className={styles.last_name_div}>نام خانوادگی</div>
         
                     {/* <!-- نام خانوادگی span --> */}
-                    <div class="h-[30px] font-light text-[#1B1D1F] text-[16px]">
+                    <div className={styles.info_title}>
                         <span>جوان</span>
                     </div>
                 </div>
         
                 {/* <!-- شماره موبایل div --> */}
-                <div class="flex flex-row items-center">
+                <div className={styles.info_div}>
 
                     {/* <!-- شماره تلفن همراه --> */}
-                    <div class="w-[116px] h-[24px] ml-[110px] font-bold text-[16px] text-[#495057] whitespace-nowrap">شماره تلفن همراه </div>
+                    <div className={styles.phone_div}>شماره تلفن همراه </div>
         
                     {/* <!-- شماره تلفن همراه  span --> */}
-                    <div class="h-[24px] font-light text-[#1B1D1F] text-[16px]">
+                    <div className={styles.info_title}>
                         <span>09140000000</span>
                     </div>
                 </div>
         
                 {/* <!-- ایمیل div --> */}
-                <div class="flex flex-row items-center">
+                <div className={styles.info_div}>
 
                     {/* <!-- ایمیل --> */}
-                    <div class="w-[37px] h-[24px] ml-[189px] font-bold text-[16px] text-[#495057] whitespace-nowrap">ایمیل</div>
+                    <div className={styles.email_div}>ایمیل</div>
         
                     {/* <!-- ایمیل  span --> */}
-                    <div class="h-[24px] font-light text-[#1B1D1F] text-[16px]">
+                    <div className={styles.info_title}>
                         <span>Bitaj@gmail.com</span>
                     </div>
                 </div>
         
 
                 {/* <!-- تخصص div --> */}
-                <div class="flex flex-row items-center">
+                <div className={styles.info_div}>
 
                     {/* <!-- تخصص --> */}
-                    <div class="w-[51px] h-[24px] ml-[175px] font-bold text-[16px] text-[#495057] whitespace-nowrap">تخصص</div>
+                    <div className={styles.expertise_div}>تخصص</div>
         
                     {/* <!-- تخصص  span --> */}
-                    <div class="h-[24px] font-light text-[#1B1D1F] text-[16px]">
+                    <div className={styles.info_title}>
                         <span>مدیر پروژه</span>
                     </div>
                 </div>
         
                 {/* <!-- توضیحات div --> */}
-                <div class="flex flex-row items-center">
+                <div className={styles.info_div}>
 
                     {/* <!-- توضیحات --> */}
-                    <div class="w-[65px] h-[24px] ml-[161px] font-bold text-[16px] text-[#495057] whitespace-nowrap">توضیحات</div>
+                    <div className={styles.explaination_div}>توضیحات</div>
         
                     {/* <!-- توضیحات  span --> */}
-                    <div class="h-[24px] font-light text-[#1B1D1F] text-[16px]">
+                    <div className={styles.info_title}>
                         <span>این فیلد مربوط به توضیحات است</span>
                     </div>
                 </div>
