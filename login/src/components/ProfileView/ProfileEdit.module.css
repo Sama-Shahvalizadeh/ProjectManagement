@@ -167,3 +167,90 @@
   @apply bg-[#F8F9FA];
 }
 
+.main_content{
+  @applly flex flex-col cols-3 ml-[240px] w-full h-auto;
+}
+
+.profile_form{
+  @applly flex flex-col w-[1140px] h-screen mt-[32px] mr-[268px] pr-[16px] font-arabic-medium antialiased;
+}
+
+.profile_image_edit_wrapper{
+  @apply relative inline-block;
+}
+
+.editable_profile_image{
+  @apply h-auto max-w-full w-[126px] h-[126px] rounded-full border-[6px] border-[#000B58] z-0 relative;
+}
+
+.edit_image_button{
+  @apply absolute bottom-0 right-0.5 rounded-full;
+}
+
+.edit_image_icon{
+  @apply w-[40px] h-[40px];
+}
+
+.profile_form_fields{
+  @apply flex flex-col gap-[16px] w-[1108px] h-[302px] mt-[12px];
+}
+
+.form_field_row{
+  @apply flex items-center;
+}
+
+.form_label{
+  @apply w-[19px] h-[24px] ml-[208px] font-bold text-[16px] antialiased text-[#495057]  whitespace-nowrap;
+}
+
+.form_input{
+  @apply w-[320px] h-[40px] pl-[8px] pr-[8px] font-light text-[#000B58] text-[16px] bg-[#F8F9FA] border-[1.5px] rounded-[5px] border-[#BBC1C7];
+}
+
+.last_name_label{
+  @apply w-[83px] h-[24px] ml-[143px] font-bold text-[16px] text-[#495057]  whitespace-nowrap;
+}
+
+.explain_label{
+  @apply w-[65px] h-[24px] ml-[161px] pb-[140px] block font-bold text-[16px] text-[#495057]  whitespace-nowrap;
+}
+
+.explain_textaera{
+  @apply w-[320px] h-[160px] pr-[15px] pt-[8.5px] pt-[8.5px] font-light text-[#000B58] text-[16px] bg-[#F8F9FA] border-[1.5px] rounded-[5px] border-[#BBC1C7] resize-none overflow-y-auto;
+}
+
+.phone_label{
+  @apply w-[116px] h-[24px] ml-[110px] font-bold text-[16px] text-[#495057]  whitespace-nowrap;
+}
+
+.email_label{
+  @apply w-[37px] h-[24px] ml-[189px] font-bold text-[16px] text-[#495057] whitespace-nowrap;
+}
+
+.breadcrumbs{
+  @applly flex flex-row gap-[10px] w-[291px] h-[24px] items-center mr-[268px] mt-[112px] font-arabic-medium font-semibold;
+}
+
+.expert_label{
+  @apply w-[51px] h-[24px] ml-[175px] font-bold text-[16px] text-[#495057] whitespace-nowrap;
+}
+
+.expert_select{
+  @apply w-[320px] h-[40px] pl-[8px] pr-[8px] font-light text-[#000B58] text-[16px] bg-[#F8F9FA] border-[1.5px] rounded-[5px] border-[#BBC1C7];
+}
+.breadcrumbs_icon{
+  @apply w-[24px] h-[24px] text-[16px];
+}
+
+.breadcrumbs_separator{
+  @apply w-[18px] h-[18px];
+}
+
+.breadcrumbs_inactive{
+@apply text-[#B2B9C0]  whitespace-nowrap;
+}
+
+.breadcrumbs_active{
+  @apply text-[#495057]  whitespace-nowrap;
+}
+
