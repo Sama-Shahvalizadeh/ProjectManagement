@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="./output.css">
+    <style>
+        body {
+            direction: rtl;
+        }
+    </style>
+</head>
+
+<body class="flex h-screen">
+
+    <!-- منوی سمت راست -->
+    <!-- to do by sama: edit hovers -->
+
+    <div class="sidebar bg-[#F8F9FA] shadow-none h-screen border-l-[1px] border-[#B2B9C0] w-[240px] fixed right-0 top-0 z-10">
+        
+        <h2 class="mt-[48px] ml-[57px] mr-[29px] text-[24px] text-[#000B58] font-saba font-bold flex items-center whitespace-nowrap">
+            <img src="icons/projectNegar.png" alt="Section Icon" class="w-[30px] h-[30px] ml-[20px]"> 
+            پروژه نگار
+        </h2>
+        <ul class="mx-auto my-auto mr-[36px] text-[#495057] text-[16px] font-normal font-arabic-bold">
+
+            <li class="flex items-center whitespace-nowrap mt-[54px] hover:bg-gray-700 rounded">
+                <img src="icons/Frame 1000001430.png" alt="Dashboard" class="w-[16px] h-[18px] ml-[16px]">داشبورد</li>
+
+            <li class="flex items-center whitespace-nowrap mt-[34px] text-[#495057]">
+                <img src="icons/projects.png" alt="Projects" class="w-[16px] h-[16px] ml-[16px]">پروژه ها</li>
+
+            <li class="flex items-center whitespace-nowrap mt-[34px]">
+                <img src="icons/tasks.png" alt="Tasks" class="w-[16px] h-[16px] ml-[16px]">وظایف</li>
+
+            <li class="flex items-center whitespace-nowrap mt-[34px]">
+                <img src="icons/users.png" alt="Users" class="w-[16px] h-[16px] ml-[16px]">کاربران</li>
+
+            <li class="flex items-center whitespace-nowrap mt-[34px]">
+                <img src="icons/report.png" alt="Reports" class="w-[16px] h-[16px] ml-[16px]">گزارش</li>
+
+            <li class="flex items-center whitespace-nowrap mt-[34px]">
+                <img src="icons/calendar.png" alt="Calendar" class="w-[16px] h-[16px] ml-[16px]">تقویم</li> 
+        </ul>
+
+        <!-- کارت زیر منوی سمت راست -->
+        <div class="flex flex-row items-center w-[205px] h-[90px] mt-[150px] mx-auto bg-[#000B58] rounded-[5px] text-[#FFFFFF] text-[10px] font-arabic-medium">
+            <div class="relative inline-block mr-[8px]">
+
+                <!-- عکس پروفایل -->
+                <img
+                    src="icons/0df984f5b0ca214b6596dd91ef682411 (1).jfif"
+                    class="h-auto max-w-full w-[40px] h-[40px] rounded-full border-[6px] border-[#000B58]"
+                    alt="icon" />
+
+                    <!-- وضعیت آنلاین بودن -->
+                    <div class="absolute bottom-1.5 right-1 rounded-full"><img class="w-[8px] h-[8px]" src="icons/status.png" alt="icon"></div>
+            </div>
+
+            <!-- ایمیل و نام کاربر به صورت span تعریف شده -->
+            <div class="mr-[8px]">
+                <div class="whitespace-nowrap">
+                    <span>بیتا جوان</span>
+                </div>
+
+                <div class="mt-[16px] whitespace-nowrap">
+                    <span>Bitaj@gmail.com</span>
+                </div>
+            </div>
+
+            <!-- منوی همبرگر -->
+            <div class="fixed ml-[16px] mr-[185px]">
+                <button>
+                    <img src="icons/Frame 1000001439.png" alt="icon">
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- navigation bar بالای صفحه -->
+    <!-- to do by sama: check responsivity, fix the width to take all remaining space -->
+    <nav class="h-[80px] w-full flex flex-row gap-[450px] bg-[#F8F9FA] mr-[240px] pt-[21px] pb-[21px] pr-[24px] font-arabic-medium" style="position:fixed; top:0; z-index: 1000;">
+
+
+        <!-- کد مربوط به نوار جست و جو -->
+        <div class="relative flex items-center text-[#787486] text-[14px]">
+            <button class="absolute left-2 top-1/2 transform -translate-y-1/2">
+                <img src="icons/search-normal.png" class="h-[22px] w-[22px]">
+            </button>
+            <input type="text" placeholder="اینجا جست و جو کنید...." class="w-[470px] h-[38px] rounded-[5px] bg-[#E2E5E9] focus:outline-none focus:ring focus:ring-[#000B58] px-[16px] text-[#000B58] whitespace-nowrap" />
+        </div>
+        
+        <!-- کد مربوط به آیکونهای سمت راست برنامه -->
+        <div class="flex flex-row  items-center">
+            <button class="bg-[#F8F9FA]">
+                <img src="icons/Group 33651.png" alt="Icon" class="h-[25px] w-[25px] ml-[16px]"> 
+            </button>
+        
+            <button class="bg-[#F8F9FA]">
+                <img src="icons/chat.png" alt="Icon" class="h-[25px] w-[25px] ml-[32px]">
+            </button>
+             
+            <span class="whitespace-nowrap text-[#495057] text-[16px] font-semibold ml-[32px]">بیتا جوان شعبانی زیاد</span>
+
+            <button class="bg-[#F8F9FA]">
+                <img src="icons/profile dropdown.png" alt="Icon" class="h-[18px] w-[18px]"> 
+            </button>
+        </div>
+    </nav>
+
+    <!--  محتوای اصلی برنامه div -->
+    <div class="flex flex-col w-full h-auto mr-[268px]">
+
+        <!-- navigation bar منوی زیر  -->
+        <div class="flex flex-row gap-[10px] h-[24px] items-center mt-[112px] font-arabic-medium font-semibold text-[16px]">
+
+            <button>
+                <img class="w-[24px] h-[24px]" src="icons/home-alt (1).png" alt="icon">
+            </button>
+    
+            <img class="w-[18px] h-[18px]" src="icons/chevron-left (1).png" alt="icon">
+
+            <button>
+                <span  class="text-[#B2B9C0] whitespace-nowrap">پروژه ها</span>
+             </button>
+
+            <img class="w-[18px] h-[18px]" src="icons/chevron-left (1).png" alt="icon">
+
+            <button>
+                <span class="text-[#B2B9C0] whitespace-nowrap">پلتفرم مدیریت حمل و نقل لجستیک</span>
+            </button>
+
+            <img class="w-[18px] h-[18px]" src="icons/chevron-left (1).png" alt="icon">
+
+            <button>
+                <span class="text-[#495057] whitespace-nowrap">اطلاعات پروژه</span>
+            </button>
+
+        </div>
+
+        <!-- باتنهای جابه جایی بین صفحات مختلف -->
+        <div class="grid grid-cols-6 w-[664px] h-[30px] items-center mt-[44px] font-arabic-medium font-semibold text-[16px] whitespace-nowrap">
+
+            <div>
+                <button class="text-[#000B58] underline underline-offset-[10px] decoration-[4px]">
+                    اطلاعات پروژه
+                </button>
+            </div>
+            
+            <div>
+                <button class="text-[#495057]">
+                    نیازمندی ها 
+                </button>
+            </div>
+
+            <div>
+                <button class="text-[#495057]">
+                     ماژول ها
+                </button>
+            </div>
+
+            <div>
+                <button class="text-[#495057]">
+                    UC ها
+               </button>
+            </div>
+
+            <div>
+                <button class="text-[#495057]">
+                    واژه نامه 
+                </button>
+            </div>
+
+            <div>
+                <button class="w-[104px] text-[#495057]">
+                    مستندات 
+                </button>
+            </div>
+        </div>
+
+            
+        <!-- فرم اطلاعات پروژه -->
+        <div class="flex flex-col w-[1136px] h-[410px] mt-[40px] ml-[40px] pr-[32px] border-[1px] rounded-[16px] border-[#B2B9C0] font-arabic-medium antialiased">
+
+            <!-- نام پروژه و دکمه ادیت div -->
+            <div class="flex justify-between w-[1108px] h-[40px] mt-[32px]">
+
+                <!-- نام پروژه div -->
+                <div class="flex items-center">
+                    <div>                        
+                        <img src="icons/maximise-frame.png"  class="h-[40px] w-[40px] ml-[16px]">
+                    </div>
+            
+                    <div class="h-[40px] text-[24px] font-semibold text-[#495057] ml-4 whitespace-nowrap">
+                        <span>نام پروژه</span>
+                    </div>
+                </div>
+
+                <!-- منوی سه نقطه و دکمه ها div -->
+                <div class="flex flex-col items-end space-y-1">
+
+                    <!-- دکمه سه نقطه  -->
+                    <button class="text-[#0D062D] text-[16px] ml-[30px]">
+                        ...
+                    </button>
+
+                    <div class="grid grid-rows-5 w-[180px] h-[248px] pt-[16px] pb-[16px] ml-[34px] border-[2px] gap-[16px] rounded-[5px] border-[#E2E5E9] text-[14px] text-[#495057] font-semibold pr-[16px]">
+                        <!-- دکمه ویرایش -->
+                        <button class="whitespace-nowrap text-right">ویرایش</button>
+
+                        <!-- دکمه حذف -->
+                        <button class="whitespace-nowrap text-right">حذف</button>
+
+                        <!-- دکمه شروع -->
+                        <button class="whitespace-nowrap text-right">شروع</button>
+
+                        <!-- دکمه توقف -->
+                        <button class="whitespace-nowrap text-right">توقف</button>
+
+                        <!-- دکمه خاتمه دادن -->
+                        <button class="whitespace-nowrap text-right">خاتمه دادن</button>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- عکس پروفایل و نام div -->
+            <div class="mt-[16px] h-[24px] text-[#7F878F] text-[14px]">
+                 <span>لورم اپیسوم یک متن ساختگی است</span>
+            </div>
+        
+
+            <!-- اطلاعات پروژه div -->
+            <div class="flex flex-col inline-block gap-[16px] mt-[32px] text-[16px]">
+        
+                <!-- وضعیت پروژه  div -->
+                <div class="flex flex-row h-[24px] items-center">
+
+                    <!-- وضعیت -->
+                    <div class="w-[52px] ml-[170px] font-bold text-[#495057] whitespace-nowrap">وضعیت</div>
+        
+                    <!-- وضعیت span -->
+                    <div class="font-light text-[#1B1D1F] ">
+                        <span>بک لاگ</span>
+                    </div>
+                </div>
+        
+                <!-- نام مالک div -->
+                <div class="flex flex-row items-center h-[24px]">
+
+                    <!-- نام مالک -->
+                    <div class="w-[34px] ml-[188px] font-bold text-[#495057] whitespace-nowrap">مالک</div>
+        
+                    <!-- نام مالک span -->
+                    <div class="font-light text-[#1B1D1F] ">
+                        <span>احسان شکیبا</span>
+                    </div>
+                </div>
+        
+                <!-- مدیر پروژه div -->
+                <div class="flex flex-row items-center h-[24px]">
+
+                    <!-- مدیر پروژه -->
+                    <div class="w-[68px] ml-[154px] font-bold text-[#495057] whitespace-nowrap">مدیر پروژه</div>
+        
+                    <!--  مدیر پروژه  span -->
+                    <div class="font-light text-[#1B1D1F] ">
+                        <span>بیتا جوان</span>
+                    </div>
+                </div>
+        
+                <!-- موعود انجام div -->
+                <div class="flex flex-row items-center h-[24px]">
+
+                    <!-- موعود انجام -->
+                    <div class="w-[74px] ml-[148px] font-bold text-[#495057] whitespace-nowrap">موعد انجام</div>
+        
+                    <!--  موعود انجام  span -->
+                    <div class="font-light text-[#1B1D1F] ">
+                        <span>خرداد،1403</span>
+                    </div>
+                </div>
+        
+                <!-- اولویت div -->
+                <div class="flex flex-row items-center h-[24px]">
+
+                    <!-- اولویت -->
+                    <div class="w-[46px] ml-[176px] font-bold text-[#495057] whitespace-nowrap">اولویت</div>
+        
+                    <!-- اولویت  span -->
+                    <div class="font-light text-[#1B1D1F] ">
+                        <span>بالا</span>
+                    </div>
+                </div>
+        
+                <!-- توضیحات div -->
+                <div class="flex flex-row items-center  h-[24px]">
+
+                    <!-- توضیحات -->
+                    <div class="w-[65px] ml-[157px] font-bold text-[#495057] whitespace-nowrap">توضیحات</div>
+        
+                    <!-- توضیحات  span -->
+                    <div class="font-light text-[#1B1D1F] ">
+                        <span>این فیلد مربوط به توضیحات است</span>
+                    </div>
+                </div>
+        
+            </div>
+        
+        </div>
+    </div>
+
+</body>
+</html>
+
+

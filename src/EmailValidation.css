@@ -1,0 +1,54 @@
+.body{
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+}
+
+.main-container{
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+}
+
+.left-side{
+    margin: 0;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: fit-content;
+    flex: 1;    
+}
+
+.validation-form{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 30px;
+}
+
+.main-form{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+}
+
+.validation-header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.validation-box{
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+
