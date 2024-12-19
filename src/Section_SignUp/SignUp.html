@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پنل کاربری</title>
+    <link rel="stylesheet" href="../output.css">
+    <link rel="stylesheet" href="SignUp.css">
+    <style>
+        body {
+            direction: rtl;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-container">  <!-- main container -->
+
+        <div class="sign-form">   <!-- سمت راست برنامه -->
+            <div class="main-form mt-[100px] mb-[100px]">
+                <div class="form-header">
+                    <div class="whitespace-nowrap font-saba text-[26px] text-[#101828]">   <!-- هدر ایجاد حساب کاربری -->
+                        ایجاد حساب کاربری 
+                    </div>
+                    <div class="mt-[50px] whitespace-nowrap font-arabic-medium text-[18px] text-[#1B1D1F]">   <!-- خوش آمدید -->
+                        به سامانه <span>پروژه نگار</span> خوش آمدید.
+                    </div>
+                </div>
+    
+                <div class="form-register mt-[50px] text-[14px] font-arabic-medium shadow-none">    <!-- کانتینر مربوط به فرم رجیستر -->
+    
+                    <div class="form-first-name">                 <!-- first name -->
+                        <label class="mb-[5px] whitespace-nowrap text-[#495057]" for="first-name">نام</label>
+                        <input type="text" id="first-name" class="w-[400px] h-[40px] pl-[10px] pr-[10px] bg-[#F8F9FA] border-[2px] border-[#BBC1C7] rounded-[5px] text-[#1B02B7] text-[16px]">   
+                    </div>
+    
+                    <div class="form-last-name mt-[20px]">         <!-- last name -->
+                        <label class="mb-[5px] whitespace-nowrap text-[#495057]" for="last-name">نام خانوادگی</label>
+                        <input type="text" id="last-name" class="w-[400px] h-[40px] pl-[10px] pr-[10px] bg-[#F8F9FA] border-[2px] border-[#BBC1C7] rounded-[5px] text-[#1B02B7] text-[16px]">
+                    </div>
+    
+                    <div class="form-email mt-[20px]">              <!-- email -->
+                        <label class="mb-[5px] whitespace-nowrap text-[#495057]" for="email">ایمیل</label>
+                        <input type="text" id="email" class="w-[400px] h-[40px] pl-[10px] pr-[10px] bg-[#F8F9FA] border-[2px] border-[#BBC1C7] rounded-[5px] text-[#1B02B7] text-[16px]">
+                    </div>
+    
+                    <div class="form-phone mt-[20px]">              <!-- phone -->
+                        <label class="mb-[5px] whitespace-nowrap text-[#495057]" for="phone">شماره تلفن</label>
+                        <input type="text" id="phone" class="w-[400px] h-[40px] pl-[10px] pr-[10px] bg-[#F8F9FA] border-[2px] border-[#BBC1C7] rounded-[5px] text-[#1B02B7] text-[16px]">
+                    </div>
+    
+                    <div class="form-field mt-[20px]">              <!-- field -->
+                        <label class="mb-[5px] whitespace-nowrap text-[#495057]" for="profession">تخصص</label>
+                        <select class="w-[400px] h-[40px] pl-[10px] pr-[10px] bg-[#F8F9FA] border-[2px] border-[#BBC1C7] rounded-[5px] text-[#1B02B7] text-[16px]" id="profession">
+                            <option>انتخاب کنید</option>
+                            <option>آپشن اول</option>
+                            <option>آپشن دوم</option>
+                            <option>آپشن سوم</option>
+                            <option>آپشن چهارم</option>
+                        </select>
+                        
+                    </div>
+    
+                    <div class="form-password mt-[20px]">           <!-- password -->
+                        <label class="mb-[5px] whitespace-nowrap text-[#495057]" for="passowrd">رمز عبور</label>
+                        <div class="relative">
+                            <span class="eye-icon">
+                                <!-- Eye icon image -->
+                                <img src="../icons/eye.png" alt="Toggle Password Visibility" width="20" height="20">
+                            </span>
+                            <input type="password" id="password" class="w-[400px] h-[40px] pl-[30px] pr-[10px] bg-[#F8F9FA] border-[2px] border-[#BBC1C7] rounded-[5px] text-[#1B02B7] text-[16px]">
+                        </div>  
+                    </div>    
+                </div>  
+
+                <button class="mt-[70px] w-[400px] h-[32px] bg-[#000B58] text-[#F8F9FA] font-arabic-medium text-[16px] rounded-[5px]">
+                    ورود
+                </button>
+                
+                <div class="mt-[16px] whitespace-nowrap font-arabic-medium text-[14px] text-[#969696]">
+                    از قبل حساب دارید؟ 
+                    <span class="whitespace-nowrap text-[#1B02B7]" >وارد حساب خود شوید</span>
+                </div>
+            </div>                      
+        </div>
+
+        <div class="left-side whitespace-nowrap font-saba text-[#FFFFFF] text-[90px] bg-[#000B58] rounded-r-[50px]">      <!-- سمت چپ برنامه -->
+            پروژه نگار
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,110 @@
+.body{
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+}
+
+.main-container{
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+}
+
+.left-side{
+    margin: 0;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: fit-content;
+    flex: 1;    
+}
+
+.main-login-container{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 30px;
+}
+
+.login-container{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+}
+
+.login-header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.login-box{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.username-field , .password-field{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: flex-start;
+}
+
+.eye-icon {
+    position: absolute;
+    left: 10px; /* Space from the left */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust to truly center */
+    cursor: pointer; /* Change cursor to pointer when hovering over the icon */
+}
+
+.password-save-forgot {
+    display: flex;
+    flex-direction: row;
+    flex: 1;    
+    align-items: center;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.hidden-checkbox {
+    display: none; /* Hide the default checkbox */
+}
+
+.checkmark {
+    width: 24px; /* Width of the custom checkbox */
+    height: 24px; /* Height of the custom checkbox */
+    border: 2px solid #000B58; /* Border color and width */
+    border-radius: 3px; /* Optional: rounded corners */
+    position: relative;
+}
+
+.hidden-checkbox:checked + .checkmark {
+    background-color: #000B58; /* Background color when checked */
+}
+
+.hidden-checkbox:checked + .checkmark::after {
+    content: '';
+    position: absolute;
+    left: 6px; /* Positioning for the check mark */
+    top: 3px; /* Positioning for the check mark */
+    width: 6px; /* Width of the check mark */
+    height: 12px; /* Height of the check mark */
+    border: solid white; /* Color of the check mark */
+    border-width: 0 2px 2px 0; /* Border width to create a check mark */
+    transform: rotate(45deg); /* Rotate to form a check mark */
+}
+
+

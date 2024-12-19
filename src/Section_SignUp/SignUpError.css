@@ -22,44 +22,68 @@
     flex: 1;    
 }
 
-.change-password-container{
+.sign-form{
     display: flex;
     flex-direction: column;
     flex: 1;
+    justify-content: center;
+    align-items: center;
     padding: 30px;
 }
 
-.main-change-password-container{
+.main-form{
     display: flex;
     flex-direction: column;
     flex: 1;
     align-items: center;
 }
 
-.enter-pass-header{
+.form-header{
     display: flex;
     flex-direction: column;
-    align-items: center;
     flex: 1;
 }
 
-.new-password-box{
+.form-register{
     display: flex;
     flex-direction: column;
     flex: 1;
-    align-items: center;
-    justify-content: center;
 }
 
-.new-password-field{
+.form-first-name{
     display: flex;
     flex-direction: column;
-    flex: 1;
     align-items: flex-start;
 }
 
-.password-field {
-    position: relative; /* Positioning context for the eye icon */
+.form-last-name{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.form-email{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.form-phone{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.form-field{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.form-password{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .eye-icon {
@@ -68,4 +92,10 @@
     top: 50%; /* Center vertically */
     transform: translateY(-50%); /* Adjust to truly center */
     cursor: pointer; /* Change cursor to pointer when hovering over the icon */
+}
+
+.error-field{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
 }

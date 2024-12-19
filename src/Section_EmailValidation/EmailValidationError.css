@@ -22,37 +22,39 @@
     flex: 1;    
 }
 
-.enter-email-container{
+.main-validation{
     display: flex;
     flex-direction: column;
     flex: 1;
     padding: 30px;
 }
 
-.main-email-container{
+.main-form{
     display: flex;
     flex-direction: column;
     flex: 1;
     align-items: center;
 }
 
-.enter-email-header{
+.validation-header{
     display: flex;
     flex-direction: column;
     align-items: center;
     flex: 1;
 }
 
-.enter-email-box{
+.validation-box{
     display: flex;
+    flex-direction: row;
     flex: 1;
     align-items: center;
     justify-content: center;
 }
 
-.email-field{
+.error-message{
     display: flex;
-    flex-direction: column;
-    flex: 1;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
 }
+
+

@@ -86,18 +86,6 @@
     align-items: flex-start;
 }
 
-.form-title{
-    font-weight: 700px;
-}
-
-.form-welcome-text{
-    font-weight: 300px;
-}
-
-.password-field {
-    position: relative; /* Positioning context for the eye icon */
-}
-
 .eye-icon {
     position: absolute;
     left: 10px; /* Space from the left */

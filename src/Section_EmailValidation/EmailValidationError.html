@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پنل کاربری</title>
+    <link rel="stylesheet" href="../output.css">
+    <link rel="stylesheet" href="EmailValidationError.css">
+    <style>
+        body {
+            direction: rtl;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-container">  <!-- main container -->
+
+        <div class="main-validation">   <!-- سمت راست برنامه -->
+            
+            <div style="right:48px; top:24px">  <!-- باتن بالای برنامه -->
+                <button class="rounded-full">
+                    <img src="../icons/Frame 1000001414.png" class="w-[48px] h-[48px]" alt="icon">
+                </button>
+            </div>
+
+            <div class="main-form mt-[295px] mb-[295px]">  
+                <div class="validation-header">                  <!-- هدر validation -->
+                    <div class="whitespace-nowrap font-saba text-[30px] text-[#101828]">  <!-- وارد کردن کد تایید -->
+                          وارد کردن کد تایید 
+                    </div>
+                    <div class="mt-[40px] whitespace-nowrap font-arabic-light text-[18px] text-[#1B1D1F]">   <!-- کد تایید را وراد کنید -->
+                        لطفا کد تاییدی که به ایمیل <span>tohidsanaei@gmail.com</span> ارسال شد را وارد نمایید.
+                    </div>
+                </div>
+    
+                <div class="mt-[48px] validation-box text-[20px] font-arabic-medium text-[#D92D20] shadow-none">    <!-- کانتینر مربوط به فرم وارد کردن کد -->
+                    <!-- در همه input  که آخرین آنها با کامنت مشخص شده است border-[2px] border-[#D92D20] اعمال شده است برای خطا -->
+                    <div>
+                        <input class="w-[48px] h-[48px] ml-[16px] border-[2px] border-[#D92D20] rounded-[2px]" type="text" id="input-num1">
+                    </div>
+
+                    <div>
+                        <input class="w-[48px] h-[48px] ml-[16px] border-[2px] border-[#D92D20] rounded-[2px]" type="text" id="input-num2">
+                    </div>
+
+                    <div>
+                        <input class="w-[48px] h-[48px] ml-[16px] border-[2px] border-[#D92D20] rounded-[2px]" type="text" id="input-num3">
+                    </div>
+
+                    <div>
+                        <input class="w-[48px] h-[48px] ml-[16px] border-[2px] border-[#D92D20] rounded-[2px]" type="tetx" id="input-num4">
+                    </div>
+
+                    <div>
+                        <input class="w-[48px] h-[48px] ml-[16px] border-[2px] border-[#D92D20] rounded-[2px]" type="text" id="input-num5">
+                    </div>
+
+                    <div>
+                        <input class="w-[48px] h-[48px] ml-[16px] border-[2px] border-[#D92D20] rounded-[2px]" type="text" id="input-num6">
+                    </div> <!---->
+                </div>  
+
+                 <!--  text-[#D92D20]اعمال  -->
+
+                <div class="mt-[40px] text-[#D92D20] text-[14px] font-arabic-medium">
+                    زمان باقی مانده:
+                    <span>4:00</span>
+                </div>
+
+                <!-- پیام ارور -->
+                <div class="error-message mt-[40px] w-[386px] h-[56px] p-[10px] pr-[15px] bg-[#FEE4E2] rounded-[5px]">
+                    <img src="../icons/big-erreo.png" alt="icon">
+                    <span class="pr-[15px] text-[#D92D20] font-arabic-light font-bold">کد تایید اشتباه است.</span>
+                </div>
+                <!-- -->
+
+                <div class="mt-[40px] font-arabic-light text-[14px] text-[#1B1D1F] whitespace-nowrap">
+                       آیا هنوز کد تایید را دریافت نکرده اید؟ 
+                    <span class="text-[#092494] whitespace-nowrap" >ارسال مجدد</span>
+                </div>
+
+                <button class="w-[400px] h-[32px] mt-[48px] bg-[#000B58] text-[#F8F9FA] font-arabic-light font-bold text-[16px] rounded-[5px]">
+                    احراز کد تایید
+                </button>               
+            </div>                      
+        </div>
+
+        <div class="left-side whitespace-nowrap font-saba text-[#FFFFFF] text-[90px] bg-[#000B58] rounded-r-[50px]">      <!-- سمت چپ برنامه -->
+            پروژه نگار
+        </div>
+
+
+    </div>
+</body>
+</html>

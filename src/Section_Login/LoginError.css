@@ -22,14 +22,14 @@
     flex: 1;    
 }
 
-.login-container{
+.main-login-container{
     display: flex;
     flex-direction: column;
     flex: 1;
     padding: 30px;
 }
 
-.main-login-container{
+.login-container{
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -51,15 +51,11 @@
     justify-content: center;
 }
 
-.username-field{
+.username-field, .password-field{
     display: flex;
     flex-direction: column;
     flex: 1;
     align-items: start;
-}
-
-.password-field {
-    position: relative; /* Positioning context for the eye icon */
 }
 
 .eye-icon {
@@ -111,4 +107,15 @@
     transform: rotate(45deg); /* Rotate to form a check mark */
 }
 
+.error-field{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.error-message{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
 
