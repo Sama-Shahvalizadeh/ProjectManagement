@@ -74,91 +74,115 @@ export default function LoginForm() {
 
     const renderLoginForm = () => (
         <form onSubmit={handleSubmit}>
-            <div className={styles.div_user_info}>
-                <div className={styles.div_welcome}>
-                <p className={styles.para_enter_account}>ورود به حساب کاربری</p>
-                    <p className={styles.para_welcome}>
-                        به سامانه <span className={styles.span_project_name}>پروژه نگار </span> خوش آمدید.
-                    </p>
-                </div>
+            <div className={styles.div_login_form}>
 
-                <button type="button" onClick={handleSignupClick} className={styles.btn_signup}>
-                ثبت نام کنید
-                </button>
+<div className={styles.div_group_content}>
 
-                <p className={styles.para_username}>نام کاربری</p>
-                <div className={styles.input_wrapper}>
-                    <input
-                        className={`${styles.input_username} ${errors.username ? styles.input_error : ''}`}
-                        type="text"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
-                    />
-                    {errors.username && (
-                        <div className={styles.error_container}>
-                            <i className="fas fa-exclamation-triangle icon-warning"></i>
-                            <p className={styles.error_message}>{errors.username}</p>
-                        </div>
-                    )}
-                </div>
-    
-                <p className={styles.para_password}>رمز عبور</p>
-                <div className={styles.input_wrapper}>
-                    <input
-                        className={`${styles.input_password} ${errors.password ? styles.input_error : ''}`}
-                        type="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                    />
-                    {errors.password && (
-                        <div className={styles.error_container}>
-                            <i className="fas fa-exclamation-triangle icon-warning"></i>
-                            <p className={styles.error_message}>{errors.password}</p>
-                        </div>
-                    )}
-                </div>
-            </div>
-    
-            <div className={styles.div_rememeber_me}>
-                <input className={styles.checkbox_remember_me} type="checkbox" id="remember" />
-                <label className={styles.label_remember_me} htmlFor="remember">
-                    مرا به خاطر بسپار
-                </label>
-                <p className={styles.para_forgot_password}  onClick={handleForgetPassClick}>
-                    رمز عبور خود را فراموش کرده ام.
-                </p>
-            </div>
-    
-            {errors.general && (
-                <div className={styles.div_general_error}>
-                    <div className={styles.div_verification_error}>
-                        <i className="fas fa-exclamation-triangle icon-warning"></i>
-                        <p className={styles.error_message}>{errors.general}</p>
-                    </div>
+    <div class={styles.login_header}>                        
+        <div class={styles.enter_account}>
+        ورود به حساب کاربری
+        </div>
+        <div class={styles.welcome_title}> 
+        به سامانه <span>پروژه نگار</span> خوش آمدید.
+
+        </div>
+    </div>
+
+
+    <div class={styles.user_pass}>
+
+        <div className={styles.username_field}>
+            <label class={styles.para_username} for="username">نام کاربری</label>
+            <input 
+                type="text" 
+                id="username" 
+                className={`${styles.input_username} ${errors.username ? styles.input_error : ''}`}
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                />   
+            {errors.username && (
+                <div className={styles.error_container}>
+                    <i className="fas fa-exclamation-triangle icon-warning"></i>
+                    <p className={styles.error_message}>{errors.username}</p>
                 </div>
             )}
-    
-            <button type="submit" className={styles.btn_login}>
-                ورود
-   {!errors && <Link to="/email">
-    </Link>}
-            </button>
+        </div>
+
+
+        <div className={styles.username_field}>
+            <label class={styles.para_password} for="password">رمز عبور</label>
+
+            <input
+                className={`${styles.input_password} ${errors.password ? styles.input_error : ''}`}
+                type="password"
+                id="password" 
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+            />
+            {errors.password && (
+            <div className={styles.error_container}>
+                <i className="fas fa-exclamation-triangle icon-warning"></i>
+                <p className={styles.error_message}>{errors.password}</p>
+            </div>
+            )}
+        </div>
+
+    </div>
+
+    <div className={styles.div_rememeber_me}>
+    <label class={styles.label_remember_me}> 
+        <input type="checkbox" class={styles.checkbox_remember_me}/>
+        <span class={styles.remember_span}></span>
+        مرا به خاطر بسپار
+    </label>  
+
+        
+        <span className={styles.para_forgot_password}  onClick={handleForgetPassClick}>
+          رمز عبور خود را فراموش کرده ام.
+        </span>
+    </div>
+
+        
+    {errors.general && (
+        <div className={styles.div_general_error}>
+            <div className={styles.div_verification_error}>
+                <i className="fas fa-exclamation-triangle icon-warning"></i>
+                <p className={styles.error_message}>{errors.general}</p>
+            </div>
+        </div>
+    )}
+
+    <button type="submit" className={styles.btn_login}>
+        ورود
+    {!errors && <Link to="/email">
+                </Link>}
+    </button>
+
+    <div class={styles.register}>
+    حساب کاربری ندارید؟
+    <button type="button" onClick={handleSignupClick} class={styles.register_btn} >ثبت نام کنید</button>
+</div>
+
+
+</div>
+</div>
         </form>
     );
 
 
     return (
-        <div className={styles.div_frame1}>
-            <div className={styles.div_project_title}>
-                <p className={styles.para_title}>پروژه نگار</p>
-            </div>
 
-            <div className={styles.div_login_form}>
-                <div className={styles.div_group_content}>
-                    {renderLoginForm()}
-                </div>
+
+        <div className={styles.div_frame1} style={{ direction: 'rtl' }}>
+
+            {renderLoginForm()}
+          
+
+            <div className={styles.div_project_title}>
+                پروژه نگار
             </div>
         </div>
+
     );
 }
 

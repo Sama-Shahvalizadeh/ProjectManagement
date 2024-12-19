@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @font-face {
   font-family: 'Saba'; 
   src: url('../../Fonts/Saba-[@i_font].ttf') format('truetype'); 
@@ -8,6 +12,57 @@
   src: url('../../Fonts/ArabicUIDisplayThin.otf') format('opentype');
 }
 
+
+@layer base {
+  @font-face {
+      font-family: 'ArabicDisplayBlack';
+      src: url(font/ARABICUIDISPLAYBLACK.OTF) format('opentype');
+  }
+  @font-face {
+      font-family: 'ArabicDisplayBold';
+      src: url(font/ARABICUIDISPLAYBOLD.OTF) format('opentype');
+  }
+  @font-face {
+      font-family: 'ArabicDisplayHeavy';
+      src: url(font/ARABICUIDISPLAYHEAVY.OTF) format('opentype');
+  }
+  @font-face {
+      font-family: 'ArabicDisplayLight';
+      src: url(font/ARABICUIDISPLAYLIGHT.OTF) format('opentype');
+  }
+  @font-face {
+      font-family: 'ArabicDisplayMedium';
+      src: url(font/ARABICUIDISPLAYMEDIUM.OTF) format('opentype');
+  }
+  @font-face {
+      font-family: 'ArabicDisplaySemiBold';
+      src: url(font/ARABICUIDISPLAYSEMIBOLD.OTF) format('opentype');
+  }
+  @font-face {
+      font-family: 'ArabicDisplayThin';
+      src: url(font/ARABICUIDISPLAYTHIN.OTF) format('opentype');
+  }
+  @font-face {
+      font-family: 'ArabicDisplayUltraLight';
+      src: url(font/ARABICUIDISPLAYULTRALIGHT.OTF) format('opentype');
+  }
+  @font-face {
+      font-family: 'Saba';
+      src: url(font/SABA-[@I_FONT].TTF) format('truetype');
+  }
+}
+
+@layer utilities {
+  .font-saba {
+    font-family: 'Saba';
+  }
+  .font-arabic-medium {
+    font-family: 'ArabicDisplayMedium';
+  }
+  .font-arabic-light {
+    font-family: 'ArabicDisplayUltraLight';
+  }
+}
 * { 
   margin: 0; padding: 0; box-sizing: border-box;
 } 
@@ -20,58 +75,221 @@ body, html {
 
 
 .div_frame1 {
-  display: grid;
-  grid-template-columns: 720px 1fr;
-  column-gap: 10px;
-  width: 100%;
-  height: 100vh; /* تغییر به 100vh برای ارتفاع کل صفحه */
-}
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  padding: 0;
+  margin: 0;}
 
 .div_project_title {
-  background-color: #000B58;
-  color: white;
+  @apply whitespace-nowrap left-side font-saba text-[#FFFFFF] text-[90px] bg-[#000B58] rounded-r-[50px];  
+}
+
+.left-side{
+  margin: 0;
+  padding: 0 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  direction: rtl;
-  border-top-right-radius: 50px;
-  border-bottom-right-radius: 50px;
-  height: 100%; /* تغییر به 100% برای اشغال کردن تمام ارتفاع والد */
+  min-width: fit-content;
+  flex: 1;    
 }
 
 .div_login_form {
-  background-color: white;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  direction: rtl;
-  text-align: right;
-  height: 100%; /* اطمینان از اینکه این بخش هم 100% ارتفاع خواهد داشت */
+  flex: 1;
+  padding: 30px;
+
+}
+.div_group_content{
+  @apply login-container mt-[277px] mb-[277px];
 }
 
-.div_group_content{
-  justify-content: center;
+.login-container{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
   align-items: center;
 }
+
+.login_header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  
+}
+
+.enter_account{
+  @apply whitespace-nowrap font-saba text-[30px] text-[#101828];
+}
+
+.welcome_tile{
+  @apply mt-[40px] whitespace-nowrap font-arabic-light text-[18px] text-[#1B1D1F];
+}
+
+.user_pass{
+  @apply login-box mt-[80px] text-[14px] font-arabic-medium shadow-none;
+}
+
+.input_wrapper{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: flex-start;
+}
+
+.username_field{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: flex-start;
+}
+
+.password_field{
+  @apply username_field mt-[20px];
+}
+
+.remember_span{
+  @apply checkmark ml-[5px];
+}
+
+.register{
+  @apply mt-[20px] whitespace-nowrap font-arabic-medium text-[14px] text-[#969696];
+}
+
+.register_btn{
+  @apply mr-[5px] whitespace-nowrap text-[#1B02B7] font-bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.body{
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+}
+
+.main-container{
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+}
+
+.left-side{
+  margin: 0;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: fit-content;
+  flex: 1;    
+}
+
+.main-login-container{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 30px;
+}
+
+.login-container{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+}
+
+.login-header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.login-box{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.username-field , .password-field{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: flex-start;
+}
+
+.eye-icon {
+  position: absolute;
+  left: 10px; /* Space from the left */
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Adjust to truly center */
+  cursor: pointer; /* Change cursor to pointer when hovering over the icon */
+}
+
+.password-save-forgot {
+  display: flex;
+  flex-direction: row;
+  flex: 1;    
+  align-items: center;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.checkmark {
+  width: 24px; /* Width of the custom checkbox */
+  height: 24px; /* Height of the custom checkbox */
+  border: 2px solid #000B58; /* Border color and width */
+  border-radius: 3px; /* Optional: rounded corners */
+  position: relative;
+}
+
+.hidden-checkbox:checked + .checkmark {
+  background-color: #000B58; /* Background color when checked */
+}
+
+.hidden-checkbox:checked + .checkmark::after {
+  content: '';
+  position: absolute;
+  left: 6px; /* Positioning for the check mark */
+  top: 3px; /* Positioning for the check mark */
+  width: 6px; /* Width of the check mark */
+  height: 12px; /* Height of the check mark */
+  border: solid white; /* Color of the check mark */
+  border-width: 0 2px 2px 0; /* Border width to create a check mark */
+  transform: rotate(45deg); /* Rotate to form a check mark */
+}
+
+
+
 
 .div_welcome{
   padding-right: 70px;
 }
 
 .div_rememeber_me{
-  margin-bottom: 35px;
-  margin-top: 20px;
-  display: flex; align-items: center; justify-content: space-between;
+  @apply password-save-forgot mt-[20px];
 }
 
-.para_title{
-  font-size: 70px;
-  font-weight: 700;
-  font-family: 'Saba';
-  line-height: 126px;
-}
 
 .para_enter_account{
   font-size: 26px;
@@ -102,54 +320,23 @@ body, html {
 }
 
 .para_username{
-  color: #495057;
-  font-family: 'W_hosseini';
-  size: 14px;
-  font-family: 'W_hosseini';
-  line-height: 23px;
-  margin-top: 60px;
-  margin-bottom: 7px;
+  @apply mb-[10px] whitespace-nowrap text-[#495057];
 }
 
 .input_username{
-  background-color: #F8F9FA;
-  border: solid;
-  border-radius: 5px;
-  border-color: #BBC1C7;
-  width: 100%;
-  max-width: 400px;
-  height: 40px;
-  border-width: 1.5px;
-  padding-left: 10px;
-  padding-right: 10px;
-  font-size: 16px;
+  @apply w-[400px] h-[40px] pl-[10px] pr-[10px] bg-[#F8F9FA] border-[2px] border-[#BBC1C7] rounded-[5px] text-[#1B02B7] text-[16px];
 }
 
 .para_email,
 .para_username,
 .para_password {
-   color: #495057;
-   font-family: 'W_hosseini';
-   size: 14px;
-   line-height: 23px;
-   margin-top: 20px;
-   margin-bottom: 7px;
+  @apply mb-[10px] whitespace-nowrap text-[#495057];
 }
 
 .input_username,
 .input_password,
 .input_email {
-   background-color: #F8F9FA;
-   border: solid;
-   border-radius: 5px;
-   border-color: #BBC1C7;
-   width: 100%;
-   max-width: 400px;
-   height: 40px;
-   border-width: 1.5px;
-   padding-left: 10px;
-   padding-right: 10px;
-   font-size: 16px;
+  @apply w-[400px] h-[40px] pl-[10px] pr-[10px] bg-[#F8F9FA] border-[2px] border-[#BBC1C7] rounded-[5px] text-[#1B02B7] text-[16px];
 }
 
 
@@ -161,14 +348,11 @@ body, html {
   border-radius: 3px;
   border-color: #000B58;
   margin-left: 5px;
+  display: none; /* Hide the default checkbox */
 }
 
 .label_remember_me{
-  font-size: 14px;
-  line-height: 23px;
-  font-family: 'W_hosseini';
-  width: 87px;
-  height: 23px;
+  @apply checkbox text-[#1B1D1F] font-arabic-light text-[14px];
 }
 
 .para_forgot_password{
@@ -394,40 +578,4 @@ body, html {
 .error_message {
   font-size: 14px;
   margin: 0;
-}
-
-@media (max-width: 768px) {
-  .div_frame1 { 
-      grid-template-columns: 1fr; /* Stacks columns vertically */
-  } 
-  
-  .div_project_title, .div_login_form {
-      width: 100%;
-  } 
-  
-  .div_welcome {
-      padding-right: 20px; /* Adjust padding as needed */ 
-  }
-
-  .para_title { 
-      font-size: 50px; /* Adjust font size for smaller screens */ line-height: 80px; 
-  } 
-  
-  .para_enter_account {
-       font-size: 22px; /* Adjust font size for smaller screens */ line-height: 40px;
-      }
-}
-
-@media (max-width: 480px) { 
-  .label_remember_me, .para_forgot_password {
-      font-size: 12px; /* Adjust font size for very small screens */
-  } 
-   
-   .para_title {
-      font-size: 40px; /* Adjust font size for smaller screens */ line-height: 60px;
-  } 
-  
-  .para_enter_account { 
-      font-size: 18px; /* Adjust font size for smaller screens */ line-height: 30px;
-  }
 }
