@@ -1,92 +1,223 @@
 import React, { useState } from "react";
-import styles from "./signup.module.css"
+import eye from "../../icons/eye.png";
+import styles from "./signup.module.css";
 
-
-export default function SignUp  () {
+export default function SignUp() {
   const [passwordVisible, setPasswordVisible] = useState(false);
-  const [password, setPassword] = useState(""); // برای ذخیره مقدار رمز عبور
-  const [isPasswordEmpty, setIsPasswordEmpty] = useState(false); // کنترل وضعیت خالی بودن رمز عبور
+  const [errors, setErrors] = useState({}); // برای ذخیره پیام خطا
+  const [formValues, setFormValues] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    profession: "",
+    password: "",
+  });
 
   const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
   };
 
-  const handleLogin = () => {
-    // بررسی خالی بودن فیلد رمز عبور
-    if (password.trim() === "") {
-      setIsPasswordEmpty(true);
-    } else {
-      setIsPasswordEmpty(false);
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setFormValues({ ...formValues, [id]: value });
+  };
+
+  const handleSubmit = () => {
+    const newErrors = {};
+    if (!formValues.firstName.trim()) {
+      newErrors.firstName = "وارد کردن این فیلد الزامی است.";
+    }
+    if (!formValues.lastName.trim()) {
+      newErrors.lastName = "وارد کردن این فیلد الزامی است.";
+    }
+    if (!formValues.email.trim()) {
+      newErrors.email = "وارد کردن این فیلد الزامی است.";
+    }
+    if (!formValues.phone.trim()) {
+      newErrors.phone = "وارد کردن این فیلد الزامی است.";
+    }
+    if (!formValues.profession.trim()) {
+      newErrors.profession = "انتخاب این فیلد الزامی است.";
+    }
+    if (!formValues.password.trim()) {
+      newErrors.password = "وارد کردن این فیلد الزامی است.";
+    }
+
+    setErrors(newErrors);
+
+    if (Object.keys(newErrors).length === 0) {
+      alert("فرم با موفقیت ارسال شد.");
     }
   };
 
   return (
     <>
-      {/* لینک Font Awesome */}
       <link
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
         rel="stylesheet"
       />
-
-      <div className={styles["div-frame1"]}>
-        <div className={styles["div-project-title"]}>
-          <p className="para-title">پروژه نگار</p>
-        </div>
-
-        <div className="div-login-form">
-          <div className="div-group-content">
-            <div className="div-welcome">
-              <p className="para-enter-account">ایجاد حساب کاربری</p>
-              <p className="para-welcome">
-                به سامانه <span className="span-project-name">پروژه نگار </span> خوش آمدید.
-              </p>
-            </div>
-
-            <div className="div-user-info">
-
-	      <p className="para-username">نام و نام خانوادگی</p>
-              <input className="input-username" type="text" />
-
-              <p className="para-email">ایمیل</p>
-              <input className="input-email" type="text" />
-
-              <p className="para-phone">شماره تلفن</p>
-              <input className="input-phone" type="text" />
-
-              <p className="para-expertise">تخصص</p>
-              <select className="input-expertise" disabled>
-                <option value=""></option>
-              </select>
-
-              <p className="para-password">رمز عبور</p>
-              <div className="password-container">
-                <input
-                  className="input-password"
-                  type={passwordVisible ? "text" : "password"}
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)} // ذخیره مقدار ورودی
-                  style={{
-                    borderColor: isPasswordEmpty ? "#ff0000e8" : "#ccc", // تغییر رنگ کادر
-                  }}
-                />
-                <span className="eye-icon" onClick={togglePasswordVisibility}>
-                  <i className={`fas ${passwordVisible ? "fa-eye-slash" : "fa-eye"}`}></i>
-                </span>
+      <div className={styles.main_container} style={{ direction: "rtl" }}>
+        <div className={styles.sign_form} style={{ direction: "rtl" }}>
+          <div className={styles.div_main_form}>
+            <div className={styles.form_header}>
+              <div className={styles.form_header_title}>ایجاد حساب کاربری</div>
+              <div className={styles.welcome_message}>
+                به سامانه <span>پروژه نگار</span> خوش آمدید.
               </div>
-              {isPasswordEmpty && (
-                <p className="para-forgot-password" style={{ color: "#ff0000e8" }}>
-                  <i className="fas fa-exclamation-triangle icon-warning"></i>
-                  وارد کردن این فیلد الزامی است
-                </p>
-              )}
             </div>
 
-            <button className="btn-login" onClick={handleLogin}>
+            <div className={styles.form_register}>
+              <div className={styles.form_first_name}>
+                <label className={styles.form_label} htmlFor="firstName">
+                  نام
+                </label>
+                <input
+                  type="text"
+                  id="firstName"
+                  className={`${styles.form_input} ${
+                    errors.firstName ? styles.input_error : ""
+                  }`}
+                  value={formValues.firstName}
+                  onChange={handleChange}
+                />
+                {errors.firstName && (
+                  <div className={styles.error_container}>
+                    <i className="fas fa-exclamation-triangle icon-warning"></i>
+                    <p className={styles.error_message}>{errors.firstName}</p>
+                  </div>
+                )}
+              </div>
+
+              <div className={styles.form_last_name}>
+                <label className={styles.form_label} htmlFor="lastName">
+                  نام خانوادگی
+                </label>
+                <input
+                  type="text"
+                  id="lastName"
+                  className={`${styles.form_input} ${
+                    errors.lastName ? styles.input_error : ""
+                  }`}
+                  value={formValues.lastName}
+                  onChange={handleChange}
+                />
+                {errors.lastName && (
+                  <div className={styles.error_container}>
+                    <i className="fas fa-exclamation-triangle icon-warning"></i>
+                    <p className={styles.error_message}>{errors.lastName}</p>
+                  </div>
+                )}
+              </div>
+
+              <div className={styles.form_email}>
+                <label className={styles.form_label} htmlFor="email">
+                  ایمیل
+                </label>
+                <input
+                  type="text"
+                  id="email"
+                  className={`${styles.form_input} ${
+                    errors.email ? styles.input_error : ""
+                  }`}
+                  value={formValues.email}
+                  onChange={handleChange}
+                />
+                {errors.email && (
+                  <div className={styles.error_container}>
+                    <i className="fas fa-exclamation-triangle icon-warning"></i>
+                    <p className={styles.error_message}>{errors.email}</p>
+                  </div>
+                )}
+              </div>
+
+              <div className={styles.form_phone}>
+                <label className={styles.form_label} htmlFor="phone">
+                  شماره تلفن
+                </label>
+                <input
+                  type="text"
+                  id="phone"
+                  className={`${styles.form_input} ${
+                    errors.phone ? styles.input_error : ""
+                  }`}
+                  value={formValues.phone}
+                  onChange={handleChange}
+                />
+                {errors.phone && (
+                  <div className={styles.error_container}>
+                    <i className="fas fa-exclamation-triangle icon-warning"></i>
+                    <p className={styles.error_message}>{errors.phone}</p>
+                  </div>
+                )}
+              </div>
+
+              <div className={styles.form_field}>
+                <label className={styles.form_label} htmlFor="profession">
+                  تخصص
+                </label>
+                <select
+                  id="profession"
+                  className={`${styles.form_select} ${
+                    errors.profession ? styles.input_error : ""
+                  }`}
+                  value={formValues.profession}
+                  onChange={handleChange}
+                >
+                  <option value="">انتخاب کنید</option>
+                  <option>آپشن اول</option>
+                  <option>آپشن دوم</option>
+                  <option>آپشن سوم</option>
+                  <option>آپشن چهارم</option>
+                </select>
+                {errors.profession && (
+                  <div className={styles.error_container}>
+                    <i className="fas fa-exclamation-triangle icon-warning"></i>
+                    <p className={styles.error_message}>{errors.profession}</p>
+                  </div>
+                )}
+              </div>
+
+              <div className={styles.form_password}>
+                <label className={styles.form_label} htmlFor="password">
+                  رمز عبور
+                </label>
+                <div className={styles.relative_position}>
+                  <span className={styles.eye_icon} onClick={togglePasswordVisibility}>
+                    <img src={eye} alt="Toggle Password Visibility" width="20" height="20" />
+                  </span>
+                  <input
+                    type={passwordVisible ? "text" : "password"}
+                    id="password"
+                    className={`${styles.form_input_password} ${
+                      errors.password ? styles.input_error : ""
+                    }`}
+                    value={formValues.password}
+                    onChange={handleChange}
+                  />
+                </div>
+                {errors.password && (
+                  <div className={styles.error_container}>
+                    <i className="fas fa-exclamation-triangle icon-warning"></i>
+                    <p className={styles.error_message}>{errors.password}</p>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            <button className={styles.submit_button} onClick={handleSubmit}>
               ورود
             </button>
+
+            <div className={styles.have_account}>
+              از قبل حساب دارید؟
+              <span className={styles.login_link}>وارد حساب خود شوید</span>
+            </div>
           </div>
         </div>
+
+        <div className={styles.left_side}>پروژه نگار</div>
       </div>
     </>
   );
-};
+}

@@ -2,15 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: 'Saba'; 
-  src: url('../../Fonts/Saba-[@i_font].ttf') format('truetype'); 
-}
-
-@font-face {
-  font-family: 'W_hosseini'; 
-  src: url('../../Fonts/ArabicUIDisplayThin.otf') format('opentype');
-}
 
 
 @layer base {
