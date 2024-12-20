@@ -1,74 +1,90 @@
 import React, { useState } from 'react';
 import styles from './Email.module.css';
-import {sendVerificationCode} from "../../Services/EmailAPI"; 		// استفاده از API برای ارسال کد تایید
+import back from "../../icons/Frame 1000001414.png";
+import {sendVerificationCode} from "../../Services/EmailAPI"; 		    // استفاده از API برای ارسال کد تایید
+
 
 export default function Email() {
-  const [email, setEmail] = useState('');
-  const [error, setError] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
+    const [email, setEmail] = useState('');
+    const [errors, setErrors] = useState({});
+    const [successMessage, setSuccessMessage] = useState('');           // پیام موفقیت
+    const [loading, setLoading] = useState(false);                      // وضعیت بارگذاری
 
-  // تابع برای ارسال کد تایید به سرور
-  const handleGetCodeClick = async (event) => {
-    event.preventDefault();
+    const handleGetCodeClick = async (event) => {
+        event.preventDefault();
+        if (!email.trim()) {
+            setErrors({ email: 'ایمیل نمی‌تواند خالی باشد.' });
+            return;
+        }
 
-    if (!email) {
-      setError('ایمیل الزامی است.');
-      return;
-    }
+        setErrors({});                                                  // پاک کردن ارور در صورت صحت اطلاعات
+        setLoading(true);                                               // فعال کردن حالت بارگذاری
+        setSuccessMessage('');
 
-    setError('');
-    setIsLoading(true);
+        try {
+            const response = await sendVerificationCode(email);         // ارسال درخواست به سرور
+            setSuccessMessage('کد تایید با موفقیت ارسال شد. لطفاً ایمیل خود را بررسی کنید.');
+        } catch (error) {
+            setErrors({ email: 'ارسال کد تایید با مشکل مواجه شد. لطفاً دوباره تلاش کنید.' });
+        } finally {
+            setLoading(false);                                          // غیرفعال کردن حالت بارگذاری
+        }
+    };
 
-    try {
-      // ارسال درخواست برای دریافت کد تایید
-      const response = await sendVerificationCode(email);
-      if (response.success) {
-        // هدایت کاربر به صفحه تایید کد
-        window.location.href = '/verify';
-      } else {
-        setError('خطا در ارسال کد تایید. لطفا دوباره تلاش کنید.');
-      }
-    } catch (error) {
-      setError('مشکلی در ارتباط با سرور پیش آمده است.');
-    } finally {
-      setIsLoading(false);
-    }
-  };
+    const handleBackePage = (event) => {
+        event.preventDefault();
+        window.location.href = 'login';
+    };
 
-  return (
-    <form onSubmit={(e) => e.preventDefault()}>
+    return (
+        <div className={styles.div_frame1}>
 
-      <div className={styles.div_frame1}>
-        <div className={styles.div_project_title}>
-          <p className={styles.para_title}>پروژه نگار</p>
-        </div>
-
-        <div className={styles.div_login_form}>
-          <div className={styles.div_group_content}>
-            <div className={styles.div_welcome}>
-              <p className={styles.para_enter_account}>وارد کردن ایمیل</p>
+            <div className={styles.div_project_title}>
+                <p className={`${styles.para_title} ${styles.center_title}`}>پروژه نگار</p>
             </div>
 
-            <p className={styles.para_verification_code}>برای دریافت کد تایید ایمیل خود را وارد نمایید.</p>
+            <div className={styles.main_enter_container} style={{ direction: 'rtl' }}>
+                <div style={styles.div_back}>
+                    <button onClick={handleBackePage}>
+                        <img src={back} className={styles.back_btn} alt="icon" />
+                    </button>
+                </div>
 
-            <div className={styles.div_user_info}>
-              <p className={styles.para_email}>ایمیل</p>
-              <input
-                className={styles.input_email}
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
+                <div className={styles.div_login_form}>
+                    <div className={styles.div_group_content}>
+                        <div className={styles.div_welcome}>
+                            <p className={styles.para_enter_account}>وارد کردن ایمیل</p>
+                        </div>
+
+                        <p className={styles.para_verification_code}>
+                            برای دریافت کد تایید ایمیل خود را وارد نمایید.
+                        </p>
+
+                        <div className={styles.div_user_info}>
+                            <p className={styles.para_email}>ایمیل</p>
+                            <input
+                                className={styles.input_email}
+                                type="email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                            />
+                            {errors.email && (
+                                <div className={styles.error_container}>
+                                    <i className="fas fa-exclamation-triangle icon-warning"></i>
+                                    <p className={styles.error_message}>{errors.email}</p>
+                                </div>
+                            )}
+                            {successMessage && (
+                                <p className={styles.success_message}>{successMessage}</p>
+                            )}
+                        </div>
+
+                        <button type="submit" className={styles.btn_login} onClick={handleGetCodeClick} disabled={loading}>
+                            {loading ? 'در حال ارسال...' : 'دریافت کد تایید'}
+                        </button>
+                    </div>
+                </div>
             </div>
-
-            {error && <p className={styles.error_message}>{error}</p>}
-
-            <button type="submit" className={styles.btn_login} onClick={handleGetCodeClick} disabled={isLoading}>
-              {isLoading ? 'در حال ارسال...' : 'دریافت کد تایید'}
-            </button>
-          </div>
         </div>
-      </div>
-    </form>
-  );
+    );
 }
