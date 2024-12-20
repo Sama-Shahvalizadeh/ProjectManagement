@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from './LoginForm.module.css';
 import { Link } from 'react-router-dom';
+import eye from "../../icons/eye.png";
 
 
 export default function LoginForm() {
@@ -13,6 +14,12 @@ export default function LoginForm() {
     const [timer, setTimer] = useState(240); // 4 دقیقه
     const [verificationError, setVerificationError] = useState(false); // خطای کد تایید
 
+
+    const [passwordVisible, setPasswordVisible] = useState(false);
+
+    const togglePasswordVisibility = () => {
+        setPasswordVisible((prevState) => !prevState);
+    };
     useEffect(() => {
         let interval;
         if (isVerificationPage && timer > 0) {
@@ -82,9 +89,6 @@ export default function LoginForm() {
                     </p>
                 </div>
 
-                <button type="button" onClick={handleSignupClick} className={styles.btn_signup}>
-                    ثبت نام کنید
-                </button>
 
                 <p className={styles.para_username}>نام کاربری</p>
                 <div className={styles.input_wrapper}>
@@ -103,10 +107,13 @@ export default function LoginForm() {
                 </div>
 
                 <p className={styles.para_password}>رمز عبور</p>
-                <div className={styles.input_wrapper}>
+                <div className={styles.relative_position}>
+                    <span className={styles.eye_icon} onClick={togglePasswordVisibility}>
+                        <img src={eye} alt="Toggle Password Visibility" width="20" height="20" />
+                    </span>
                     <input
                         className={`${styles.input_password} ${errors.password ? styles.input_error : ''}`}
-                        type="password"
+                        type={passwordVisible ? 'text' : 'password'}
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                     />
@@ -117,6 +124,7 @@ export default function LoginForm() {
                         </div>
                     )}
                 </div>
+
             </div>
 
             <div className={styles.div_rememeber_me}>
@@ -143,6 +151,11 @@ export default function LoginForm() {
                 {!errors && <Link to="/email">
                 </Link>}
             </button>
+
+            <div class={styles.register}>
+                حساب کاربری ندارید؟
+                <button class={styles.register_btn} onClick={handleSignupClick}>ثبت نام کنید</button>
+            </div>
         </form>
     );
 
@@ -152,7 +165,6 @@ export default function LoginForm() {
             <div className={styles.div_project_title}>
                 <p className={styles.para_title}>پروژه نگار</p>
             </div>
-
             <div className={styles.div_login_form}>
                 <div className={styles.div_group_content}>
                     {renderLoginForm()}
