@@ -1,172 +1,377 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-
-
-@layer base {
-  @font-face {
-    font-family: 'ArabicDisplayBlack';
-    src: url(../../font/ARABICUIDISPLAYBLACK.OTF) format('opentype');
-  }
-
-  @font-face {
-    font-family: 'ArabicDisplayBold';
-    src: url(../../font/ARABICUIDISPLAYBOLD.OTF) format('opentype');
-  }
-
-  @font-face {
-    font-family: 'ArabicDisplayHeavy';
-    src: url(../../font/ARABICUIDISPLAYHEAVY.OTF) format('opentype');
-  }
-
-  @font-face {
-    font-family: 'ArabicDisplayLight';
-    src: url(../../font/ARABICUIDISPLAYLIGHT.OTF) format('opentype');
-  }
-
-  @font-face {
-    font-family: 'ArabicDisplayMedium';
-    src: url(../../font/ARABICUIDISPLAYMEDIUM.OTF) format('opentype');
-  }
-
-  @font-face {
-    font-family: 'ArabicDisplaySemiBold';
-    src: url(../../font/ARABICUIDISPLAYSEMIBOLD.OTF) format('opentype');
-  }
-
-  @font-face {
-    font-family: 'ArabicDisplayThin';
-    src: url(../../font/ARABICUIDISPLAYTHIN.OTF) format('opentype');
-  }
-
-  @font-face {
-    font-family: 'ArabicDisplayUltraLight';
-    src: url(../../font/ARABICUIDISPLAYULTRALIGHT.OTF) format('opentype');
-  }
-
-  @font-face {
-    font-family: 'Saba';
-    src: url(../../font/SABA-[@I_FONT].TTF) format('truetype');
-  }
+@font-face {
+  font-family: 'Saba'; 
+  src: url('../../Fonts/Saba-[@i_font].ttf') format('truetype'); 
 }
 
-@layer utilities {
-  .font-saba {
-    font-family: 'Saba';
-  }
-
-  .font-arabic-medium {
-    font-family: 'ArabicDisplayMedium';
-  }
-
-  .font-arabic-light {
-    font-family: 'ArabicDisplayUltraLight';
-  }
+@font-face {
+  font-family: 'W_hosseini'; 
+  src: url('../../Fonts/ArabicUIDisplayThin.otf') format('opentype');
 }
 
-.body {
-  margin: 0;
-  padding: 0;
-  overflow: auto;
+* { 
+  margin: 0; padding: 0; box-sizing: border-box;
+} 
+
+
+body, html {
+   height: 100%;
 }
 
-.rounded_full{
 
+
+.div_frame1 {
+  display: grid;
+  grid-template-columns: 720px 1fr;
+  column-gap: 10px;
+  width: 100%;
+  height: 100vh; /* تغییر به 100vh برای ارتفاع کل صفحه */
 }
 
-.back{
-  @apply w-[48px] h-[48px];
-}
-
-.content_div{
-  @apply enter-container mt-[343px] mb-[343px];
-}
-
-.main_container {
-  display: flex;
-  flex-direction: row;
-  width: 100vw;
-  padding: 0;
-  margin: 0;
-}
-
-.left-side {
-  margin: 0;
-  padding: 0 20px;
+.div_project_title {
+  background-color: #000B58;
+  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: fit-content;
-  flex: 1;
+  direction: rtl;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  height: 100%; /* تغییر به 100% برای اشغال کردن تمام ارتفاع والد */
 }
 
-.main_enter_container {
+.div_login_form {
+  background-color: white;
   display: flex;
   flex-direction: column;
-  flex: 1;
-  padding: 30px;
-}
-
-.top_div {
-  right: 48px;
-  top: 24px;
-}
-
-.enter-container {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  align-items: center;
-}
-
-.enter_header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex: 1;
-}
-
-.enter_email{
-  @apply whitespace-nowrap font-saba text-[30px] text-[#101828];
-}
-
-.for_code{
-  @apply mt-[40px] whitespace-nowrap font-arabic-light text-[18px] text-[#1B1D1F];
-}
-
-.div_email_field{
-  @apply enter-box mt-[74px] text-[14px] font-arabic-medium;
-}
-.enter-box {
-  display: flex;
-  flex: 1;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  padding: 20px;
+  direction: rtl;
+  text-align: right;
+  height: 100%; /* اطمینان از اینکه این بخش هم 100% ارتفاع خواهد داشت */
 }
 
-.email_field {
+.div_group_content{
+  justify-content: center;
+  align-items: center;
+}
+
+.div_welcome{
+  padding-right: 70px;
+}
+
+.div_rememeber_me{
+  margin-bottom: 35px;
+  margin-top: 20px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+.para_title{
+  font-size: 70px;
+  font-weight: 700;
+  font-family: 'Saba';
+  line-height: 126px;
+}
+
+.para_enter_account{
+  font-size: 26px;
+  font-family: 'Saba';
+  font-weight: 700;
+  line-height: 47px;
+  margin-bottom: 0;
+  color: #101828;
+}
+
+.para_welcome{
+  font-size: 18px;
+  line-height: 26px;
+  font-family: 'W_hosseini';
+  margin-top: 30px;
+  margin-bottom: 0;
+  margin-right: 30px;
+  color: #1B1D1F;
+}
+
+.span_project_name{
+  color: rgb(51, 6, 51);
+}
+
+.span_project_name:hover{
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.para_username{
+  color: #495057;
+  font-family: 'W_hosseini';
+  size: 14px;
+  font-family: 'W_hosseini';
+  line-height: 23px;
+  margin-top: 60px;
+  margin-bottom: 7px;
+}
+
+.input_username{
+  background-color: #F8F9FA;
+  border: solid;
+  border-radius: 5px;
+  border-color: #BBC1C7;
+  width: 100%;
+  max-width: 400px;
+  height: 40px;
+  border-width: 1.5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 16px;
+}
+
+.para_email,
+.para_username,
+.para_password {
+   color: #495057;
+   font-family: 'W_hosseini';
+   size: 14px;
+   line-height: 23px;
+   margin-top: 20px;
+   margin-bottom: 7px;
+}
+
+.input_username,
+.input_password,
+.input_email {
+   background-color: #F8F9FA;
+   border: solid;
+   border-radius: 5px;
+   border-color: #BBC1C7;
+   width: 100%;
+   max-width: 400px;
+   height: 40px;
+   border-width: 1.5px;
+   padding-left: 10px;
+   padding-right: 10px;
+   font-size: 16px;
+}
+
+
+.checkbox_remember_me{
+  height: 15px;
+  width: 15px;
+  border: solid;
+  border-width: 2px;
+  border-radius: 3px;
+  border-color: #000B58;
+  margin-left: 5px;
+}
+
+.label_remember_me{
+  font-size: 14px;
+  line-height: 23px;
+  font-family: 'W_hosseini';
+  width: 87px;
+  height: 23px;
+}
+
+.para_forgot_password{
+  margin-right: 150px;
+  display: inline-block;
+  width: 159px;
+  height: 23px;
+  font-size: 14px;
+  line-height: 23px;
+  font-family: 'W_hosseini';
+  color: #1B02B7;
+}
+
+.btn_login{
+  background-color: #000B58;
+  width: 100%; /* Makes button responsive */
+  max-width: 400px;
+  height: 32px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #F8F9FA;
+  font-family: 'W_hosseini';
+  margin-top: 20px;
+}
+
+
+.para_verification_code {
+  color: #495057;
+  font-family: 'W_hosseini';
+  font-size: 16px;
+  line-height: 26px;
+  margin-top: 20px;
+  margin-bottom: 7px;
+  text-align: center;
+}
+
+.input_code_container {
   display: flex;
-  flex-direction: column;
-  flex: 1;
-  align-items: flex-start;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
 }
 
-.email_label{
-  @apply mb-[10px] whitespace-nowrap text-[#495057];
+.input_code {
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  width: 40px;
+  height: 40px;
+  border: 1.5px solid #BBC1C7;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 18px;
+  font-family: 'Saba';
+  background-color: #F8F9FA;
+  color: #000;
 }
 
+.input_code:focus {
+  border-color: #000B58;
+  outline: none;
+}
+
+.timer {
+  font-family: 'W_hosseini';
+  font-size: 12px;
+  color: #495057;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.para_resend {
+  font-family: 'W_hosseini';
+  font-size: 14px;
+  color: #0d19c0;
+  text-align: center;
+  margin-top: 10px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.para_resend:hover {
+  color: #000B58;
+}
+
+.para_email{
+  color: #495057;
+  font-family: 'W_hosseini';
+  size: 14px;
+  font-family: 'W_hosseini';
+  line-height: 23px;
+  margin-top: 20px;
+  margin-bottom: 7px;
+}
 .input_email{
-  @apply w-[400px] h-[40px] pl-[10px] pr-[10px] bg-[#F8F9FA] border-[2px] border-[#BBC1C7] rounded-[5px] text-[20px] text-[#1B02B7] shadow-none;
+  background-color: #F8F9FA;
+  border: solid;
+  border-radius: 5px;
+  border-color: #BBC1C7;
+  width: 100%;
+  max-width: 400px;
+  height: 40px;
+  border-width: 1.5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 16px;
 }
 
-.get_code_btn{
-  @apply w-[400px] h-[32px] mt-[48px] bg-[#000B58] text-[#F8F9FA] font-arabic-light font-bold text-[16px] rounded-[5px];
+.para_enter_account{
+  font-size: 26px;
+  font-family: 'Saba';
+  font-weight: 700;
+  line-height: 47px;
+  margin-bottom: 0;
+  color: #101828;
 }
 
-.div_project_title{
-  @apply left-side whitespace-nowrap font-saba text-[#FFFFFF] text-[90px] bg-[#000B58] rounded-r-[50px];
+.para_verification_code {
+  color: #495057;
+  font-family: 'W_hosseini';
+  font-size: 16px;
+  line-height: 26px;
+  margin-top: 20px;
+  margin-bottom: 7px;
+  text-align: center;
 }
+
+.para_email {
+   color: #495057;
+   font-family: 'W_hosseini';
+   size: 14px;
+   line-height: 23px;
+   margin-top: 20px;
+   margin-bottom: 7px;
+}
+
+.input_email {
+   background-color: #F8F9FA;
+   border: solid;
+   border-radius: 5px;
+   border-color: #BBC1C7;
+   width: 100%;
+   max-width: 400px;
+   height: 40px;
+   border-width: 1.5px;
+   padding-left: 10px;
+   padding-right: 10px;
+   font-size: 16px;
+}
+
+/* صفحه وارد کردن کد تایید*/
+.para_resend {
+   color: black;
+   text-decoration: none;
+   margin-bottom: 40px;
+}
+
+.timer {
+   font-family: 'W_hosseini';
+   font-size: 12px;
+   color: #495057;
+   margin-top: 15px;
+   text-align: center;
+   margin-bottom: 40px;
+}
+
+.para_resend .resend_link {
+   color: #000B58;
+   text-decoration: none;
+   margin-bottom: 40px;
+}
+
+.para_resend:hover .resend_link {
+   color: #000B58;
+   margin-bottom: 40px;
+}
+
+
+/* صفحه جدید برای تایید کد اشتباه*/
+.div_verification_error {
+  display: none;
+  background-color: #f8d7da;
+  color: red;
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid red;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.div_verification_error .error_icon {
+  margin-right: 15px;
+  font-size: 18px;
+  color: red;
+}
+
+.div_verification_error .error_message {
+  margin: 0;
+  font-size: 14px;
+  color: red;
+}
+
 .input_code.error {
   border: 2px solid red;
 }
@@ -189,4 +394,40 @@
 .error_message {
   font-size: 14px;
   margin: 0;
+}
+
+@media (max-width: 768px) {
+  .div_frame1 { 
+      grid-template-columns: 1fr; /* Stacks columns vertically */
+  } 
+  
+  .div_project_title, .div_login_form {
+      width: 100%;
+  } 
+  
+  .div_welcome {
+      padding-right: 20px; /* Adjust padding as needed */ 
+  }
+
+  .para_title { 
+      font-size: 50px; /* Adjust font size for smaller screens */ line-height: 80px; 
+  } 
+  
+  .para_enter_account {
+       font-size: 22px; /* Adjust font size for smaller screens */ line-height: 40px;
+      }
+}
+
+@media (max-width: 480px) { 
+  .label_remember_me, .para_forgot_password {
+      font-size: 12px; /* Adjust font size for very small screens */
+  } 
+   
+   .para_title {
+      font-size: 40px; /* Adjust font size for smaller screens */ line-height: 60px;
+  } 
+  
+  .para_enter_account { 
+      font-size: 18px; /* Adjust font size for smaller screens */ line-height: 30px;
+  }
 }
