@@ -189,11 +189,6 @@ body, html {
   margin-right: 5px;
 }
 
-.error_message {
-  font-size: 14px;
-  margin: 0;
-}
-
 
 .main_enter_container{
   display: flex;
@@ -217,15 +212,8 @@ body, html {
   color: red;
 }
 
-
-.div_verification_error {
-  display: none;
-  background-color: #f8d7da;
+.div_verification_error .error_message {
+  margin: 0;
+  font-size: 14px;
   color: red;
-  padding: 10px;
-  border-radius: 5px;
-  border: 2px solid red;
-  display: flex;
-  align-items: center;
-  margin-top: 10px;
 }

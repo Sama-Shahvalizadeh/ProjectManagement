@@ -397,11 +397,6 @@ html {
   margin-right: 5px;
 }
 
-.error_message {
-  font-size: 14px;
-  margin: 0;
-}
-
 .email_div {
   right: 48px;
   top: 24px;
@@ -431,9 +426,4 @@ html {
 
 .icon_warning {
   margin-right: 5px;
-}
-
-.error_message {
-  font-size: 14px;
-  margin: 0;
 }

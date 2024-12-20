@@ -5,7 +5,7 @@ import back from "../../icons/Frame 1000001414.png";
 export default function NewPass() {
     const [newPassword, setNewPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
-    const [errors, setErrors] = useState({ newPassword: '', confirmPassword: '', email: '' });
+    const [errors, setErrors] = useState({ newPassword: '', confirmPassword: '', general: '' });
     const [isPasswordMismatch, setIsPasswordMismatch] = useState(false); // برای بررسی مغایرت
 
     const handleBackePage = (event) => {
@@ -17,7 +17,7 @@ export default function NewPass() {
         event.preventDefault();
 
         let valid = true;
-        const newErrors = { newPassword: '', confirmPassword: '', email: '' };
+        const newErrors = { newPassword: '', confirmPassword: '', general: '' };
 
         if (!newPassword) {
             newErrors.newPassword = 'این فیلد نباید خالی باشد';
@@ -105,7 +105,6 @@ export default function NewPass() {
                                 </div>
                             </div>
                         )}
-
 
                         <button type="submit" className={styles.btn_change} disabled={!!errors.newPassword || !!errors.confirmPassword}>تغییر رمز عبور</button>
                     </form>
