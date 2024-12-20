@@ -1,16 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import styles from './LoginForm.module.css';
-import { loginUser, sendVerificationCode } from '../../Services/LoginFormAPI'; 		// استفاده از توابع API
 import { Link } from 'react-router-dom';
+import eye from "../../icons/eye.png";
+import { loginUser, sendVerificationCode } from '../../Services/LoginFormAPI'; 		// استفاده از توابع API
 
 export default function LoginForm() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [errors, setErrors] = useState({ username: '', password: '', general: '' });
     const [isForgotPassword, setIsForgotPassword] = useState(false);
-    const [isVerificationPage, setIsVerificationPage] = useState(false);
+    const [isVerificationPage, setIsVerificationPage] = useState(false); // حالت صفحه وارد کردن کد
     const [timer, setTimer] = useState(240); // 4 دقیقه
-    const [verificationError, setVerificationError] = useState(false);
+    const [verificationError, setVerificationError] = useState(false); // خطای کد تایید
+    const [passwordVisible, setPasswordVisible] = useState(false);
+
+    const togglePasswordVisibility = () => {
+        setPasswordVisible((prevState) => !prevState);
+    };
 
     useEffect(() => {
         let interval;
@@ -26,7 +32,12 @@ export default function LoginForm() {
         event.preventDefault();
 
         if (isForgotPassword) {
-            setIsVerificationPage(true);
+            setIsVerificationPage(true); // تغییر به صفحه کد تایید
+            try {
+                await sendVerificationCode(username); // ارسال کد تایید به ایمیل
+            } catch (error) {
+                setVerificationError(true); // خطا در ارسال کد تایید
+            }
             return;
         }
 
@@ -47,9 +58,7 @@ export default function LoginForm() {
 
         if (valid) {
             try {
-                // ارسال درخواست ورود به سرور
-                const response = await loginUser({ username, password });
-
+                const response = await loginUser({ username, password }); // استفاده از تابع loginUser برای ورود
                 if (response.success) {
                     alert('ورود با موفقیت انجام شد');
                 } else {
@@ -63,26 +72,20 @@ export default function LoginForm() {
                 setErrors({
                     username: '',
                     password: '',
-                    general: 'خطا در برقراری ارتباط با سرور. لطفا دوباره تلاش کنید.',
+                    general: 'خطا در ارتباط با سرور. لطفا دوباره تلاش کنید.',
                 });
             }
         }
     };
 
-    const handleForgetPassClick = async (event) => {
+    const handleForgetPassClick = (event) => {
         event.preventDefault();
-        try {
-            // ارسال ایمیل برای دریافت کد تایید
-            await sendVerificationCode(username);
-            window.location.href = '/verification'; // انتقال به صفحه تایید کد
-        } catch (error) {
-            setVerificationError(true);
-        }
+        setIsForgotPassword(true); // نمایش صفحه فراموشی رمز عبور
     };
 
     const handleSignupClick = (event) => {
-        event.preventDefault();
-        window.location.href = '/signup';
+        event.preventDefault(); // جلوگیری از ارسال فرم
+        window.location.href = '/signup'; // انتقال به صفحه signup
     };
 
     const renderLoginForm = () => (
@@ -94,10 +97,6 @@ export default function LoginForm() {
                         به سامانه <span className={styles.span_project_name}>پروژه نگار </span> خوش آمدید.
                     </p>
                 </div>
-
-                <button type="button" onClick={handleSignupClick} className={styles.btn_signup}>
-                    ثبت نام کنید
-                </button>
 
                 <p className={styles.para_username}>نام کاربری</p>
                 <div className={styles.input_wrapper}>
@@ -116,10 +115,13 @@ export default function LoginForm() {
                 </div>
 
                 <p className={styles.para_password}>رمز عبور</p>
-                <div className={styles.input_wrapper}>
+                <div className={styles.relative_position}>
+                    <span className={styles.eye_icon} onClick={togglePasswordVisibility}>
+                        <img src={eye} alt="Toggle Password Visibility" width="20" height="20" />
+                    </span>
                     <input
                         className={`${styles.input_password} ${errors.password ? styles.input_error : ''}`}
-                        type="password"
+                        type={passwordVisible ? 'text' : 'password'}
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                     />
@@ -154,6 +156,11 @@ export default function LoginForm() {
             <button type="submit" className={styles.btn_login}>
                 ورود
             </button>
+
+            <div className={styles.register}>
+                حساب کاربری ندارید؟
+                <button className={styles.register_btn} onClick={handleSignupClick}>ثبت نام کنید</button>
+            </div>
         </form>
     );
 
@@ -162,7 +169,6 @@ export default function LoginForm() {
             <div className={styles.div_project_title}>
                 <p className={styles.para_title}>پروژه نگار</p>
             </div>
-
             <div className={styles.div_login_form}>
                 <div className={styles.div_group_content}>
                     {renderLoginForm()}
