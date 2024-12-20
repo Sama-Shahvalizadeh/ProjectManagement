@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import styles from './LoginForm.module.css' ;
+import styles from './LoginForm.module.css';
 import { Link } from 'react-router-dom';
 
 
@@ -22,34 +22,34 @@ export default function LoginForm() {
         }
         return () => clearInterval(interval);
     }, [isVerificationPage, timer]);
- 
+
     const handleSubmit = (event) => {
         event.preventDefault();
-    
+
         if (isForgotPassword) {
             setIsVerificationPage(true); // تغییر به صفحه کد تایید
             return;
         }
-    
+
         let valid = true;
         const newErrors = { username: '', password: '', general: '' };
-    
+
         if (!username) {
             newErrors.username = 'وارد کردن این فیلد الزامی است.';
             valid = false;
         }
-    
+
         if (!password) {
             newErrors.password = 'وارد کردن این فیلد الزامی است.';
             valid = false;
         }
-    
+
         setErrors(newErrors);
-    
+
         if (valid) {
             const users = require('./users.json').users;
             const user = users.find((u) => u.username === username);
-    
+
             if (user && user.password === password) {
                 alert('ورود با موفقیت انجام شد');
             } else {
@@ -62,7 +62,7 @@ export default function LoginForm() {
         }
     };
 
-    const handleForgetPassClick = (event) =>{
+    const handleForgetPassClick = (event) => {
         event.preventDefault();
         window.location.href = 'email'
     }
@@ -76,14 +76,14 @@ export default function LoginForm() {
         <form onSubmit={handleSubmit}>
             <div className={styles.div_user_info}>
                 <div className={styles.div_welcome}>
-                <p className={styles.para_enter_account}>ورود به حساب کاربری</p>
+                    <p className={styles.para_enter_account}>ورود به حساب کاربری</p>
                     <p className={styles.para_welcome}>
                         به سامانه <span className={styles.span_project_name}>پروژه نگار </span> خوش آمدید.
                     </p>
                 </div>
 
                 <button type="button" onClick={handleSignupClick} className={styles.btn_signup}>
-                ثبت نام کنید
+                    ثبت نام کنید
                 </button>
 
                 <p className={styles.para_username}>نام کاربری</p>
@@ -101,7 +101,7 @@ export default function LoginForm() {
                         </div>
                     )}
                 </div>
-    
+
                 <p className={styles.para_password}>رمز عبور</p>
                 <div className={styles.input_wrapper}>
                     <input
@@ -118,17 +118,17 @@ export default function LoginForm() {
                     )}
                 </div>
             </div>
-    
+
             <div className={styles.div_rememeber_me}>
                 <input className={styles.checkbox_remember_me} type="checkbox" id="remember" />
                 <label className={styles.label_remember_me} htmlFor="remember">
                     مرا به خاطر بسپار
                 </label>
-                <p className={styles.para_forgot_password}  onClick={handleForgetPassClick}>
+                <p className={styles.para_forgot_password} onClick={handleForgetPassClick}>
                     رمز عبور خود را فراموش کرده ام.
                 </p>
             </div>
-    
+
             {errors.general && (
                 <div className={styles.div_general_error}>
                     <div className={styles.div_verification_error}>
@@ -137,11 +137,11 @@ export default function LoginForm() {
                     </div>
                 </div>
             )}
-    
+
             <button type="submit" className={styles.btn_login}>
                 ورود
-   {!errors && <Link to="/email">
-    </Link>}
+                {!errors && <Link to="/email">
+                </Link>}
             </button>
         </form>
     );

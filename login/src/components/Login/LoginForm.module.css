@@ -296,29 +296,6 @@ body, html {
   text-align: center;
 }
 
-.para_email {
-   color: #495057;
-   font-family: 'W_hosseini';
-   size: 14px;
-   line-height: 23px;
-   margin-top: 20px;
-   margin-bottom: 7px;
-}
-
-.input_email {
-   background-color: #F8F9FA;
-   border: solid;
-   border-radius: 5px;
-   border-color: #BBC1C7;
-   width: 100%;
-   max-width: 400px;
-   height: 40px;
-   border-width: 1.5px;
-   padding-left: 10px;
-   padding-right: 10px;
-   font-size: 16px;
-}
-
 /* صفحه وارد کردن کد تایید*/
 .para_resend {
    color: black;
@@ -396,38 +373,3 @@ body, html {
   margin: 0;
 }
 
-@media (max-width: 768px) {
-  .div_frame1 { 
-      grid-template-columns: 1fr; /* Stacks columns vertically */
-  } 
-  
-  .div_project_title, .div_login_form {
-      width: 100%;
-  } 
-  
-  .div_welcome {
-      padding-right: 20px; /* Adjust padding as needed */ 
-  }
-
-  .para_title { 
-      font-size: 50px; /* Adjust font size for smaller screens */ line-height: 80px; 
-  } 
-  
-  .para_enter_account {
-       font-size: 22px; /* Adjust font size for smaller screens */ line-height: 40px;
-      }
-}
-
-@media (max-width: 480px) { 
-  .label_remember_me, .para_forgot_password {
-      font-size: 12px; /* Adjust font size for very small screens */
-  } 
-   
-   .para_title {
-      font-size: 40px; /* Adjust font size for smaller screens */ line-height: 60px;
-  } 
-  
-  .para_enter_account { 
-      font-size: 18px; /* Adjust font size for smaller screens */ line-height: 30px;
-  }
-}
