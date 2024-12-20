@@ -173,7 +173,7 @@ html {
   height: 40px;
   border-width: 1.5px;
   padding-left: 10px;
-  padding-right: 100px;
+  padding-right: 10px;
   font-size: 16px;
 }
 
@@ -297,19 +297,7 @@ html {
   margin-bottom: 7px;
 }
 
-.input_email {
-  background-color: #F8F9FA;
-  border: solid;
-  border-radius: 5px;
-  border-color: #BBC1C7;
-  width: 100%;
-  max-width: 400px;
-  height: 40px;
-  border-width: 1.5px;
-  padding-left: 10px;
-  padding-right: 10px;
-  font-size: 16px;
-}
+
 
 .para_enter_account {
   font-size: 26px;
