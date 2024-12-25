@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Edited_ProfileView.css">
+    <link rel="stylesheet" href="../output.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="sidebar.css">
+
+
+    <style>
+        body {
+            direction: rtl;
+            margin: 0;
+            padding-bottom: 30px;
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <div class="main-container">
+
+        <!--sidebar-->
+        <div class="sidebar">
+            <h2 class="sidebar-header font-saba">
+                <img class="sidebar-header-icon" src="../icons/projectNegar.png" alt="icon">
+                <span>پروژه نگار</span>
+            </h2>
+            
+            <ul class="sidebar-list font-arabic-medium font-semibold">
+                <li id="item-dashboard" class="sidebar-item">
+                    <img class="sidebar-icon" src="../icons/home-gray.png" alt="icon">
+                    <span class="sidebar-text">داشبورد</span>
+                </li>
+            
+                <li id="item-projects" class="sidebar-item">
+                    <img class="sidebar-icon" src="../icons/projects.png" alt="icon">
+                    <span class="sidebar-text">پروژه ها</span>
+                </li>
+            
+                <li id="item-tasks" class="sidebar-item">
+                    <img class="sidebar-icon" src="../icons/tasks.png" alt="icon">
+                    <span class="sidebar-text">وظایف</span>
+                </li>
+            
+                <li id="item-users" class="sidebar-item">
+                    <img class="sidebar-icon" src="../icons/users.png" alt="icon">
+                    <span class="sidebar-text">کاربران</span>
+                </li>
+            
+                <li id="item-report" class="sidebar-item">
+                    <img class="sidebar-icon" src="../icons/report.png" alt="icon">
+                    <span class="sidebar-text">گزارش</span>
+                </li>
+            
+                <li id="item-calendar" class="sidebar-item">
+                    <img class="sidebar-icon" src="../icons/calendar.png" alt="icon">
+                    <span class="sidebar-text">تقویم</span>
+                </li>
+            </ul>
+
+            <!--sidebar card-->
+            <div class="profile-card h-sm:mt-[50px] h-md:mt-[200px] h-lg:mt-[490px] h-xl:mt-[600px] h-2xl:mt-[700px] h-3xl:[800px] h-4xl:[900px] mx-auto font-arabic-medium">
+                <div class="profile-div relative inline-block mr-[8px]">
+                    <!-- عکس پروفایل -->
+                    <img id="img-sidebar-profile" src="../icons/profile.jfif" class="profile-img w-[40px] h-[40px] rounded-full border-[6px] border-[#000B58]" alt="icon" />
+    
+                    <!-- وضعیت آنلاین بودن -->
+                        
+                    <img id="img-status" class="online-status w-[8px] h-[8px] absolute bottom-1.5 right-1 rounded-full" src="../icons/status.png" alt="icon">
+                </div>
+    
+                <!-- ایمیل و نام کاربر به صورت span تعریف شده -->
+                <div class="mr-[8px]">
+                    <div class="whitespace-normal">
+                        <span id="span-sidebar-username">الف ب پ ت ث ج چ ح خ د</span>
+                    </div>
+    
+                    <div class="mt-[16px] whitespace-nowrap">
+                        <span id="span-sidebar-email">Bitajhjhjhkbjbj@gmail.com</span>
+                    </div>
+                </div>
+    
+                <!-- منوی همبرگر -->
+                <div class="fixed ml-[16px] mr-[185px]">
+                    <button id="btn-side-hamburger">
+                        <img src="../icons/Frame 1000001439.png" alt="icon">
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!--end of sidebar-->
+
+        <!--right container-->
+        <div class="right-container font-arabic-medium">
+
+            <!-- navigation bar -->
+            <div class="header">
+                <div class="right-header">
+                    <div class="input-div">
+                        <input id="input-searchbar" class="search-bar" type="text" placeholder="اینجا جست و جو کنید...">
+                        <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+                            <button id="btn-serachbar">
+                                <img src="../icons/search-normal.png" alt="Search Icon" class="searchbar-img h-5 w-5">
+                            </button>
+                        </span>
+                    </div>                
+                </div>
+                              
+                <div class="left-header">
+
+                    <!--
+                    <div>
+                        <button id="btn-chat">
+                            <img class="chat-img" src="../icons/chat.png" alt="icon">
+                            
+                        </button>
+                        
+                    </div> -->
+
+                    <div class="relative inline-block">
+                        <button id="btn-notification">
+                            <img class="notif-img" src="../icons/notification-bell.png" alt="icon">
+                            <img src="../icons/Ellipse 87.png" alt="Notification Dot" class="notification-dot" />
+                        </button>                
+                    </div>
+
+                    <!--
+                    <div class="header-name whitespace-nowrap text-[16px] text-[#495057]">
+                        <span id="span-menu-name">الف ب پ ت ث ج چ </span>
+                    </div> -->
+
+                    <!--
+                    <div>
+                        <button id="btn-dropdown">
+                            <img class="drop-down-img" src="../icons/profile dropdown.png" alt="icon">
+                        </button>
+                    </div> -->
+                </div>
+            </div>
+            <!--end of navigation bar-->
+
+            <!-- navigation bar منوی زیر  -->
+            <div class="flex flex-row gap-[10px] mt-[112px] items-center font-arabic-medium font-semibold pr-[32px]">
+                <button id="btn-home">
+                    <img class="w-[24px] h-[24px] text-[16px]" src="../icons/home-alt (1).png" alt="icon">
+                </button>
+            
+                <img class="w-[18px] h-[18px]" src="../icons/chevron-left (1).png" alt="icon">
+
+                <button id="btn-user-account" class="text-[#B2B9C0] whitespace-nowrap">
+                    حساب کاربری
+                </button>
+
+                <img class="w-[18px] h-[18px]" src="../icons/chevron-left (1).png" alt="icon">
+
+                <button id="btn-personal-info" class="text-[#495057] whitespace-nowrap">
+                    اطلاعات شخصی
+                </button>
+            </div>
+                
+            <!-- فرم اطلاعات کاربر -->
+            <div class="flex flex-col w-[1140px] mt-[32px] mr-[32px] px-[16px] pb-[16px] border-[2px] rounded-[5px] border-[#E2E5E9] font-arabic-medium">
+
+                <!-- اطلاعات شخصی و دکمه ادیت div -->
+                <div class="flex justify-between w-[1108px] mt-[20px]">
+
+                    <!-- اطلاعات شخصی div -->
+                    <div class="flex items-center">
+                        <div>
+                            <img src="../icons/maximise-frame.png"  class="w-[40px] h-[40px] ml-[16px]">
+                        </div>
+                    
+                        <div class="h-[40px] text-[24px] font-semibold text-[#495057] ml-4 whitespace-nowrap">
+                            اطلاعات شخصی
+                        </div>
+                    </div>
+
+                    <!-- منوی سه نقطه و دکمه ها div -->
+                    <div class="menu-container">
+
+                        <!-- دکمه سه نقطه  -->
+                        <button id="btn-three-dots" class="three-dots"onclick="toggleMenu()">
+                            ...
+                        </button>
+
+                        <div class="dropdown-menu" id="dropdownMenu">
+                            <ul>
+                                <li id="item-edit">ویرایش اطلاعات شخصی</li>
+                            </ul>
+                        </div>                
+                    </div>
+                </div>
+                
+                <!-- عکس پروفایل و نام div -->
+                <div class="flex flex-row items-center gap-[32px] w-[1108px]">
+
+                    <!-- عکس پروفایل -->                   
+                    <img id="img-profile" 
+                    src="../icons/profile.jfif"
+                    class="w-[126px] h-[126px] mt-[32px] rounded-full border-[8px] border-[#000B58] z-0 relative"
+                    alt="profile" />
+
+                    <!-- نام -->
+                    <span id="span-profile-name" class="text-[24px] font-normal text-[#495057] whitespace-nowrap">
+                        بیتا جوان
+                    </span>                    
+                </div>
+                
+                <!-- اطلاعات کاربر div -->
+                <div class="flex flex-col gap-[24px] w-[1108px] pt-[20px]">
+                
+                    <!-- نام کاربر div -->
+                    <div class="information-container">
+
+                        <!-- نام -->
+                        <div class="ml-[208px] information-div">نام</div>
+                
+                        <!-- نام span -->
+                        <div class="information-span whitespace-nowrap">
+                            <span id="span-firstname">بیتا</span>
+                        </div>
+                    </div>
+                
+                    <!-- نام خانوادگی div -->
+                    <div class="information-container">
+
+                        <!-- نام خانوادگی -->
+                        <div class="ml-[143px] information-div">نام خانوادگی</div>
+                
+                        <!-- نام خانوادگی span -->
+                        <div class="information-span whitespace-nowrap">
+                            <span id="span-lastname">جوان</span>
+                        </div>
+                    </div>
+                
+                    <!-- شماره موبایل div -->
+                    <div class="information-container">
+
+                        <!-- شماره تلفن همراه -->
+                        <div class="ml-[110px] information-div">شماره تلفن همراه </div>
+                
+                        <!-- شماره تلفن همراه  span -->
+                        <div class="information-span whitespace-nowrap">
+                            <span id="span-phone">09140000000</span>
+                        </div>
+                    </div>
+                
+                    <!-- ایمیل div -->
+                    <div class="information-container">
+
+                        <!-- ایمیل -->
+                        <div class="ml-[189px] information-div">ایمیل</div>
+                
+                        <!-- ایمیل  span -->
+                        <div class="information-span whitespace-nowrap">
+                            <span id="span-email">Bitaj@gmail.com</span>
+                        </div>
+                    </div>
+                
+                    <!-- تخصص div -->
+                    <div class="information-container">
+
+                        <!-- تخصص -->
+                        <div class="ml-[175px] information-div">تخصص</div>
+                
+                        <!-- تخصص  span -->
+                        <div class="information-span whitespace-nowrap">
+                            <span id="span-profession">مدیر پروژه</span>
+                        </div>
+                    </div>
+                
+                    <!-- توضیحات div -->
+                    <div class="information-container">
+
+                        <!-- توضیحات -->
+                        <div class="ml-[161px] information-div">توضیحات</div>
+                
+                        <!-- توضیحات  span -->
+                        <div class="information-span pl-[16px] pb-[16px]">
+                            <span id="span-explanations" class="whitespace-normal">
+                                این یک متن ساختگی است که برای تست برنامه نوشته شده است. 
+                                تذتذتدندنئمئمموکوکوکوگوووگگ.گ.انانتمتمتمتمتنمننکنکنکنکوکووگوگ
+                                دندمدمئدمدمت
+                            </span>
+                        </div>
+                    </div>           
+                </div>          
+            </div>
+        </div>
+    </div>
+    <script>
+        function toggleMenu() {
+        const menu = document.getElementById("dropdownMenu");
+        menu.style.display = (menu.style.display === "block") ? "none" : "block";
+    }
+
+    // Optional: Close the menu when clicking outside
+    window.onclick = function(event) {
+        if (!event.target.matches('.three-dots')) {
+            const dropdowns = document.getElementsByClassName("dropdown-menu");
+            for (let i = 0; i < dropdowns.length; i++) {
+                dropdowns[i].style.display = "none";
+            }
+        }
+    };
+    </script>
+</body>
+</html>

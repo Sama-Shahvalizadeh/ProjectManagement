@@ -1,0 +1,78 @@
+.main-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+}
+
+.right-container{
+    display: flex;
+    flex-direction: column;
+    margin-right: 240px;
+}
+
+.menu-container {
+    position: relative; /* Positioning context for the dropdown */
+    display: inline-block; /* Allow the menu to fit its content */
+}
+
+.three-dots {
+    background: none;   
+    color: #0D062D;
+    font-size: 16px;
+    margin-left: 16px;
+}
+
+.dropdown-menu {
+    display: none; /* Hidden by default */
+    position: absolute; /* Position it absolutely */
+    top: 27px; /* Below the button */
+    left: 16px; /* Align to the left of the button */
+    background: white; /* Background for the dropdown */
+    border: 2px solid #E2E5E9; /* Optional border */
+    border-radius: 8px;
+    z-index: 1000; /* Ensure it appears above other elements */
+    width: 200px;
+    background-color: #FFFFFF;
+}
+
+.dropdown-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-menu li {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 31px;
+    padding-right: 31px;
+    font-weight: 700px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.dropdown-menu li:hover {
+    background-color: #f0f0f0; /* Highlight on hover */
+}
+
+.information-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.information-div{
+    font-size: 16px;
+    font-weight: bold;
+    color: #495057;
+    white-space: nowrap;
+}
+
+.information-span{
+    font-size: 16px;
+    font-weight: 300px;
+    color: #1B1D1F;
+}

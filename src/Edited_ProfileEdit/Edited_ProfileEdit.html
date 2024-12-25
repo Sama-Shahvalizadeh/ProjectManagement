@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Edited_ProfileEdit.css">
+    <link rel="stylesheet" href="../output.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="sidebar.css">
+
+    <style>
+         body {
+            direction: rtl;
+            margin: 0;
+            padding-bottom: 30px;
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+    <div class="main-container">
+
+        <!--sidebar-->
+        <div class="sidebar">
+            <h2 class="sidebar-header font-saba">
+                <img class="sidebar-header-icon" src="../icons/projectNegar.png" alt="icon">
+                <span>پروژه نگار</span>
+            </h2>
+            
+            <ul class="sidebar-list font-arabic-medium font-semibold">
+                <li id="item-dashboard" class="sidebar-item">
+                    <img class="sidebar-icon" src="../icons/home-gray.png" alt="icon">
+                    <span class="sidebar-text">داشبورد</span>
+                </li>
+            
+                <li id="item-projects" class="sidebar-item">
+                    <img class="sidebar-icon" src="../icons/projects.png" alt="icon">
+                    <span class="sidebar-text">پروژه ها</span>
+                </li>
+            
+                <li id="item-tasks" class="sidebar-item">
+                    <img class="sidebar-icon" src="../icons/tasks.png" alt="icon">
+                    <span class="sidebar-text">وظایف</span>
+                </li>
+            
+                <li id="item-users" class="sidebar-item">
+                    <img class="sidebar-icon" src="../icons/users.png" alt="icon">
+                    <span class="sidebar-text">کاربران</span>
+                </li>
+            
+                <li id="item-report" class="sidebar-item">
+                    <img class="sidebar-icon" src="../icons/report.png" alt="icon">
+                    <span class="sidebar-text">گزارش</span>
+                </li>
+            
+                <li id="item-calendar" class="sidebar-item">
+                    <img class="sidebar-icon" src="../icons/calendar.png" alt="icon">
+                    <span class="sidebar-text">تقویم</span>
+                </li>
+            </ul>
+
+            <!--sidebar card-->
+            <div class="profile-card h-sm:mt-[50px] h-md:mt-[200px] h-lg:mt-[490px] h-xl:mt-[600px] h-2xl:mt-[700px] h-3xl:[800px] h-4xl:[900px] mx-auto font-arabic-medium">
+                <div class="profile-div relative inline-block mr-[8px]">
+                    <!-- عکس پروفایل -->
+                    <img id="img-sidebar-profile" src="../icons/profile.jfif" class="profile-img w-[40px] h-[40px] rounded-full border-[6px] border-[#000B58]" alt="icon" />
+    
+                    <!-- وضعیت آنلاین بودن -->
+                        
+                    <img id="img-status" class="online-status w-[8px] h-[8px] absolute bottom-1.5 right-1 rounded-full" src="../icons/status.png" alt="icon">
+                </div>
+    
+                <!-- ایمیل و نام کاربر به صورت span تعریف شده -->
+                <div class="mr-[8px]">
+                    <div class="whitespace-normal">
+                        <span id="span-sidebar-username">الف ب پ ت ث ج چ ح خ د </span>
+                    </div>
+    
+                    <div class="mt-[16px] whitespace-nowrap">
+                        <span id="span-sidebar-email">Bitajhjhjhkbjbj@gmail.com</span>
+                    </div>
+                </div>
+    
+                <!-- منوی همبرگر -->
+                <div class="fixed ml-[16px] mr-[185px]">
+                    <button id="btn-side-hamburger">
+                        <img src="../icons/Frame 1000001439.png" alt="icon">
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!--end of sidebar-->
+
+        <!--right container-->
+        <div class="right-container font-arabic-medium">
+
+            <!-- navigation bar -->
+            <div class="header">
+                <div class="right-header">
+                    <div class="input-div">
+                        <input id="input-searchbar" class="search-bar" type="text" placeholder="اینجا جست و جو کنید...">
+                        <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+                            <button id="btn-serachbar">
+                                <img src="../icons/search-normal.png" alt="Search Icon" class="searchbar-img h-5 w-5">
+                            </button>
+                        </span>
+                    </div>                
+                </div>
+                              
+                <div class="left-header">
+                    <!--
+                    <div>
+                        <button id="btn-chat">
+                            <img class="chat-img" src="../icons/chat.png" alt="icon">
+                            
+                        </button>
+                        
+                    </div> -->
+
+                    <div class="relative inline-block">
+                        <button id="btn-notification">
+                            <img class="notif-img" src="../icons/notification-bell.png" alt="icon">
+                            <img src="../icons/Ellipse 87.png" alt="Notification Dot" class="notification-dot" />
+                        </button>                
+                    </div>
+
+                    <!--
+                    <div class="header-name whitespace-nowrap text-[16px] text-[#495057]">
+                        <span id="span-menu-name">الف ب پ ت ث ج چ </span>
+                    </div> -->
+
+                    <!--
+                    <div>
+                        <button id="btn-dropdown">
+                            <img class="drop-down-img" src="../icons/profile dropdown.png" alt="icon">
+                        </button>
+                    </div> -->
+                </div>
+            </div>
+            <!--end of navigation bar-->
+
+            <!-- navigation bar منوی زیر  -->
+            <div class="flex flex-row gap-[10px] mt-[112px] items-center font-arabic-medium font-semibold pr-[32px]">
+                <button id="btn-home">
+                    <img class="w-[24px] h-[24px] text-[16px]" src="../icons/home-alt (1).png" alt="icon">
+                </button>
+            
+                <img class="w-[18px] h-[18px]" src="../icons/chevron-left (1).png" alt="icon">
+
+                <button id="btn-user-account" class="text-[#B2B9C0] whitespace-nowrap">
+                    حساب کاربری
+                </button>
+
+                <img class="w-[18px] h-[18px]" src="../icons/chevron-left (1).png" alt="icon">
+
+                <button id="btn-personal-info" class="text-[#495057] whitespace-nowrap">
+                    اطلاعات شخصی
+                </button>
+            </div>
+
+            <!-- فرم اطلاعات کاربر -->
+            <div class="flex flex-col w-[1440px] mt-[32px] pr-[32px] font-arabic-medium">        
+                <!-- عکس پروفایل -->
+                <div class="relative inline-block">
+                    <!-- عکس پروفایل -->
+                    <img id="img-profile"
+                        src="../icons/profile.jfif"
+                        class="w-[126px] h-[126px] rounded-full border-[8px] border-[#000B58] z-0 relative"
+                        alt="profile" />
+
+                    <div class="absolute bottom-0 right-0.5 rounded-full">
+                        <button id="btn-camera">
+                            <img src="../icons/Group 33652.png" class="w-40px h-[40px]" alt="icon">
+                        </button>
+                    </div>
+                </div>
+        
+                <!-- اطلاعات کاربر div -->
+                <div class="flex flex-col gap-[16px] h-[302px] mt-[12px]">       
+                    <!-- نام کاربر div -->
+                    <div class="information-container">
+                        <!-- نام -->
+                        <label class="w-[19px] h-[24px] ml-[208px] information-label" for="input-firstname">
+                            نام
+                        </label>
+                        
+                        <!--  نام input -->
+                        <input type="text" id="input-firstname" class="information-input">       
+                    </div>
+        
+                    <!-- نام خانوادگی div -->
+                    <div class="information-container">
+                        <!-- نام خانوادگی -->
+                        <label class="w-[83px] h-[24px] ml-[143px] information-label" for="input-lastname">نام خانوادگی</label>
+        
+                        <!-- نام خانوادگی input -->
+                        <input class="information-input" id="input-lastname">                       
+                    </div>
+        
+                    <!-- شماره موبایل div -->
+                    <div class="information-container">
+                        <!-- شماره تلفن همراه -->
+                        <label class="w-[116px] h-[24px] ml-[110px] information-label" for="input-phone">شماره تلفن همراه </label>
+        
+                        <!-- شماره تلفن همراه  input -->
+                        <input class="information-input" id="input-phone">
+                    </div>
+        
+                    <!-- ایمیل div -->
+                    <div class="information-container">
+                        <!-- ایمیل -->
+                        <label class="w-[37px] h-[24px] ml-[189px] information-label" for="input-email">ایمیل</label>
+        
+                        <!-- ایمیل  input -->
+                        <input class="information-input" id="input-email">
+                    </div>
+        
+                    <!-- تخصص div -->
+                    <div class="information-container">
+                        <!-- تخصص -->
+                        <label class="w-[51px] h-[24px] ml-[175px] information-label" for="select-profession">تخصص</label>
+
+                        <!-- تخصص  select -->
+                        <select class="w-[320px] h-[40px] pl-[8px] pr-[8px] font-light text-[#000B58] text-[16px] bg-[#F8F9FA] border-[1.5px] rounded-[5px] border-[#BBC1C7]" name="professions" id="select-profession">
+                            <option value="انتخاب کنید">انتخاب کنید</option>
+                            <option value="مدیر شرکت">مدیر شرکت</option>
+                            <option value="مدیر پروژه">مدیر پروژه</option>
+                            <option value="مدیر فرانت">مدیر فرانت</option>
+                            <option value="مدیر بک">مدیر بک</option>
+                            <option value="مدیر تحلیل">مدیر تحلیل</option>
+                            <option value="مدیر تست">مدیر تست</option>
+                            <option value="فرانت اند دولوپر">فرانت اند دولوپر</option>
+                            <option value="UI/UX">UI/UX</option>
+                            <option  value="بک اند دولوپر">بک اند دولوپر</option>
+                            <option value="deploy">deploy</option>
+                            <option value="تحلیلگر">تحلیلگر</option>
+                            <option value="مدیر تست">مدیر تست</option>
+                            <option value="تستر">تستر</option>
+                        </select>        
+                    </div>
+        
+                    <!-- توضیحات div -->
+                    <div class="information-container">
+
+                        <!-- توضیحات -->
+                        <label class="information-label w-[65px] h-[24px] ml-[161px] pb-[140px] block" for="input-explaining">توضیحات</label>
+
+                        <textarea class="explanations-textarea" id="textarea-explaining" type="text" rows="5"></textarea>
+                    </div>
+                </div>
+                <div class="flex items-center justify-end flex-row gap-2 font-arabic-medium mt-[200px] pl-[100px]">
+                    <button class="bg-[#FFFFFF] text-[#000B58] w-[120px] h-[40px] rounded-[5px] border-[2px] border-[#000B58] text-[16px] whitespace-nowrap" id="btn-withdraw">انصراف</button>
+                    <button class="bg-[#000B58] text-[#F8F9FA] w-[120px] h-[40px] rounded-[5px] border-[2px] text-[14px] border-none whitespace-nowrap" id="btn-record-changes">ثبت تغییرات</button>
+                </div>   
+            </div>    
+                  
+        </div>
+    </div>
+</body>
+</html>
