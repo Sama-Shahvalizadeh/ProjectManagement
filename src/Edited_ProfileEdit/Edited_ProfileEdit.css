@@ -21,7 +21,7 @@
 
 .information-label{
     font-size: 16px;
-    font-weight: bold;
+    font-weight: 700;
     color: #495057;
     white-space: nowrap;
 }
@@ -31,7 +31,7 @@
     height: 40px;
     padding: 0 8px ;
     font-size: 16px;
-    font-weight: 300px;
+    font-weight: 300;
     color: #000B58;
     background-color:#F8F9FA ;
     border-radius: 5px;
@@ -45,7 +45,7 @@
     padding-right: 15px;
     padding-top: 8.5px;
     font-size: 16px;
-    font-weight: 300px;
+    font-weight: 300;
     background-color:#F8F9FA ;
     border-width: 1.5px;
     border-radius: 5px;
