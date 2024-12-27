@@ -1,197 +1,195 @@
+import React from "react";
+import { Helmet } from 'react-helmet';
 
-import React from 'react';
 import styles from './ProfileEdit.module.css';
-import projectNegar from "./icons/projectNegar.png";
-import frame from "./icons/Frame 1000001430.png";
-import projects from "./icons/projects.png";
-import tasks from "./icons/tasks.png";
-import users from "./icons/users.png";
-import report from "./icons/report.png";
-import calendar from "./icons/calendar.png";
-import userImg from "./icons/0df984f5b0ca214b6596dd91ef682411.jfif";
-import status from "./icons/status.png";
-import hamburger_icon from "./icons/Frame 1000001439.png";
-import search from "./icons/search-normal.png";
-import btn1 from "./icons/Group 33651.png";
-import btn2 from "./icons/Group 33652.png"
-import profile from "./icons/profile dropdown.png";
-import chat from "./icons/chat.png";
-import home from "./icons/home-alt (1).png";
-import left from "./icons/chevron-left (1).png";
+import outputStyles from './output.module.css';
 
-export default function ProfileEdit ()  {
-  return (    <>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  
-      <link rel="stylesheet" href="./output.css"/>
-  
-      <div className={styles.container} style={{ direction: 'rtl' }}>
-      {/* منوی سمت راست */}
-      <div className={styles.sidebar}>
-        <h2 className={styles.sidebar_header}>
-          <img src={projectNegar} alt="Section Icon" className={styles.sidebar_icon} />
-          پروژه نگار
-        </h2>
-        <ul className={styles.sidebar_list}>
-          <li className={styles.sidebar_dashboard}><img src={frame} alt="Dashboard" className={styles.sidebar_dashboard_icon} />داشبورد</li>
-          <li className={styles.sidebar_projects}><img src={projects} alt="Projects" className={styles.sidebar_item_icon} />پروژه ها</li>
-          <li className={styles.sidebar_item}><img src={tasks} alt="Tasks" className={styles.sidebar_item_icon} />وظایف</li>
-          <li className={styles.sidebar_item}><img src={users} alt="Users" className={styles.sidebar_item_icon} />کاربران</li>
-          <li className={styles.sidebar_item}><img src={report} alt="Reports" className={styles.sidebar_item_icon} />گزارش</li>
-          <li className={styles.sidebar_item}><img src={calendar} alt="Calendar" className={styles.sidebar_item_icon} />تقویم</li>
-        </ul>
+import profile from "../../icons/profile.jfif";
+import home_alt from "../../icons/home-alt (1).png";
+import chevort_left from "../../icons/chevron-left (1).png";
+import btn_camera from "../../icons/Group 33652.png";
+
+import Sidebar from '../Header and Sidebar/Sidebar'
+import Header from '../Header and Sidebar/Header'
 
 
-        <div className={styles.sidebar_card}>
-          <div className={styles.profile_image_wrapper}>
-            <img src={userImg} className={styles.profile_image} alt="icon" />
-            <div className={styles.status_icon_wrapper}><img src={status} alt="status" className={styles.status_icon} /></div>
-          </div>
-          <div className={styles.user_info}>
-            <span>بیتا جوان</span>
-            <span>Bitaj@gmail.com</span>
-          </div>
-          <button className={styles.menu_button}><img src={hamburger_icon} alt="menu" /></button>
-        </div>
-      </div>
+export default function ProfileEdit() {
 
-      {/* navigation bar بالای صفحه */}
-      <nav className={styles.navbar} style={{position:'fixed', top:0, zIndex: 1000}}>
-        <div className={styles.search_wrapper}>
-          <button className={styles.search_button}><img src={search}className={styles.search_icon} alt="search" /></button>
-          <input type="text" placeholder="اینجا جست و جو کنید...." className={styles.search_input} />
-        </div>
+  // دکمه انصراف
+  const handleCancel = (event) =>{
+        event.preventDefault();
+        window.location.href = 'profileview'
+  }
 
-        {/* <!-- کد مربوط به آیکونهای سمت راست برنامه --> */}
-        <div className={styles.navbar_icons_wrapper}>
-          <button className={styles.btn_style}><img src={btn1} alt="Icon" className={styles.btn1} /></button>
-          <button className={styles.btn_style}><img src={chat} alt="Chat" className={styles.chat} /></button>
-          <button><img src={profile} alt="Dropdown" className={styles.navbar_dropdown_icon} /></button>
-        </div>
-      </nav>
+  // دکمه ثبت تغییرات
+  const handleRegister = (event) =>{
 
-      {/* محتوای اصلی برنامه */}
-      <div className={styles.main_content}>
-        <div className={styles.breadcrumbs}>
-         
-          <button>
-                <img class={styles.breadcrumbs_icon} src={home} alt="icon"/>
-          </button>
+}
 
-          <img class={styles.breadcrumbs_separator} src={left} alt="icon"/>
 
-          <button className={styles.breadcrumbs_inactive}>
-            حساب کاربری
-          </button>
+  return (
+    <>
+      <Helmet>
+        <title>ویرایش پروفایل</title>
+        {/* <link rel="stylesheet" href="Edited_ProfileView.css" />
+        <link rel="stylesheet" href="header.css" />
+        <link rel="stylesheet" href="sidebar.css" /> */}
+        <style>
+          {`
+            body {
+              direction: rtl;
+              margin: 0;
+              padding-bottom: 30px;
+            }
+          `}
+        </style>
+      </Helmet>
 
-          <img class={styles.breadcrumbs_separator} src={left} alt="icon"/>
+      <div className={styles.antialiased}>
+        <div class={styles.main_container}>
 
-          <button className={styles.breadcrumbs_active}>
-            اطلاعات شخصی
-          </button>
-        </div>
+          {/* <!--sidebar--> */}
+          <Sidebar />
+          {/* <!--end of sidebar--> */}
 
-        <div className={styles.profile_form}>
-        {/* <!-- عکس پروفایل --> */}
-          <div className={styles.profile_image_edit_wrapper}>
+          {/* <!--right container--> */}
+          <div class={`${styles.right_container} ${outputStyles.font_arabic_medium}`}>
 
-            {/* <!-- عکس پروفایل --> */}
-            <img
-              src={userImg}
-              className={styles.editable_profile_image}
-              alt="profile" />
+            {/* <!-- navigation bar --> */}
+            <Header />
+            {/* <!--end of navigation bar--> */}
 
-              <div className={styles.edit_image_button}>
-                <button>
-                  <img src={btn2} className={styles.edit_image_icon} alt="icon"/>
+            {/* <!-- navigation bar منوی زیر  --> */}
+            <div class={`flex flex-row gap-[10px] mt-[112px] items-center font-arabic-medium font-semibold pr-[32px]`}>
+              <button id="btn-home">
+                <img class={`w-[24px] h-[24px] text-[16px]`} src={home_alt} alt="icon" />
+              </button>
+
+              <img class={`w-[18px] h-[18px]`} src={chevort_left} alt="icon" />
+
+              <button id="btn-user-account" class={`text-[#B2B9C0] whitespace-nowrap`}>
+                حساب کاربری
+              </button>
+
+              <img class={`w-[18px] h-[18px]`} src={chevort_left} alt="icon" />
+
+              <button id="btn-personal-info" class={`text-[#495057] whitespace-nowrap`}>
+                اطلاعات شخصی
+              </button>
+            </div>
+
+            {/* <!-- فرم اطلاعات کاربر --> */}
+            <div class={`flex flex-col w-[1440px] mt-[32px] pr-[32px] font-arabic-medium`}>
+              {/* <!-- عکس پروفایل --> */}
+              <div class={`relative inline-block`}>
+                {/* <!-- عکس پروفایل --> */}
+                <img id="img-profile"
+                  src={profile}
+                  class={`w-[126px] h-[126px] rounded-full border-[8px] border-[#000B58] z-0 relative`}
+                  alt="profile" />
+
+                <div class={`absolute bottom-0 right-0.5 rounded-full`}>
+                  <button id="btn-camera">
+                    <img src={btn_camera} class={`w-40px h-[40px]`} alt="icon"/>
+                  </button>
+                </div>
+              </div>
+
+              {/* <!-- اطلاعات کاربر div --> */}
+              <div class={`flex flex-col gap-[16px] h-[302px] mt-[12px]`}>
+                {/* <!-- نام کاربر div --> */}
+                <div class={styles.information_container}>
+                  {/* <!-- نام --> */}
+                  <label class={`w-[19px] h-[24px] ml-[208px] information-label`} for="input-firstname">
+                    نام
+                  </label>
+
+                  {/* <!--  نام input --> */}
+                  <input type="text" id="input-firstname" class={styles.information_input}/>
+                </div>
+
+                {/* <!-- نام خانوادگی div --> */}
+                <div class={styles.information_container}>
+                  {/* <!-- نام خانوادگی --> */}
+                  <label class={`w-[83px] h-[24px] ml-[143px] ${styles.information_label}`} for="input-lastname">نام خانوادگی</label>
+
+                  {/* <!-- نام خانوادگی input --> */}
+                  <input class={styles.information_input} id="input-lastname"/>
+                </div>
+
+                {/* <!-- شماره موبایل div --> */}
+                <div class={styles.information_container}>
+                  {/* <!-- شماره تلفن همراه --> */}
+                  <label class={`w-[116px] h-[24px] ml-[110px] ${styles.information_label}`} for="input-phone">شماره تلفن همراه </label>
+
+                  {/* <!-- شماره تلفن همراه  input --> */}
+                  <input class={styles.information_input} id="input-phone"/>
+                </div>
+
+                {/* <!-- ایمیل div --> */}
+                <div class={styles.information_container}>
+                  {/* <!-- ایمیل --> */}
+                  <label class={`w-[37px] h-[24px] ml-[189px] ${styles.information_label}`} for="input-email">ایمیل</label>
+
+                  {/* <!-- ایمیل  input --> */}
+                  <input class={styles.information_input} id="input-email"/>
+                </div>
+
+                {/* <!-- تخصص div --> */}
+                <div class={styles.information_container}>
+                  {/* <!-- تخصص --> */}
+                  <label class={`w-[51px] h-[24px] ml-[175px] ${styles.information_label}`} for="select-profession">تخصص</label>
+
+                  {/* <!-- تخصص  select --> */}
+                  <select class={`w-[320px] h-[40px] pl-[8px] pr-[8px] font-light text-[#000B58] text-[16px] bg-[#F8F9FA] border-[1.5px] rounded-[5px] border-[#BBC1C7]`} name="professions" id="select-profession">
+                    <option value="انتخاب کنید">انتخاب کنید</option>
+                    <option value="مدیر شرکت">مدیر شرکت</option>
+                    <option value="مدیر پروژه">مدیر پروژه</option>
+                    <option value="مدیر فرانت">مدیر فرانت</option>
+                    <option value="مدیر بک">مدیر بک</option>
+                    <option value="مدیر تحلیل">مدیر تحلیل</option>
+                    <option value="مدیر تست">مدیر تست</option>
+                    <option value="فرانت اند دولوپر">فرانت اند دولوپر</option>
+                    <option value="UI/UX">UI/UX</option>
+                    <option value="بک اند دولوپر">بک اند دولوپر</option>
+                    <option value="deploy">deploy</option>
+                    <option value="تحلیلگر">تحلیلگر</option>
+                    <option value="مدیر تست">مدیر تست</option>
+                    <option value="تستر">تستر</option>
+                  </select>
+                </div>
+
+                {/* <!-- توضیحات div --> */}
+                <div class={styles.information_container}>
+
+                  {/* <!-- توضیحات --> */}
+                  <label class={`${styles.information_label} w-[65px] h-[24px] ml-[161px] pb-[140px] block`} for="input-explaining">توضیحات</label>
+
+                  <textarea class={styles.explanations_textarea} id="textarea-explaining" type="text" rows="5"></textarea>
+                </div>
+              </div>
+              <div class={`flex items-center justify-end flex-row gap-2 font-arabic-medium mt-[200px] pl-[100px]`}>
+                <button 
+                 class={`bg-[#FFFFFF] text-[#000B58] w-[120px] h-[40px] rounded-[5px] border-[2px] border-[#000B58] text-[16px] whitespace-nowrap`}
+                 id="btn-withdraw"
+                 onClick={handleCancel}
+                 >
+                  انصراف
+                </button>
+                <button 
+                class={`bg-[#000B58] text-[#F8F9FA] w-[120px] h-[40px] rounded-[5px] border-[2px] text-[14px] border-none whitespace-nowrap`} 
+                id="btn-record-changes"
+                onClick={handleRegister}
+                >
+                  ثبت تغییرات
                 </button>
               </div>
-
-          </div>
-
-          {/* <!-- اطلاعات کاربر div --> */}
-          <div className={styles.profile_form_fields}>
-
-          {/* <!-- نام کاربر div --> */}
-            <div className={styles.form_field_row}>
-
-            {/* <!-- نام --> */}
-              <label className={styles.form_label} for="first-name">
-                نام
-              </label>
-
-              {/* <!--  نام input --> */}
-              <input type="text" id="first-name" className={styles.form_input} />
-
             </div>
 
-          {/* <!-- نام خانوادگی div --> */}
-            <div className={styles.form_field_row}>
-
-              {/* <!-- نام خانوادگی --> */}
-              <label class={styles.last_name_label} for="last-name">نام خانوادگی</label>
-    
-              {/* <!-- نام خانوادگی input --> */}
-              <input class={styles.form_input} id="last-name"/>
-                      
-            </div>
-    
-            {/* <!-- شماره موبایل div --> */}
-            <div className={styles.form_field_row}>
-
-              {/* <!-- شماره تلفن همراه --> */}
-              <label class={styles.phone_label} for="phone-number">شماره تلفن همراه </label>
-    
-              {/* <!-- شماره تلفن همراه  input --> */}
-              <input class={styles.form_input} id="phone-number"/>
-            </div>
-    
-            {/* <!-- ایمیل div --> */}
-            <div className={styles.form_field_row}>
-
-              {/* <!-- ایمیل --> */}
-              <label class={styles.email_label} for="email-address">ایمیل</label>
-    
-              {/* <!-- ایمیل  input --> */}
-              <input class={styles.form_input} id="email-address"/>
-            </div>
-    
-
-              {/* <!-- تخصص div --> */}
-              <div className={styles.form_field_row}>
-
-                {/* <!-- تخصص --> */}
-                <label class={styles.expert_label} for="profession">تخصص</label>
-
-                {/* <!-- تخصص  select --> */}
-                <select class={styles.expert_select} name="professions" id="profession">
-                  <option>انتخاب کنید</option>
-                  <option>تخصص1</option>
-                  <option>تخصص2</option>
-                </select>
-    
-              </div>
-    
-              {/* <!-- توضیحات div --> */}
-              <div className={styles.form_field_row}>
-
-                {/* <!-- توضیحات --> */}
-                 <label class={styles.explain_label} for="explaining">توضیحات</label>
-
-                 <textarea class={styles.explain_textaera} id="explaining" type="text" rows="5" style={{textَlign: 'right'}}></textarea>
-              </div>
-
-          </div>
-
-          <div className={styles.form_buttons_wrapper}>
-            <button className={styles.cancel_button}>انصراف</button>
-            <button className={styles.submit_button}>ثبت تغییرات</button>
           </div>
         </div>
       </div>
-    </div>
+
     </>
-  );
-};
-
-
+  )
+}

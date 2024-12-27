@@ -1,0 +1,79 @@
+.sidebar{
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 240px;
+  max-height: 100vh;
+  min-height: 100vh;
+  background-color:#F8F9FA;
+  border-left: #B2B9C0;
+  border-left-width: 1px;
+  border-style: solid;
+  z-index: 10;
+  white-space: nowrap;
+}
+
+.sidebar_header{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-right: 29px;
+  margin-top: 52px;
+  font-size: 24px;
+  color: #000B58;
+}
+
+.sidebar_header_icon{
+  width: 30px;
+  height: 30px;
+  margin-left: 16px;
+}
+
+.sidebar_list{
+  margin-top: 40px;
+}
+
+.sidebar_item{
+  height: 60px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.sidebar_icon{
+  width: 20px;
+  height: 20px;
+  margin-left: 16px;
+  margin-right: 36px;
+}
+
+.sidebar_text{
+  font-size: 16px;
+  color: #495057;
+}
+
+.sidebar_item:hover{
+  background-color: #000B58;
+  border-radius: 8px;  
+}
+
+.sidebar_item:hover .sidebar_text{
+  color: white;
+}
+
+.sidebar_item:hover .sidebar_icon {
+  filter: brightness(0) invert(1); /* Change icon to white */
+}
+
+.profile_card{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #000B58;
+  border-radius: 5px;
+  color:#FFFFFF ;
+  font-size: 10px;
+  width: 205px;
+  height: 90px;
+}
