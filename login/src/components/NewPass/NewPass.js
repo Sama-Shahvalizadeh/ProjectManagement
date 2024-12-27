@@ -16,6 +16,10 @@ export default function NewPass() {
     const handleSubmit = (event) => {
         event.preventDefault();
 
+        // Reset errors
+        setErrors({ newPassword: '', confirmPassword: '', general: '' });
+        setIsPasswordMismatch(false);
+
         let valid = true;
         const newErrors = { newPassword: '', confirmPassword: '', general: '' };
 
@@ -44,6 +48,7 @@ export default function NewPass() {
             window.location.href = 'successpass'; // ریدایرکت فقط زمانی که همه شرایط برآورده شده باشند
         }
     };
+    
 
     return (
         <div className={styles.div_frame1}>
