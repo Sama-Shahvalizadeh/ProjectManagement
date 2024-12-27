@@ -1,4 +1,3 @@
-// api.js
 import apiClient from './apiClient';
 
 /**

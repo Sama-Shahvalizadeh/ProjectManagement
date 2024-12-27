@@ -1,4 +1,3 @@
-// ProfileViewIPA.js
 import apiClient from './apiClient';
 
 /**
