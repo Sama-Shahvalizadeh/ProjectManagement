@@ -54,14 +54,7 @@
     font-family: 'ArabicDisplayUltraLight';
   }
 }
-@font-face {
-  font-family: 'Saba'; 
-  src: url('../../Fonts/Saba-[@i_font].ttf') format('truetype'); 
-}
-@font-face {
-  font-family: 'W_hosseini'; 
-  src: url('../../Fonts/ArabicUIDisplayThin.otf') format('opentype');
-}
+
 .body {
   margin: 0;
   padding: 0;
@@ -142,6 +135,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  font-family: 'ArabicDisplayMedium';
 }
 
 .form_label {
@@ -150,11 +144,11 @@
 
 .form_input,
 .form_select {
-  @apply w-[400px] h-[40px] pl-[10px] pr-[10px] bg-[#F8F9FA] border-[2px] border-[#BBC1C7] rounded-[5px] text-[#1B02B7] text-[16px];
+  @apply w-[400px] h-[40px] pl-[10px] pr-[10px] bg-[#F8F9FA] border-[2px] mb-[8px] border-[#BBC1C7] rounded-[5px] text-[#1B02B7] text-[16px];
 }
 
 .form_input_password {
-  @apply w-[400px] h-[40px] pl-[30px] pr-[10px] bg-[#F8F9FA] border-[2px] border-[#BBC1C7] rounded-[5px] text-[#1B02B7] text-[16px];
+  @apply w-[400px] h-[40px] pl-[30px] pr-[10px] bg-[#F8F9FA] border-[2px] mb-[8px] border-[#BBC1C7] rounded-[5px] text-[#1B02B7] text-[16px] relative z-0;
 }
 
 .relative_position {
@@ -167,6 +161,7 @@
   top: 50%; /* Center vertically */
   transform: translateY(-50%);
   cursor: pointer;
+  z-index: 2;
 }
 
 .submit_button {
@@ -216,4 +211,45 @@
 .error_message {
   font-size: 14px;
   margin: 0;
+}
+
+@media (max-width: 768px) {
+  .main_container { 
+      grid-template-columns: 1fr; /* Stacks columns vertically */
+  } 
+  
+  .sign_form, .left-side {
+      width: 100%;
+  } 
+  
+  .left_side {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .div_welcome {
+      padding-right: 20px; /* Adjust padding as needed */ 
+  }
+
+  .left_side { 
+      font-size: 50px; /* Adjust font size for smaller screens */ line-height: 80px; 
+  } 
+  
+  .form_header_title {
+       font-size: 22px; /* Adjust font size for smaller screens */ line-height: 40px;
+      }
+}
+
+@media (max-width: 480px) { 
+  .label_remember_me, .para_forgot_password {
+      font-size: 12px; /* Adjust font size for very small screens */
+  } 
+   
+   .para_title {
+      font-size: 40px; /* Adjust font size for smaller screens */ line-height: 60px;
+  } 
+  
+  .para_enter_account { 
+      font-size: 18px; /* Adjust font size for smaller screens */ line-height: 30px;
+  }
 }
