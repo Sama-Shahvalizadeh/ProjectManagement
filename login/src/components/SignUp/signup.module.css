@@ -144,11 +144,11 @@
 
 .form_input,
 .form_select {
-  @apply w-[400px] h-[40px] pl-[10px] pr-[10px] bg-[#F8F9FA] border-[2px] mb-[8px] border-[#BBC1C7] rounded-[5px] text-[#1B02B7] text-[16px];
+  @apply w-[400px] h-[40px] pl-[10px] pr-[10px] bg-[#F8F9FA] border-[2px] mb-[8px] border-[#BBC1C7] rounded-[5px] text-[#1B02B7] text-[16px] font-arabic-medium;
 }
 
 .form_input_password {
-  @apply w-[400px] h-[40px] pl-[30px] pr-[10px] bg-[#F8F9FA] border-[2px] mb-[8px] border-[#BBC1C7] rounded-[5px] text-[#1B02B7] text-[16px] relative z-0;
+  @apply w-[400px] h-[40px] pl-[30px] pr-[10px] bg-[#F8F9FA] border-[2px] mb-[8px] border-[#BBC1C7] rounded-[5px] text-[#1B02B7] text-[16px] relative z-0 font-arabic-medium;
 }
 
 .relative_position {

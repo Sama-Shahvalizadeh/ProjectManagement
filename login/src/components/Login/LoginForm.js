@@ -9,34 +9,16 @@ export default function LoginForm() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [errors, setErrors] = useState({ username: '', password: '', general: '' });
-    const [isForgotPassword, setIsForgotPassword] = useState(false);
-    const [isVerificationPage, setIsVerificationPage] = useState(false); // حالت صفحه وارد کردن کد
-    const [timer, setTimer] = useState(240); // 4 دقیقه
-    const [verificationError, setVerificationError] = useState(false); // خطای کد تایید
-
-
     const [passwordVisible, setPasswordVisible] = useState(false);
 
     const togglePasswordVisibility = () => {
         setPasswordVisible((prevState) => !prevState);
     };
-    useEffect(() => {
-        let interval;
-        if (isVerificationPage && timer > 0) {
-            interval = setInterval(() => {
-                setTimer((prevTimer) => prevTimer - 1);
-            }, 1000);
-        }
-        return () => clearInterval(interval);
-    }, [isVerificationPage, timer]);
-
+    
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        if (isForgotPassword) {
-            setIsVerificationPage(true); // تغییر به صفحه کد تایید
-            return;
-        }
+        
 
         let valid = true;
         const newErrors = { username: '', password: '', general: '' };
