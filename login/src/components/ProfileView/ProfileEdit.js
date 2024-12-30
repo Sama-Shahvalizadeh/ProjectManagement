@@ -26,6 +26,14 @@ export default function ProfileEdit() {
 
 }
 
+  // دکمه انتخاب عکس جدید
+  const handleSelectImage = (event) =>{
+    const fileInput = document.createElement("input");
+    fileInput.type = "file";
+    fileInput.accept = "image/*"; // فقط فایل‌های تصویری
+    fileInput.click(); // فایل منیجر رو باز می‌کنه
+  }
+
 
   return (
     <>
@@ -89,7 +97,7 @@ export default function ProfileEdit() {
                   alt="profile" />
 
                 <div class={`absolute bottom-0 right-0.5 rounded-full`}>
-                  <button id="btn-camera">
+                  <button id="btn-camera" onClick={handleSelectImage}>
                     <img src={btn_camera} class={`w-40px h-[40px]`} alt="icon"/>
                   </button>
                 </div>
