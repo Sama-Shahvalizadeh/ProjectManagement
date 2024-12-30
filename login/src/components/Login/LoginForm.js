@@ -107,16 +107,18 @@ export default function LoginForm() {
                 </div>
 
                 <p className={styles.para_password}>رمز عبور</p>
-                <div className={styles.relative_position}>
-                    <span className={styles.eye_icon} onClick={togglePasswordVisibility}>
-                        <img src={eye} alt="Toggle Password Visibility" width="20" height="20" />
-                    </span>
-                    <input
-                        className={`${styles.input_password} ${errors.password ? styles.input_error : ''}`}
-                        type={passwordVisible ? 'text' : 'password'}
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                    />
+                <div className={styles.input_wrapper}>
+                    <div className={styles.relative_position}>
+                        <span className={styles.eye_icon} onClick={togglePasswordVisibility}>
+                            <img src={eye} alt="Toggle Password Visibility" width="20" height="20" />
+                        </span>
+                        <input
+                            className={`${styles.input_password} ${errors.password ? styles.input_error : ''}`}
+                            type={passwordVisible ? 'text' : 'password'}
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                        />
+                    </div>
                     {errors.password && (
                         <div className={styles.error_container}>
                             <i className="fas fa-exclamation-triangle icon-warning"></i>
