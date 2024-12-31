@@ -1,0 +1,18 @@
+#table-phase .header-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#table-phase td:not(:last-child):not(:first-child){
+    text-align: center;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    padding: 19px 8px 19px 8px;
+}
+
+#table-phase .priority{
+    font-family: Arial;
+}
+

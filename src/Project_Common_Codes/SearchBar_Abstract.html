@@ -1,0 +1,38 @@
+<!-- div شامل سرچ بار و باتن افزودن -->
+<div class="flex flex-row h-[72px] py-[16px] items-center justify-between">
+
+    <!-- div سرچ بار -->
+    <div class="relative">
+        <input class="w-[320px] h-[40px] border-[#B2B9C0] border-[2px] pr-[56px] rounded-[8px] bg-[#F8F9FA] placeholder-[#495057]" type="text" placeholder="اینجا جست و جو کنید...">
+        <span class="absolute inset-y-0 right-[16px] flex items-center">
+            <button>
+                <img src="../icons/search-normal.png" alt="Search Icon" class="h-[18px] w-[18px]">
+            </button>
+        </span>
+        <!-- add button -->
+        <button class="w-[120px] h-[32px] mr-[16px] bg-[#000B58] rounded-[5px] text-[#F8F9FA] text-[16px]">
+            + جدید
+        </button>
+    <!---->
+    </div>  
+    <!---->
+
+    <!-- منوی سه نقطه و دکمه ها div -->
+    <div class="menu-container">
+
+        <!-- دکمه سه نقطه  -->
+        <button class="three-dotsPhase"onclick="toggleMenuTablePhase()">
+            ...
+        </button>
+
+        <div class="dropdown-menuTablePhase" id="dropdownMenuTablePhase">
+            <ul>
+                <li>خروجی گرفتن به فرمت <span>word</span></li>
+                <li>خروجی گرفتن به فرمت <span>PDF</span></li>
+                <li>خروجی گرفتن به فرمت <span>DB</span></li>
+                <li>حذف ردیف های انتخاب شده</li>
+            </ul>
+        </div>                
+    </div>           
+</div>
+<!-- div پایان شامل سرچ بار و باتن افزودن -->

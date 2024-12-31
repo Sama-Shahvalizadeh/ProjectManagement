@@ -1,0 +1,125 @@
+.sidebar{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 240px;
+    height: 100vh;
+    background-color:#F8F9FA;
+    border-left:1px solid #B2B9C0;
+    z-index: 10;
+    padding-bottom: 30px;
+}
+
+.sidebar span{
+    white-space: nowrap;
+}
+
+.sidebar-header{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-right: 29px;
+    margin-top: 52px;
+    font-size: 24px;
+    color: #000B58;
+}
+
+.sidebar-header-icon{
+    width: 30px;
+    height: 30px;
+    margin-left: 16px;
+}
+
+.sidebar-list{
+    margin-top: 40px;
+}
+
+.sidebar-item{
+    height: 60px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.sidebar-icon{
+    width: 20px;
+    height: 20px;
+    margin-left: 16px;
+    margin-right: 36px;
+}
+
+.sidebar-text{
+    font-size: 16px;
+    color: #495057;
+}
+
+.sidebar-item:hover{
+    background-color: #000B58;
+    border-radius: 8px;
+}
+
+.sidebar-item:hover .sidebar-text{
+    color: white;
+}
+
+.sidebar-item:hover .sidebar-icon {
+    filter: brightness(0) invert(1); /* Change icon to white */
+}
+
+.profile-card{
+    width: 205px;
+    height: 90px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #000B58;
+    border-radius: 5px;
+    color:#FFFFFF ;
+    font-size: 10px;
+    gap: 15px;
+}
+
+.sidebar-profile-container, .down-menu-container{
+    position: relative;
+    display: inline-block;
+}
+
+.sidebar-userinfo-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.down-dropdown-menu{
+    width: 180px;
+    display: none; 
+    position: absolute; 
+    top: 10px; 
+    left: 16px; 
+    background: #FFFFFF; 
+    border: 2px solid #E2E5E9;
+    border-radius: 8px;
+    z-index: 1000;
+}
+
+.down-dropdown-menu ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.down-dropdown-menu li{
+    padding: 12px 12px 12px 0px;
+    font-weight: normal;
+    font-size: 14px;
+    cursor: pointer;
+    color: #495057;
+    text-align: start;
+}
+
+.down-dropdown-menu li:hover{
+    background-color: #f0f0f0;
+}

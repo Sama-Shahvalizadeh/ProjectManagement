@@ -1,0 +1,358 @@
+<div class="flex flex-col w-[1168px] mt-[32px] mr-[32px] px-[32px] pb-[16px] pt-[32px] border-[#B2B9C0] border-[1px] rounded-[16px] font-arabic-medium">
+
+    <!-- فاز div -->
+    <div class="flex items-center">
+                                
+        <img src="../icons/maximise-frame.png"  class="h-[40px] w-[40px] ml-[16px]">
+        
+        <h2 class="text-[24px] text-[#495057] font-arabic-bold whitespace-nowrap">
+            فازها
+        </h2>
+    </div>
+    <!---->
+
+    <!-- div محتوای اصلی شامل جدول و سرچ بار -->
+    <div class="w-[1104px] mt-[32px] pb-[16px] px-[16px] border-[1px] border-[#E2E5E9] rounded-[16px]">
+
+        <!-- div شامل سرچ بار و باتن افزودن -->
+        کد earchbar-abstract اینجا قرار میگیرد.
+        <!-- div پایان شامل سرچ بار و باتن افزودن -->
+
+        <!-- شروع جدول فاز -->
+        <table class="w-[1072px] border-collapse font-arabic-medium mb-[20px]" id="table-phase">
+            <!-- شروع هدر جدول -->
+            <thead>
+                <tr>
+                    <th class="w-[104px]">
+                        <div class="header-row-container">
+                            <label class="checkbox">  
+                                <input type="checkbox" class="hidden-checkbox">
+                                <span class="checkmark"></span>
+                                ردیف
+                            </label>  
+                        </div>
+                    </th>
+                    <th class="w-[160px]">
+                        <div class="header-container">
+                            <img src="../icons/aperture.png" alt="h-title-icon">
+                            <label>عنوان فاز</label>
+                        </div>
+                    </th>
+                    <th class="w-[240px]">
+                        <div class="header-container">
+                            <img src="../icons/calendar (1).png" alt="h-time-icon">
+                            <label>زمان پیش بینی شده</label>
+                        </div>
+                    </th>
+                    <th class="w-[160px]">
+                        <div class="header-container">
+                            <img src="../icons/calendar (1).png" alt="h-start-icon">
+                            <label>زمان آغاز</label>
+                        </div>
+                    </th>
+                    <th class="w-[160px]">
+                        <div class="header-container">
+                            <img src="../icons/calendar (1).png" alt="h-end-icon">
+                            <label>زمان پایان</label>
+                        </div>
+                    </th>
+                    <th class="w-[160px]">
+                        <div class="header-container">
+                            <img src="../icons/calendar (1).png" alt="h-priority-icon">
+                            <label>اولویت</label>
+                        </div>
+                    </th>
+                    <th class="w-[78px]">
+                        <div class="header-container">
+                            عملیات
+                        </div>
+                    </th>
+                </tr>
+            </thead>
+            <!-- پایان هدر -->
+
+            <!-- شروع body -->
+            <tbody>
+
+                <!-- سطر اول -->
+                <tr>
+                    <td>
+                        <div class="checkbox-container">
+                            <label class="checkbox" style="font-family: Arial;">  
+                                <input type="checkbox" class="hidden-checkbox">
+                                <span class="checkmark"></span>
+                                1
+                            </label>  
+                        </div>
+                    </td>
+                    <td>
+                        <span>پایه</span>
+                    </td>
+                    <td>
+                        <span>18 فروردین، 1403</span>
+                    </td>
+                    <td>
+                        <span>18 اردیبهشت، 1403</span>   
+                    </td>
+                    <td>
+                        <span>18 شهریور، 1403</span>
+                    </td>
+                    <td>
+                        <span class="priority">1</span>
+                    </td>
+                    <td>
+                        <!-- منوی سه نقطه و دکمه ها div -->
+                        <div class="menu-container">
+                            <!-- دکمه سه نقطه  -->
+                            <button class="three-dotsPhase"onclick="toggleMenuRowPhase()">
+                                ...
+                            </button>
+
+                            <div class="dropdown-menuRowPhase" id="dropdownMenuRowPhase">
+                                <ul>
+                                    <li>ویرایش</li>
+                                    <li>حذف</li>
+                                    <li>شروع</li>
+                                    <li>خاتمه</li>
+                                </ul>
+                            </div>                
+                        </div> 
+                    </td>
+                </tr>
+                
+                <!-- سطر دوم -->
+                <tr>
+                    <td>
+                        <div class="checkbox-container">
+                            <label class="checkbox" style="font-family: Arial;">  
+                                <input type="checkbox" class="hidden-checkbox">
+                                <span class="checkmark"></span>
+                                2
+                            </label>  
+                        </div>
+                    </td>
+                    <td>
+                        <span>عملکردی</span>
+                    </td>
+                    <td>
+                        <span>18 خرداد، 1403</span>
+                    </td>
+                    <td>
+                        <span>18 خرداد، 1403</span>   
+                    </td>
+                    <td>
+                        <span>18 خرداد، 1403</span>
+                    </td>
+                    <td>
+                        <span class="priority">2</span>
+                    </td>
+                    <td>
+                        <!-- منوی سه نقطه و دکمه ها div -->
+                        <div class="menu-container">
+                            <!-- دکمه سه نقطه  -->
+                            <button class="three-dotsPhase"onclick="toggleMenuRowPhase()">
+                                ...
+                            </button>
+
+                            <div class="dropdown-menuRowPhase" id="dropdownMenuRowPhase">
+                                <ul>
+                                    <li>ویرایش</li>
+                                    <li>حذف</li>
+                                    <li>شروع</li>
+                                    <li>خاتمه</li>
+                                </ul>
+                            </div>                
+                        </div> 
+                    </td>
+                </tr>
+
+                <!-- سطر سوم -->
+                <tr>
+                    <td>
+                        <div class="checkbox-container">
+                            <label class="checkbox" style="font-family: Arial;">  
+                                <input type="checkbox" class="hidden-checkbox">
+                                <span class="checkmark"></span>
+                                3
+                            </label>  
+                        </div>
+                    </td>
+                    <td>
+                        <span>ارتقا و پایداری بهینه سازی به همرا یادگیری</span>
+                    </td>
+                    <td>
+                        <span>18 خرداد، 1403</span>
+                    </td>
+                    <td>
+                        <span>18 خرداد، 1403</span>   
+                    </td>
+                    <td>
+                        <span>18 خرداد، 1403</span>
+                    </td>
+                    <td>
+                        <span class="priority">3</span>
+                    </td>
+                    <td>
+                        <!-- منوی سه نقطه و دکمه ها div -->
+                        <div class="menu-container">
+                            <!-- دکمه سه نقطه  -->
+                            <button class="three-dotsPhase"onclick="toggleMenuRowPhase()">
+                                ...
+                            </button>
+
+                            <div class="dropdown-menuRowPhase" id="dropdownMenuRowPhase">
+                                <ul>
+                                    <li>ویرایش</li>
+                                    <li>حذف</li>
+                                    <li>شروع</li>
+                                    <li>خاتمه</li>
+                                </ul>
+                            </div>                
+                        </div> 
+                    </td>
+                </tr>
+
+                <!-- سطر چهارم -->
+                <tr>
+                    <td>
+                        <div class="checkbox-container">
+                            <label class="checkbox" style="font-family: Arial;">  
+                                <input type="checkbox" class="hidden-checkbox">
+                                <span class="checkmark"></span>
+                                4
+                            </label>  
+                        </div>
+                    </td>
+                    <td>
+                        <span>بهینه سازی</span>
+                    </td>
+                    <td>
+                        <span>18 خرداد، 1403</span>
+                    </td>
+                    <td>
+                        <span>18 خرداد، 1403</span>   
+                    </td>
+                    <td>
+                        <span>18 خرداد، 1403</span>
+                    </td>
+                    <td>
+                        <span class="priority">4</span>
+                    </td>
+                    <td>
+                        <!-- منوی سه نقطه و دکمه ها div -->
+                        <div class="menu-container">
+                            <!-- دکمه سه نقطه  -->
+                            <button class="three-dotsPhase"onclick="toggleMenuRowPhase()">
+                                ...
+                            </button>
+
+                            <div class="dropdown-menuRowPhase" id="dropdownMenuRowPhase">
+                                <ul>
+                                    <li>ویرایش</li>
+                                    <li>حذف</li>
+                                    <li>شروع</li>
+                                    <li>خاتمه</li>
+                                </ul>
+                            </div>                
+                        </div> 
+                    </td>
+                </tr>
+
+                <!-- سطر پنجم -->
+                <tr>
+                    <td>
+                        <div class="checkbox-container">
+                            <label class="checkbox" style="font-family: Arial;">  
+                                <input type="checkbox" class="hidden-checkbox">
+                                <span class="checkmark"></span>
+                                5
+                            </label>  
+                        </div> 
+                    </td>
+                    <td>
+                        <span>مقیاس پذیری</span>
+                    </td>
+                    <td>
+                        <span>18 خرداد، 1403</span>
+                    </td>
+                    <td>
+                        <span>18 خرداد، 1403</span>   
+                    </td>
+                    <td>
+                        <span>18 خرداد، 1403</span>
+                    </td>
+                    <td>
+                        <span class="priority">5</span>
+                    </td>
+                    <td>
+                        <!-- منوی سه نقطه و دکمه ها div -->
+                        <div class="menu-container">
+                            <!-- دکمه سه نقطه  -->
+                            <button class="three-dotsPhase"onclick="toggleMenuRowPhase()">
+                                ...
+                            </button>
+
+                            <div class="dropdown-menuRowPhase" id="dropdownMenuRowPhase">
+                                <ul>
+                                    <li>ویرایش</li>
+                                    <li>حذف</li>
+                                    <li>شروع</li>
+                                    <li>خاتمه</li>
+                                </ul>
+                            </div>                
+                        </div> 
+                    </td>
+                </tr>
+
+                <!-- سطر ششم -->
+                <tr>
+                    <td>
+                        <div class="checkbox-container">
+                            <label class="checkbox" style="font-family: Arial;">  
+                                <input type="checkbox" class="hidden-checkbox">
+                                <span class="checkmark"></span>
+                                6
+                            </label>  
+                        </div> 
+                    </td>
+                    <td>
+                        <span>الف ب پ ت ث ج چ ح خ د ذ رز </span>
+                    </td>
+                    <td>
+                        <span>18 خرداد، 1403</span>
+                    </td>
+                    <td>
+                        <span>18 خرداد، 1403</span>   
+                    </td>
+                    <td>
+                        <span>18 خرداد، 1403</span>
+                    </td>
+                    <td>
+                        <span class="priority">5</span>
+                    </td>
+                    <td>
+                        <!-- منوی سه نقطه و دکمه ها div -->
+                        <div class="menu-container">
+                            <!-- دکمه سه نقطه  -->
+                            <button class="three-dotsPhase"onclick="toggleMenuRowPhase()">
+                                ...
+                            </button>
+
+                            <div class="dropdown-menuRowPhase" id="dropdownMenuRowPhase">
+                                <ul>
+                                    <li>ویرایش</li>
+                                    <li>حذف</li>
+                                    <li>شروع</li>
+                                    <li>خاتمه</li>
+                                </ul>
+                            </div>                
+                        </div> 
+                    </td>
+                </tr>
+            </tbody>         <!-- پایان body -->
+        </table>             <!-- پایان جدول -->
+        <!-- Pagination -->
+         کد pagination-abstract اینجا قرار میگیرد.
+        <!-- پایان pagination -->
+    </div>    <!-- div پایان محتوای اصلی شامل جدول و سرچ بار -->                   
+</div>        <!-- پایان شروع محتوای فاز -->

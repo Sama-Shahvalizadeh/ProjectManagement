@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../output.css">
+    <link rel="stylesheet" href="TeamTable.css">
+    <link rel="stylesheet" href="../Project_Common_Codes/Common.css">
+    <link rel="stylesheet" href="../Project_Common_Codes/Pagination.css">
+
+    <style>
+        body {
+            direction: rtl;
+            margin: 0;
+            padding: 30px;
+            overflow: auto;
+        }      
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <!-- شروع محتوای ممبر -->
+    <div class="flex flex-col w-[1168px] mt-[32px] mr-[32px] px-[32px] pb-[16px] pt-[32px] border-[#B2B9C0] border-[1px] rounded-[16px] font-arabic-medium">
+
+        <!-- ممبر div -->
+        <div class="flex items-center">
+                                    
+            <img src="../icons/maximise-frame.png"  class="h-[40px] w-[40px] ml-[16px]">
+            
+            <h3 class="text-[24px] text-[#495057] font-arabic-bold whitespace-nowrap">
+                تیم
+            </h3>
+        </div>
+        <!---->
+
+        <!-- div محتوای اصلی شامل جدول و سرچ بار -->
+        <div class="w-[1104px] mt-[32px] pb-[16px] px-[16px] border-[1px] border-[#E2E5E9] rounded-[16px]">
+
+            <!-- div شامل سرچ بار و باتن افزودن -->
+            <div class="flex flex-row h-[72px] py-[16px] items-center justify-between">
+
+                <!-- div سرچ بار -->
+                <div class="relative">
+                    <input class="w-[320px] h-[40px] border-[#B2B9C0] border-[2px] pr-[56px] rounded-[8px] bg-[#F8F9FA] placeholder-[#495057]" type="text" placeholder="اینجا جست و جو کنید...">
+                    <span class="absolute inset-y-0 right-[16px] flex items-center">
+                        <button>
+                            <img src="../icons/search-normal.png" alt="Search Icon" class="h-[18px] w-[18px]">
+                        </button>
+                    </span>
+                    <!-- add button -->
+                    <button class="w-[120px] h-[32px] mr-[16px] bg-[#000B58] rounded-[5px] text-[#F8F9FA] text-[16px]">
+                        + جدید
+                    </button>
+                <!---->
+                </div>  
+                <!---->
+
+                <!-- منوی سه نقطه و دکمه ها div -->
+                <div class="menu-container">
+
+                    <!-- دکمه سه نقطه  -->
+                    <button class="three-dotsMember"onclick="toggleMenuTableMember()">
+                        ...
+                    </button>
+
+                    <div class="dropdown-menuTableMember" id="dropdownMenuTableMember">
+                        <ul>
+                            <li>خروجی گرفتن به فرمت <span>word</span></li>
+                            <li>خروجی گرفتن به فرمت <span>PDF</span></li>
+                            <li>خروجی گرفتن به فرمت <span>DB</span></li>
+                            <li>حذف ردیف های انتخاب شده</li>
+                        </ul>
+                    </div>                
+                </div>           
+            </div>
+            <!-- div پایان شامل سرچ بار و باتن افزودن -->
+
+            <!-- شروع جدول ممبر -->
+            <table class="w-[1072px] border-collapse font-arabic-medium mb-[20px]" id="table-team">
+                <!-- شروع هدر جدول -->
+                <thead>
+                    <tr>
+                        <th class="w-[104px]">
+                            <div class="header-row-container">
+                                <label class="checkbox">  
+                                    <input type="checkbox" class="hidden-checkbox">
+                                    <span class="checkmark"></span>
+                                    ردیف
+                                </label>  
+                            </div>
+                        </th>
+                        <th class="w-[426px]">
+                            <div class="header-container">
+                                <img src="../icons/person-alt.png" alt="h-name-icon">
+                                <label>نام و نام خانوادگی</label>
+                            </div>
+                        </th>
+                        <th class="w-[228px]">
+                            <div class="header-container">
+                                <img src="../icons/info.png" alt="h-role-icon">
+                                <label>نقش</label>
+                            </div>
+                        </th>
+                        <th class="w-[228px]">
+                            <div class="header-container">
+                                <img src="../icons/person-check.png" alt="h-level-icon">
+                                <label> سطح</label>
+                            </div>
+                        </th>
+                        <th class="w-[78px]">
+                            <div class="header-container">
+                                عملیات
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
+                <!-- پایان هدر -->  
+
+                <!-- شروع tbody -->
+                <tbody>
+                    <!-- سطر اول-->
+                    <tr>
+                        <td>
+                            <div class="checkbox-container">
+                                <label class="checkbox" style="font-family: Arial;">  
+                                    <input type="checkbox" class="hidden-checkbox">
+                                    <span class="checkmark"></span>
+                                    1
+                                </label>  
+                            </div>
+                        </td>
+                        <td>
+                            <div class="tr-second-column">
+                                <div class="avatar">
+                                    <img src="../icons/Avatar.png" alt="icon">
+                                </div>
+                                <div class="flex flex-col gap-[4px] mr-[32px]">
+                                    <span class="td-member-name">الف ب پ ت ث ج چ ح خ د</span>
+                                    <span class="td-member-username">
+                                    @username 
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <span>مدیر UI/UX</span>   
+                        </td>
+                        <td>
+                            <span>مدیر</span>
+                        </td>
+                        <td>
+                            <!-- منوی سه نقطه و دکمه ها div -->
+                            <div class="menu-container">
+                                <!-- دکمه سه نقطه  -->
+                                <button class="three-dotsMember"onclick="toggleMenuRowMember()">
+                                    ...
+                                </button>
+
+                                <div class="dropdown-menuRowMember" id="dropdownMenuRowMember">
+                                    <ul>
+                                        <li>پایان همکاری</li>
+                                    </ul>
+                                </div>                
+                            </div>         
+                        </td>
+                    </tr>
+                    
+                    <!-- سطر دوم -->
+                    <tr>
+                        <td>
+                            <div class="checkbox-container">
+                                <label class="checkbox" style="font-family: Arial;">  
+                                    <input type="checkbox" class="hidden-checkbox">
+                                    <span class="checkmark"></span>
+                                    2
+                                </label>  
+                            </div>
+                        </td>
+                        <td>
+                            <div class="tr-second-column">
+                                <div class="avatar">
+                                    <img src="../icons/Avatar.png" alt="icon">
+                                </div>
+                                <div class="flex flex-col gap-[4px] mr-[32px]">
+                                    <span class="td-member-name">الف ب پ ت ث ج چ ح خ د</span>
+                                    <span class="td-member-username">
+                                    @username 
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <span>مدیر پروژه</span>   
+                        </td>
+                        <td>
+                            <span>مدیر</span>
+                        </td>
+                        <td>
+                            <!-- منوی سه نقطه و دکمه ها div -->
+                            <div class="menu-container">
+                                <!-- دکمه سه نقطه  -->
+                                <button class="three-dotsMember"onclick="toggleMenuRowMember()">
+                                    ...
+                                </button>
+
+                                <div class="dropdown-menuRowMember" id="dropdownMenuRowMember">
+                                    <ul>
+                                        <li>پایان همکاری</li>
+                                    </ul>
+                                </div>                
+                            </div>         
+                        </td>
+                    </tr>
+
+                    <!-- سطر سوم -->
+                    <tr>
+                        <td>
+                            <div class="checkbox-container">
+                                <label class="checkbox" style="font-family: Arial;">  
+                                    <input type="checkbox" class="hidden-checkbox">
+                                    <span class="checkmark"></span>
+                                    3
+                                </label>  
+                            </div>
+                        </td>
+                        <td>
+                            <div class="tr-second-column">
+                                <div class="avatar">
+                                    <img src="../icons/images.jfif" alt="icon">
+                                </div>
+                                <div class="flex flex-col gap-[4px] mr-[32px]">
+                                    <span class="td-member-name">الف ب پ ت ث ج چ ح خ د</span>
+                                    <span class="td-member-username">
+                                    @username 
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <span>مدیر پروژه</span>   
+                        </td>
+                        <td>
+                            <span>مدیر</span>
+                        </td>
+                        <td>
+                            <!-- منوی سه نقطه و دکمه ها div -->
+                            <div class="menu-container">
+                                <!-- دکمه سه نقطه  -->
+                                <button class="three-dotsMember"onclick="toggleMenuRowMember()">
+                                    ...
+                                </button>
+
+                                <div class="dropdown-menuRowMember" id="dropdownMenuRowMember">
+                                    <ul>
+                                        <li>پایان همکاری</li>
+                                    </ul>
+                                </div>                
+                            </div>         
+                        </td>
+                    </tr>
+
+                    <!-- سطر چهارم -->
+                    <tr>
+                        <td>
+                            <div class="checkbox-container">
+                                <label class="checkbox" style="font-family: Arial;">  
+                                    <input type="checkbox" class="hidden-checkbox">
+                                    <span class="checkmark"></span>
+                                    4
+                                </label>  
+                            </div>
+                        </td>
+                        <td>
+                            <div class="tr-second-column">
+                                <div class="avatar">
+                                    <img src="../icons/Avatar.png" alt="icon">
+                                </div>
+                                <div class="flex flex-col gap-[4px] mr-[32px]">
+                                    <span class="td-member-name">الف ب پ ت ث ج چ ح خ د</span>
+                                    <span class="td-member-username">
+                                    @username 
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <span>مدیر پروژه</span>   
+                        </td>
+                        <td>
+                            <span>مدیر</span>
+                        </td>
+                        <td>
+                            <!-- منوی سه نقطه و دکمه ها div -->
+                            <div class="menu-container">
+                                <!-- دکمه سه نقطه  -->
+                                <button class="three-dotsMember"onclick="toggleMenuRowMember()">
+                                    ...
+                                </button>
+
+                                <div class="dropdown-menuRowMember" id="dropdownMenuRowMember">
+                                    <ul>
+                                        <li>پایان همکاری</li>
+                                    </ul>
+                                </div>                
+                            </div>        
+                        </td>
+                    </tr>
+
+                    <!-- سطر پنجم -->
+                    <tr>
+                        <td>
+                            <div class="checkbox-container">
+                                <label class="checkbox" style="font-family: Arial;">  
+                                    <input type="checkbox" class="hidden-checkbox">
+                                    <span class="checkmark"></span>
+                                    5
+                                </label>  
+                            </div>
+                        </td>
+                        <td>
+                            <div class="tr-second-column">
+                                <div class="avatar">
+                                    <img src="../icons/Avatar.png" alt="icon">
+                                </div>
+                                <div class="flex flex-col gap-[4px] mr-[32px]">
+                                    <span class="td-member-name">الف ب پ ت ث ج چ ح خ د</span>
+                                    <span class="td-member-username">
+                                    @username 
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <span>مدیر پروژه</span>   
+                        </td>
+                        <td>
+                            <span>مدیر</span>
+                        </td>
+                        <td>
+                            <!-- منوی سه نقطه و دکمه ها div -->
+                            <div class="menu-container">
+                                <!-- دکمه سه نقطه  -->
+                                <button class="three-dotsMember"onclick="toggleMenuRowMember()">
+                                    ...
+                                </button>
+
+                                <div class="dropdown-menuRowMember" id="dropdownMenuRowMember">
+                                    <ul>
+                                        <li>پایان همکاری</li>
+                                    </ul>
+                                </div>                
+                            </div>        
+                        </td>
+                    </tr>
+
+                    <!-- سطر ششم -->
+                    <tr>
+                        <td>
+                            <div class="checkbox-container">
+                                <label class="checkbox" style="font-family: Arial;">  
+                                    <input type="checkbox" class="hidden-checkbox">
+                                    <span class="checkmark"></span>
+                                    6
+                                </label>  
+                            </div>
+                        </td>
+                        <td>
+                            <div class="tr-second-column">
+                                <div class="avatar">
+                                    <img src="../icons/Avatar.png" alt="icon">
+                                </div>
+                                <div class="flex flex-col gap-[4px] mr-[32px]">
+                                    <span class="td-member-name">الف ب پ ت ث ج چ ح خ د</span>
+                                    <span class="td-member-username">
+                                    @username 
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <span>مدیر پروژه</span>   
+                        </td>
+                        <td>
+                            <span>مدیر</span>
+                        </td>
+                        <td>
+                            <!-- منوی سه نقطه و دکمه ها div -->
+                            <div class="menu-container">
+                                <!-- دکمه سه نقطه  -->
+                                <button class="three-dotsMember"onclick="toggleMenuRowMember()">
+                                    ...
+                                </button>
+
+                                <div class="dropdown-menuRowMember" id="dropdownMenuRowMember">
+                                    <ul>
+                                        <li>پایان همکاری</li>
+                                    </ul>
+                                </div>                
+                            </div>        
+                        </td>
+                    </tr>
+                </tbody>  <!-- پایان بادی -->
+            </table>      <!-- پایان جدول -->
+            <!---->
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <div class="previous-page-container">
+                    <button>
+                        <img src="../icons/chevron-right.png" alt="icon">
+                    </button>
+                    <span class="font-arabic-medium text-[14px] font-semibold text-[#2E2E2E">
+                        صفحه قبل
+                    </span>
+                </div>
+                
+                <div class="pagination-items">
+                    <a href="#" id="page1" class="active" onclick="goToPage(1)">1</a>
+                    <a href="#" id="page2" onclick="goToPage(2)">2</a>
+                    <a href="#" id="page3" onclick="goToPage(3)">3</a>
+                    <a href="#" id="page4" onclick="goToPage(4)">...</a>
+                    <a href="#" id="page8" onclick="goToPage(8)">8</a>
+                    <a href="#" id="page9" onclick="goToPage(9)">9</a>
+                    <a href="#" id="page10" onclick="goToPage(10)">10</a>
+                </div>       
+
+                <div class="next-page-container">
+                    <span class="font-arabic-medium text-[14px] font-semibold text-[#2E2E2E]">
+                        صفحه بعد
+                    </span>
+                    <button>
+                        <img src="../icons/chevron-left (2).png" alt="icon" class="h-[20px] w-[20px]">
+                    </button>
+                </div>                          
+            </div>    <!-- پایان pagination -->
+        </div>        <!-- div پایان محتوای اصلی شامل جدول و سرچ بار -->    
+    </div>            <!-- پایان شروع محتوای ممبر -->
+    <script>
+        function toggleMenuTableMember() {
+        const menu = document.getElementById("dropdownMenuTableMember");
+        menu.style.display = (menu.style.display === "block") ? "none" : "block";
+        }
+        // Optional: Close the menu when clicking outside
+        window.onclick = function(event) {
+            if (!event.target.matches('.three-dotsMember')) {
+                const dropdowns = document.getElementsByClassName("dropdown-menuTableMember");
+                for (let i = 0; i < dropdowns.length; i++) {
+                    dropdowns[i].style.display = "none";
+                }
+            }
+        }; 
+
+        function toggleMenuRowMember() {
+            const menu = document.getElementById("dropdownMenuRowMember");
+            menu.style.display = (menu.style.display === "block") ? "none" : "block";
+        }
+
+        // Optional: Close the menu when clicking outside
+        window.onclick = function(event) {
+            if (!event.target.matches('.three-dotsMember')) {
+                const dropdowns = document.getElementsByClassName("dropdown-menuRowMember");
+                for (let i = 0; i < dropdowns.length; i++) {
+                    dropdowns[i].style.display = "none";
+                }
+            }
+        }; 
+    </script>
+    
+</body>
+</html>
