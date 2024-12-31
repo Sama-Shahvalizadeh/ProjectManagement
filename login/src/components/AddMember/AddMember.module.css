@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* فونت‌های سفارشی */
+@font-face {
+  font-family: 'ArabicDisplayBlack';
+  src: url('font/ARABICUIDISPLAYBLACK.OTF') format('opentype');
+}
+@font-face {
+  font-family: 'ArabicDisplayBold';
+  src: url('font/ARABICUIDISPLAYBOLD.OTF') format('opentype');
+}
+@font-face {
+  font-family: 'ArabicDisplayMedium';
+  src: url('font/ARABICUIDISPLAYMEDIUM.OTF') format('opentype');
+}
+@font-face {
+  font-family: 'Saba';
+  src: url('font/SABA-[@I_FONT].TTF') format('truetype');
+}
+
+/* تعریف کلاس‌های سفارشی */
+@layer utilities {
+  .font-arabic-bold {
+    font-family: 'ArabicDisplayBold';
+  }
+  .font-arabic-medium {
+    font-family: 'ArabicDisplayMedium';
+  }
+}
+
+/* استایل‌های مربوط به کامپوننت AddMember */
+.container {
+  @apply flex items-center justify-center h-screen;
+}
+
+.modal_style{
+  @apply my-auto w-[800px] bg-[#F8F9FA]; 
+}
+
+.modal {
+  @apply pb-20;
+}
+
+.closeButton {
+  @apply mr-[30px] mt-[30px];
+}
+
+.closeIcon {
+  @apply h-[32px] w-[32px];
+}
+
+.titleContainer {
+  @apply mt-[32px] mr-[41px];
+}
+
+.title {
+  @apply block font-arabic-bold antialiased text-[20px] text-[#495057] w-[150px] h-[24px];
+}
+
+.formContainer {
+  @apply w-[701px] h-[272px] mt-[72px];
+}
+
+.field {
+  @apply w-[701px] h-[40px] flex items-center mb-[16px] mr-[48px];
+}
+
+.label {
+  @apply w-[39px] h-[24px] block text-[#495057] font-arabic-bold antialiased text-[16px];
+}
+
+.select {
+  @apply w-[475px] h-[40px] mr-[187px] border-[2px] pr-[8.5px] pl-[8.5px] border-[#BBC1C7] rounded-[5px] shadow-none bg-[#F8F9FA] font-arabic-medium antialiased font-normal text-[16px] text-[#1B02B7];
+}
+
+.textareaField {
+  @apply w-[701px] h-[160px] flex items-center justify-between mr-[48px];
+}
+
+.textareaLabel {
+  @apply w-[65px] h-[24px] block text-[#495057] font-arabic-bold antialiased text-[16px] pb-[140px];
+}
+
+.textarea {
+  @apply w-[475px] h-[160px] pr-[15px] pt-[8.5px] border-[2px] border-[#BBC1C7] rounded-[5px] bg-[#F8F9FA] shadow-none font-arabic-medium antialiased font-normal text-[16px] text-[#1B02B7] resize-none overflow-y-auto;
+}
+
+.saveButtonContainer {
+  @apply mt-[40px] mr-[629px];
+}
+
+.saveButton {
+  @apply bg-[#000B58] w-[120px] h-[40px] border-none rounded-[5px] text-white font-arabic-medium antialiased text-[16px];
+}

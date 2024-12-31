@@ -1,0 +1,255 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@layer base {
+  @font-face {
+      font-family: 'ArabicDisplayBlack';
+      src: url(../../font/ARABICUIDISPLAYBLACK.OTF) format('opentype');
+  }
+  @font-face {
+      font-family: 'ArabicDisplayBold';
+      src: url(../../font/ARABICUIDISPLAYBOLD.OTF) format('opentype');
+  }
+  @font-face {
+      font-family: 'ArabicDisplayHeavy';
+      src: url(../../font/ARABICUIDISPLAYHEAVY.OTF) format('opentype');
+  }
+  @font-face {
+      font-family: 'ArabicDisplayLight';
+      src: url(../../font/ARABICUIDISPLAYLIGHT.OTF) format('opentype');
+  }
+  @font-face {
+      font-family: 'ArabicDisplayMedium';
+      src: url(../../font/ARABICUIDISPLAYMEDIUM.OTF) format('opentype');
+  }
+  @font-face {
+      font-family: 'ArabicDisplaySemiBold';
+      src: url(../../font/ARABICUIDISPLAYSEMIBOLD.OTF) format('opentype');
+  }
+  @font-face {
+      font-family: 'ArabicDisplayThin';
+      src: url(../../font/ARABICUIDISPLAYTHIN.OTF) format('opentype');
+  }
+  @font-face {
+      font-family: 'ArabicDisplayUltraLight';
+      src: url(../../font/ARABICUIDISPLAYULTRALIGHT.OTF) format('opentype');
+  }
+  @font-face {
+      font-family: 'Saba';
+      src: url(../../font/SABA-[@I_FONT].TTF) format('truetype');
+  }
+}
+
+@layer utilities {
+  .font-saba {
+    font-family: 'Saba';
+  }
+  .font-arabic-medium {
+    font-family: 'ArabicDisplayMedium';
+  }
+  .font-arabic-light {
+    font-family: 'ArabicDisplayUltraLight';
+  }
+}
+
+.body {
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+}
+
+.main_container {
+  display: grid;
+  grid-template-columns: 720px 1fr;
+  column-gap: 10px;
+  width: 100%;
+  height: 100vh; /* تغییر به 100vh برای ارتفاع کل صفحه */
+}
+
+.left_side{
+  background-color: #000B58;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  direction: rtl;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  height: 100%; /* تغییر به 100% برای اشغال کردن تمام ارتفاع والد */
+}
+
+.left-side {
+  margin: 0;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: fit-content;
+  flex: 1;
+}
+
+.sign_form {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  direction: rtl;
+  text-align: right;
+  height: 100%; /* اطمینان از اینکه این بخش هم 100% ارتفاع خواهد داشت */
+}
+
+.div_main_form{
+  @apply main-form mt-[100px] mb-[100px];
+}
+
+.main-form {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+}
+
+.form_header {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.form_register {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.form_first_name,
+.form_last_name,
+.form_email,
+.form_phone,
+.form_field,
+.form_password {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-family: 'ArabicDisplayMedium';
+}
+
+.form_label {
+  @apply mb-[5px] whitespace-nowrap text-[#495057];
+}
+
+.form_input,
+.form_select {
+  @apply w-[400px] h-[40px] pl-[10px] pr-[10px] bg-[#F8F9FA] border-[2px] mb-[8px] border-[#BBC1C7] rounded-[5px] text-[#1B02B7] text-[16px] font-arabic-medium;
+}
+
+.form_input_password {
+  @apply w-[400px] h-[40px] pl-[30px] pr-[10px] bg-[#F8F9FA] border-[2px] mb-[8px] border-[#BBC1C7] rounded-[5px] text-[#1B02B7] text-[16px] relative z-0 font-arabic-medium;
+}
+
+.relative_position {
+  position: relative;
+}
+
+.eye_icon {
+  position: absolute;
+  left: 10px; /* Space from the left */
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 2;
+}
+
+.submit_button {
+  @apply mt-[70px] w-[400px] h-[32px] bg-[#000B58] text-[#F8F9FA] font-arabic-medium text-[16px] rounded-[5px];
+}
+
+.have_account {
+  @apply mt-[16px] whitespace-nowrap font-arabic-medium text-[14px] text-[#969696];
+}
+
+.login_link {
+  @apply whitespace-nowrap text-[#1B02B7];
+}
+
+.form_header_title {
+  @apply whitespace-nowrap font-saba text-[26px] text-[#101828];
+}
+
+.welcome_message {
+  @apply mt-[50px] whitespace-nowrap font-arabic-medium text-[18px] text-[#1B1D1F];
+}
+
+.left_side {
+  @apply whitespace-nowrap font-saba text-[#FFFFFF] text-[90px] bg-[#000B58] rounded-r-[50px];
+}
+
+
+.input_code.error {
+  border: 2px solid red;
+}
+
+.input_error {
+  border: 1px solid red;
+}
+
+.error_container {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+  color: red;
+}
+
+.icon_warning {
+  margin-right: 5px;
+}
+
+.error_message {
+  font-size: 14px;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .main_container { 
+      grid-template-columns: 1fr; /* Stacks columns vertically */
+  } 
+  
+  .sign_form, .left-side {
+      width: 100%;
+  } 
+  
+  .left_side {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .div_welcome {
+      padding-right: 20px; /* Adjust padding as needed */ 
+  }
+
+  .left_side { 
+      font-size: 50px; /* Adjust font size for smaller screens */ line-height: 80px; 
+  } 
+  
+  .form_header_title {
+       font-size: 22px; /* Adjust font size for smaller screens */ line-height: 40px;
+      }
+}
+
+@media (max-width: 480px) { 
+  .label_remember_me, .para_forgot_password {
+      font-size: 12px; /* Adjust font size for very small screens */
+  } 
+   
+   .para_title {
+      font-size: 40px; /* Adjust font size for smaller screens */ line-height: 60px;
+  } 
+  
+  .para_enter_account { 
+      font-size: 18px; /* Adjust font size for smaller screens */ line-height: 30px;
+  }
+}

@@ -1,0 +1,74 @@
+/* main-container برداشته شد */
+
+/* right به left تغییر کرده و استایلش عوض شد */
+.left_container{
+  display: flex;
+  flex-direction: column;
+  margin-right: 240px;
+  padding-bottom: 30px;
+  padding-left: 30px;
+  height: 100vh;
+  overflow: auto;
+}
+
+.menu_container {
+  position: relative;
+  display: inline-block; 
+}
+
+.three_dots {
+  background: none;   
+  color: #0D062D;
+  font-size: 16px;
+  margin-left: 16px;
+}
+
+/*کامنت ها حذف شد*/
+.dropdown_menu {
+  display: none; 
+  position: absolute;
+  top: 27px;
+  left: 16px;
+  border: 2px solid #E2E5E9; 
+  border-radius: 8px;
+  z-index: 1000;
+  width: 200px;
+  background-color: #FFFFFF;
+}
+
+.dropdown_menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown_menu li {
+  padding: 20px 30px;
+  color: #495057;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.dropdown_menu li:hover {
+  background-color: #f0f0f0; 
+}
+
+.information_container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.information_div{
+  font-size: 16px;
+  font-weight: bold;
+  color: #495057;
+  white-space: nowrap;
+}
+
+.information_span{
+  font-size: 16px;
+  font-weight: 300;
+  color: #1B1D1F;
+}

@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+    @font-face {
+        font-family: 'ArabicDisplayBlack';
+        src: url(./font/ARABICUIDISPLAYBLACK.OTF) format('opentype');
+    }
+    @font-face {
+        font-family: 'ArabicDisplayBold';
+        src: url(./font/ARABICUIDISPLAYBOLD.OTF) format('opentype');
+    }
+    @font-face {
+        font-family: 'ArabicDisplayHeavy';
+        src: url(./font/ARABICUIDISPLAYHEAVY.OTF) format('opentype');
+    }
+    @font-face {
+        font-family: 'ArabicDisplayLight';
+        src: url(./font/ARABICUIDISPLAYLIGHT.OTF) format('opentype');
+    }
+    @font-face {
+        font-family: 'ArabicDisplayMedium';
+        src: url(./font/ARABICUIDISPLAYMEDIUM.OTF) format('opentype');
+    }
+    @font-face {
+        font-family: 'ArabicDisplaySemiBold';
+        src: url(./font/ARABICUIDISPLAYSEMIBOLD.OTF) format('opentype');
+    }
+    @font-face {
+        font-family: 'ArabicDisplayThin';
+        src: url(./font/ARABICUIDISPLAYTHIN.OTF) format('opentype');
+    }
+    @font-face {
+        font-family: 'ArabicDisplayUltraLight';
+        src: url(./font/ARABICUIDISPLAYULTRALIGHT.OTF) format('opentype');
+    }
+    @font-face {
+        font-family: 'Saba';
+        src: url(./font/SABA-[@I_FONT].TTF) format('truetype');
+    }
+  }
+
+  

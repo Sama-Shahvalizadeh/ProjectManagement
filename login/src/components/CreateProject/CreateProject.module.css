@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* فونت‌های سفارشی */
+@font-face {
+  font-family: 'ArabicDisplayBlack';
+  src: url('./font/ARABICUIDISPLAYBLACK.OTF') format('opentype');
+}
+@font-face {
+  font-family: 'ArabicDisplayBold';
+  src: url('./font/ARABICUIDISPLAYBOLD.OTF') format('opentype');
+}
+@font-face {
+  font-family: 'ArabicDisplayMedium';
+  src: url('./font/ARABICUIDISPLAYMEDIUM.OTF') format('opentype');
+}
+@font-face {
+  font-family: 'Saba';
+  src: url('./font/SABA-[@I_FONT].TTF') format('truetype');
+}
+
+/* تعریف کلاس‌های سفارشی */
+@layer utilities {
+  .font-arabic-bold {
+    font-family: 'ArabicDisplayBold';
+  }
+  .font-arabic-medium {
+    font-family: 'ArabicDisplayMedium';
+  }
+}
+
+/* تنظیمات اصلی */
+.container {
+  @apply flex items-center justify-center h-screen;
+}
+
+.modal_style{
+  @apply my-auto w-[800px] bg-[#F8F9FA];
+}
+
+.modal {
+  @apply pb-20;
+}
+
+.closeButton {
+  @apply mr-[30px] mt-[30px];
+}
+
+.closeIcon {
+  @apply h-[32px] w-[32px];
+}
+
+/* عنوان */
+.titleContainer {
+  @apply mt-[32px] mr-[41px];
+}
+
+.title {
+  @apply block font-arabic-bold antialiased text-[20px] text-[#495057] w-[150px] h-[24px];
+}
+
+/* فرم */
+.formContainer {
+  @apply w-[701px] h-[496px] mt-[72px];
+}
+
+.field {
+  @apply w-[701px] h-[40px] flex items-center text-[#495057] mr-[48px] mb-[16px];
+}
+
+.title_field{
+  @apply w-[701px] h-[40px] flex items-center text-[#495057] mr-[48px] mb-[16px];
+}
+
+.status_field{
+  @apply w-[701px] h-[40px] flex items-center mb-[16px] mr-[48px];
+}
+
+.label {
+  @apply block font-arabic-bold antialiased text-[16px] text-[#495057];
+}
+
+.title_label{
+  @apply w-[38px] h-[24px] block font-arabic-bold antialiased text-[16px] text-[#495057];
+}
+
+.status_label{
+  @apply w-[52px] h-[24px] block text-[#495057] font-arabic-bold antialiased text-[16px]
+}
+
+.manager_label{
+  @apply w-[68px] h-[24px] block text-[#495057] font-arabic-bold antialiased text-[16px];
+}
+
+.duedate_label{
+  @apply w-[73px] h-[24px] block text-[#495057] font-arabic-bold antialiased text-[16px];
+}
+
+.prior_label{
+  @apply w-[46px] h-[24px] block text-[#495057] font-arabic-bold antialiased text-[16px];
+}
+
+.input {
+  @apply w-[475px] h-[40px] mr-[188px] pr-[8.5px] pl-[8.5px] border-[2px] border-[#BBC1C7] rounded-[5px] border-solid shadow-none font-arabic-medium antialiased font-normal text-[16px] text-[#1B02B7] bg-[#F8F9FA] ;
+}
+
+.owner_input{
+  @apply w-[475px] h-[40px] mr-[192px] border-[2px] pr-[8.5px] pl-[8.5px] border-[#BBC1C7] rounded-[5px] shadow-none font-arabic-medium antialiased font-normal text-[16px] text-[#1B02B7] bg-[#F8F9FA];
+}
+
+.duedate_input{
+  @apply w-[475px] h-[40px] mr-[153px] pr-[8.5px] pl-[8.5px] border-[2px] border-[#BBC1C7] rounded-[5px] shadow-none font-arabic-medium antialiased font-normal text-[16px] text-[#1B02B7] bg-[#F8F9FA];
+}
+
+.input-title {
+  @apply mr-[188px];
+}
+
+.select {
+  @apply w-[475px] h-[40px] pr-[8.5px] pl-[8.5px] border-[2px] border-[#BBC1C7] rounded-[5px] border-solid shadow-none font-arabic-medium antialiased font-normal text-[16px] text-[#1B02B7];
+}
+
+.status_select{
+  @apply w-[475px] h-[40px] mr-[174px] border-[2px] pr-[8.5px] pl-[8.5px] border-[#BBC1C7] rounded-[5px] border-solid shadow-none font-arabic-medium antialiased font-normal text-[16px] text-[#1B02B7] bg-[#F8F9FA];
+}
+
+.manager_select{
+  @apply w-[475px] h-[40px] mr-[158px] border-[2px] pr-[8.5px] pl-[8.5px] border-[#BBC1C7] rounded-[5px] shadow-none font-arabic-medium antialiased font-normal text-[16px] text-[#1B02B7] bg-[#F8F9FA];
+}
+
+.prior_select{
+  @apply w-[475px] h-[40px] mr-[180px] pr-[8.5px] pl-[8.5px] border-[2px] border-[#BBC1C7] rounded-[5px] shadow-none font-arabic-medium antialiased font-normal text-[16px] text-[#1B02B7] bg-[#F8F9FA];
+}
+
+.prior_option{
+  @apply font-arabic-medium font-normal text-[14px];
+}
+
+.select-status {
+  @apply mr-[174px];
+}
+
+.select-manager {
+  @apply mr-[158px];
+}
+
+.select-importance {
+  @apply mr-[180px];
+}
+
+.textareaField {
+  @apply w-[701px] h-[160px] flex items-center justify-between mr-[48px];
+}
+
+.textareaLabel {
+  @apply block font-arabic-bold antialiased text-[16px] text-[#495057] pb-[140px];
+}
+
+.textarea {
+  @apply w-[475px] h-[160px] pr-[15px] pt-[8.5px] border-[2px] border-[#BBC1C7] rounded-[5px] shadow-none font-arabic-medium antialiased font-normal text-[16px] text-[#1B02B7] resize-none overflow-y-auto bg-[#F8F9FA];
+}
+
+/* دکمه‌ها */
+.saveButtonContainer {
+  @apply mt-[40px] mr-[629px] flex;
+}
+
+.saveButton {
+  @apply bg-[#000B58] w-[120px] h-[40px] border-none rounded-[5px] text-white font-arabic-medium antialiased text-[16px];
+}
