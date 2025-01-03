@@ -1,13 +1,40 @@
 import React, { useState } from 'react';
 import styles from './Email.module.css';
 import back from "../../icons/Frame 1000001414.png";
+import {sendVerificationCode} from "../../Services/EmailAPI"; 		    // استفاده از API برای ارسال کد تایید
+
 
 export default function Email() {
+    const [email, setEmail] = useState('');
+    const [errors, setErrors] = useState({});
+    const [successMessage, setSuccessMessage] = useState('');           // پیام موفقیت
+    const [loading, setLoading] = useState(false);                      // وضعیت بارگذاری
 
     const handleGetCodeClick = async (event) => {
         event.preventDefault();
-        window.location.href = 'verify'
-    }
+        if (!email.trim()) {
+            setErrors({ email: 'ایمیل نمی‌تواند خالی باشد.' });
+            return;
+        }
+
+        setErrors({});                                                  // پاک کردن ارور در صورت صحت اطلاعات
+        setLoading(true);                                               // فعال کردن حالت بارگذاری
+        setSuccessMessage('');
+
+        try {
+            const response = await sendVerificationCode(email);         // ارسال درخواست به سرور
+            setSuccessMessage('کد تایید با موفقیت ارسال شد. لطفاً ایمیل خود را بررسی کنید.');
+        } catch (error) {
+            setErrors({ email: 'ارسال کد تایید با مشکل مواجه شد. لطفاً دوباره تلاش کنید.' });
+        } finally {
+            setLoading(false);                                          // غیرفعال کردن حالت بارگذاری
+        }
+    };
+
+    const handleBackePage = (event) => {
+        event.preventDefault();
+        window.location.href = 'login';
+    };
 
     return (
         <div className={styles.div_frame1}>
@@ -33,21 +60,31 @@ export default function Email() {
                             برای دریافت کد تایید ایمیل خود را وارد نمایید.
                         </p>
 
-            <div className={styles.div_user_info}>
-                <p className={styles.para_email}>ایمیل</p>
-                <input className={styles.input_email} type="email" />
-            </div>
+                        <div className={styles.div_user_info}>
+                            <p className={styles.para_email}>ایمیل</p>
+                            <input
+                                className={styles.input_email}
+                                type="email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                            />
+                            {errors.email && (
+                                <div className={styles.error_container}>
+                                    <i className="fas fa-exclamation-triangle icon-warning"></i>
+                                    <p className={styles.error_message}>{errors.email}</p>
+                                </div>
+                            )}
+                            {successMessage && (
+                                <p className={styles.success_message}>{successMessage}</p>
+                            )}
+                        </div>
 
-            <button type="submit" className={styles.btn_login} onClick={handleGetCodeClick}>
-                دریافت کد تایید
-            </button>
+                        <button type="submit" className={styles.btn_login} onClick={handleGetCodeClick} disabled={loading}>
+                            {loading ? 'در حال ارسال...' : 'دریافت کد تایید'}
+                        </button>
+                    </div>
                 </div>
             </div>
-            
-            </div>
-        </form>
+        </div>
     );
-
-
-    }
-   
+}

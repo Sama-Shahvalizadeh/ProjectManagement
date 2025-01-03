@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import styles from './LoginForm.module.css';
 import { Link } from 'react-router-dom';
-
+import eye from "../../icons/eye.png";
+import { loginUser, sendVerificationCode } from '../../Services/LoginFormAPI'; 		// استفاده از توابع API
 
 export default function LoginForm() {
     const [username, setUsername] = useState('');
@@ -11,6 +12,11 @@ export default function LoginForm() {
     const [isVerificationPage, setIsVerificationPage] = useState(false); // حالت صفحه وارد کردن کد
     const [timer, setTimer] = useState(240); // 4 دقیقه
     const [verificationError, setVerificationError] = useState(false); // خطای کد تایید
+    const [passwordVisible, setPasswordVisible] = useState(false);
+
+    const togglePasswordVisibility = () => {
+        setPasswordVisible((prevState) => !prevState);
+    };
 
     useEffect(() => {
         let interval;
@@ -21,15 +27,20 @@ export default function LoginForm() {
         }
         return () => clearInterval(interval);
     }, [isVerificationPage, timer]);
- 
-    const handleSubmit = (event) => {
+
+    const handleSubmit = async (event) => {
         event.preventDefault();
-    
+
         if (isForgotPassword) {
             setIsVerificationPage(true); // تغییر به صفحه کد تایید
+            try {
+                await sendVerificationCode(username); // ارسال کد تایید به ایمیل
+            } catch (error) {
+                setVerificationError(true); // خطا در ارسال کد تایید
+            }
             return;
         }
-    
+
         let valid = true;
         const newErrors = { username: '', password: '', general: '' };
 
@@ -46,16 +57,22 @@ export default function LoginForm() {
         setErrors(newErrors);
 
         if (valid) {
-            const users = require('./users.json').users;
-            const user = users.find((u) => u.username === username);
-    
-            if (user && user.password === password) {
-                alert('ورود با موفقیت انجام شد');
-            } else {
+            try {
+                const response = await loginUser({ username, password }); // استفاده از تابع loginUser برای ورود
+                if (response.success) {
+                    alert('ورود با موفقیت انجام شد');
+                } else {
+                    setErrors({
+                        username: '',
+                        password: '',
+                        general: 'متاسفانه کاربری با نام کاربری و رمز عبور وارد شده در سامانه یافت نشد.',
+                    });
+                }
+            } catch (error) {
                 setErrors({
                     username: '',
                     password: '',
-                    general: 'متاسفانه کاربری با نام کاربری و رمز عبور وارد شده در سامانه یافت نشد.',
+                    general: 'خطا در ارتباط با سرور. لطفا دوباره تلاش کنید.',
                 });
             }
         }
@@ -81,10 +98,6 @@ export default function LoginForm() {
                     </p>
                 </div>
 
-                <button type="button" onClick={handleSignupClick} className={styles.btn_signup}>
-                ثبت نام کنید
-                </button>
-
                 <p className={styles.para_username}>نام کاربری</p>
                 <div className={styles.input_wrapper}>
                     <input
@@ -102,10 +115,13 @@ export default function LoginForm() {
                 </div>
 
                 <p className={styles.para_password}>رمز عبور</p>
-                <div className={styles.input_wrapper}>
+                <div className={styles.relative_position}>
+                    <span className={styles.eye_icon} onClick={togglePasswordVisibility}>
+                        <img src={eye} alt="Toggle Password Visibility" width="20" height="20" />
+                    </span>
                     <input
                         className={`${styles.input_password} ${errors.password ? styles.input_error : ''}`}
-                        type="password"
+                        type={passwordVisible ? 'text' : 'password'}
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                     />
@@ -116,7 +132,6 @@ export default function LoginForm() {
                         </div>
                     )}
                 </div>
-
             </div>
 
             <div className={styles.div_rememeber_me}>
@@ -140,9 +155,12 @@ export default function LoginForm() {
 
             <button type="submit" className={styles.btn_login}>
                 ورود
-   {!errors && <Link to="/email">
-    </Link>}
             </button>
+
+            <div className={styles.register}>
+                حساب کاربری ندارید؟
+                <button className={styles.register_btn} onClick={handleSignupClick}>ثبت نام کنید</button>
+            </div>
         </form>
     );
 
