@@ -254,6 +254,25 @@ body, html {
   color: #000B58;
 }
 
+
+.para_enter_account {
+  font-size: 26px;
+  font-family: 'Saba';
+  font-weight: 700;
+  line-height: 47px;
+  margin-bottom: 0;
+  color: #101828;
+  text-align: center; /* وسط‌چین کردن متن */
+
+}
+
+.main_enter_container{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 30px;
+}
+
 .para_email{
   color: #495057;
   font-family: 'W_hosseini';

@@ -1,0 +1,58 @@
+.main_container{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+}
+
+.right_container{
+  display: flex;
+  flex-direction: column;
+  margin-right: 240px;
+}
+
+.information_container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.information_label{
+  font-size: 16px;
+  font-weight: 700;
+  color: #495057;
+  white-space: nowrap;
+}
+
+.information_input{
+  width: 320px;
+  height: 40px;
+  padding: 0 8px ;
+  font-size: 16px;
+  font-weight: 300;
+  color: #000B58;
+  background-color:#F8F9FA ;
+  border-radius: 5px;
+  border-width: 1.5px;
+  border-color: #BBC1C7;
+}
+
+.explanations_textarea{
+  width: 320px;
+  height: 160px;
+  padding-right: 15px;
+  padding-top: 8.5px;
+  font-size: 16px;
+  font-weight: 300;
+  background-color:#F8F9FA ;
+  border-width: 1.5px;
+  border-radius: 5px;
+  border-color: #BBC1C7;
+  resize: none;
+  overflow-y: auto;
+  text-align: right;
+  white-space: normal;
+}
+

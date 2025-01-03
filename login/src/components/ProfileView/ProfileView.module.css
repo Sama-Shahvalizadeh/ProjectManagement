@@ -1,234 +1,80 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
-@font-face {
-  font-family: 'ArabicDisplayBlack';
-  src: url(font/ARABICUIDISPLAYBLACK.OTF) format('opentype');
-}
-@font-face {
-  font-family: 'ArabicDisplayBold';
-  src: url(font/ARABICUIDISPLAYBOLD.OTF) format('opentype');
-}
-@font-face {
-  font-family: 'ArabicDisplayHeavy';
-  src: url(font/ARABICUIDISPLAYHEAVY.OTF) format('opentype');
-}
-@font-face {
-  font-family: 'ArabicDisplayLight';
-  src: url(font/ARABICUIDISPLAYLIGHT.OTF) format('opentype');
-}
-@font-face {
-  font-family: 'ArabicDisplayMedium';
-  src: url(font/ARABICUIDISPLAYMEDIUM.OTF) format('opentype');
-}
-@font-face {
-  font-family: 'ArabicDisplaySemiBold';
-  src: url(font/ARABICUIDISPLAYSEMIBOLD.OTF) format('opentype');
-}
-@font-face {
-  font-family: 'ArabicDisplayThin';
-  src: url(font/ARABICUIDISPLAYTHIN.OTF) format('opentype');
-}
-@font-face {
-  font-family: 'ArabicDisplayUltraLight';
-  src: url(font/ARABICUIDISPLAYULTRALIGHT.OTF) format('opentype');
-}
-@font-face {
-  font-family: 'Saba';
-  src: url(font/SABA-[@I_FONT].TTF) format('truetype');
+.main_container{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
 }
 
-/* تعریف کلاس‌های سفارشی */
-@layer utilities {
-  .font-arabic-bold {
-    font-family: 'ArabicDisplayBold';
-  }
-  .font-arabic-medium {
-    font-family: 'ArabicDisplayMedium';
-  }
-  .font-saba {
-    font-family: 'Saba';
-  }
-  .font-semibold{
-    font-family: 'ArabicDisplaySemiBold'
-  }
+.right_container{
+  display: flex;
+  flex-direction: column;
+  margin-right: 240px;
 }
 
-.container {
-  @apply flex;
+.menu_container {
+  position: relative; /* Positioning context for the dropdown */
+  display: inline-block; /* Allow the menu to fit its content */
 }
 
-/* In your tailwind.css or custom CSS file */
-.sidebar {
-  @apply bg-[#F8F9FA] shadow-none h-screen border-l-[1px] border-[#B2B9C0] w-[240px] fixed right-0 top-0 z-10;
+.three_dots {
+  background: none;   
+  color: #0D062D;
+  font-size: 16px;
+  margin-left: 16px;
 }
 
-
-.sidebarHeader {
-  @apply mt-[48px] ml-[57px] mr-[29px] text-[24px] text-[#000B58] font-saba font-bold flex items-center whitespace-nowrap;
+.dropdown_menu {
+  display: none; /* Hidden by default */
+  position: absolute; /* Position it absolutely */
+  top: 27px; /* Below the button */
+  left: 16px; /* Align to the left of the button */
+  background: white; /* Background for the dropdown */
+  border: 2px solid #E2E5E9; /* Optional border */
+  border-radius: 8px;
+  z-index: 1000; /* Ensure it appears above other elements */
+  width: 200px;
+  background-color: #FFFFFF;
 }
 
-.icon {
-  @apply w-[30px] h-[30px] ml-[20px];
+.dropdown_menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
-.menu {
-  @apply mx-auto my-auto mr-[36px] text-[#495057] text-[16px] font-normal font-arabic-bold;
+.dropdown_menu li {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 31px;
+  padding-right: 31px;
+  color: #495057;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
 }
 
-.dashboard_item{
-  @apply flex items-center whitespace-nowrap mt-[54px] hover:bg-gray-700 rounded;
+.dropdown_menu li:hover {
+  background-color: #f0f0f0; /* Highlight on hover */
 }
 
-.dashboard_icon{
-  @apply w-[16px] h-[18px] ml-[16px];
+.information_container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
-.projects_item{
-  @apply flex items-center whitespace-nowrap mt-[34px] text-[#495057];
+.information_div{
+  font-size: 16px;
+  font-weight: 700;
+  color: #495057;
+  white-space: nowrap;
 }
 
-.projects_icon{
-  @apply w-[16px] h-[16px] ml-[16px];
-}
-
-.tasks_item{
-  @apply flex items-center whitespace-nowrap mt-[34px];
-}
-
-.tasks_icon{
-  @apply w-[16px] h-[16px] ml-[16px];
-}
-
-.users_item{
-  @apply flex items-center whitespace-nowrap mt-[34px];
-}
-
-.users_icon{
-  @apply w-[16px] h-[16px] ml-[16px];
-}
-
-.report_item{
-  @apply flex items-center whitespace-nowrap mt-[34px];
-}
-
-.report_icon{
-  @apply w-[16px] h-[16px] ml-[16px];
-}
-
-.calendar_item{
-  @apply flex items-center whitespace-nowrap mt-[34px];
-}
-
-.calendar_icon{
-  @apply w-[16px] h-[16px] ml-[16px];
-}
-
-.userCard {
-  @apply flex flex-row items-center w-[205px] h-[90px] mt-[150px] mx-auto bg-[#000B58] rounded-[5px] text-[#FFFFFF] text-[10px] font-arabic-medium;
-}
-
-.userImageWrapper {
-  @apply relative inline-block mr-[8px];
-}
-
-.userImage {
-  @apply h-auto max-w-full w-[40px] h-[40px] rounded-full border-[6px] border-[#000B58];
-}
-
-.status {
-  @apply absolute bottom-1.5 right-1 rounded-full;
-}
-
-.status_icon{
-  @apply w-[8px] h-[8px];
-}
-
-.div_span{
-  @apply mr-[8px];
-}
-
-.name_span{
-  @apply whitespace-nowrap;
-}
-
-.email_span{
-  @apply mt-[16px] whitespace-nowrap;
-}
-
-.hamburger_menu{
-  @apply fixed ml-[16px] mr-[185px];
-}
-
-.navbar {
-  @apply h-[80px] w-full flex flex-row gap-[450px] items-center bg-[#F8F9FA] mr-[240px] pr-[24px] pt-[21px] pb-[21px] font-arabic-medium;
-}
-
-
-.searchBar {
-  @apply relative flex items-center text-[#787486] text-[14px];
-}
-
-.search_btn {
-  @apply absolute left-2 top-1/2 transform -translate-y-1/2;
-}
-
-.search_icon{
-   @apply h-[22px] w-[22px];
-}
-
-.searchInput {
-  @apply w-[470px] h-[38px] rounded-[5px] bg-[#E2E5E9] focus:outline-none focus:ring focus:ring-[#000B58] px-[16px] text-[#000B58] whitespace-nowrap;
-}
-
-.icon_grp{
-  @apply flex flex-row justify-end items-center;
-}
-
-.icon_style{
-  @apply bg-[#F8F9FA];
-}
-
-.btn1_style{
-  @apply h-[25px] w-[25px] ml-[16px];
-}
-
-.chat{
-  @apply h-[25px] w-[25px] ml-[32px];
-}
-
-.user_name{
-  @apply whitespace-nowrap text-[#495057] text-[16px] font-semibold ml-[32px] whitespace-nowrap;
-}
-
-.profile{
-  @apply h-[18px] w-[18px];
-}
-
-.main_div{
-  /* @apply flex flex-col cols-2 w-full h-auto; */
-  @apply flex flex-col  w-full h-auto;
-
-}
-
-.sub_navbar{
-  @apply flex flex-row gap-[10px] w-[291px] h-[24px] items-center mr-[268px] mt-[112px] font-arabic-medium font-semibold;
-  
-}
-
-.home{
-  @aply w-[24px] h-[24px] text-[16px];
-}
-
-.left{
-  @apply w-[18px] h-[18px];
-}
-
-.account{
-  @apply text-[#B2B9C0]  whitespace-nowrap;
-}
-
-.personal_info{
-  @apply text-[#495057] whitespace-nowrap;
+.information_span{
+  font-size: 16px;
+  font-weight: 300;
+  color: #1B1D1F;
 }

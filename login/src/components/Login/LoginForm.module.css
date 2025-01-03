@@ -1,20 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* فونت‌های سفارشی */
 @font-face {
-  font-family: 'Saba'; 
-  src: url('../../Fonts/Saba-[@i_font].ttf') format('truetype'); 
+  font-family: 'ArabicDisplayBlack';
+  src: url('../../font/ARABICUIDISPLAYBLACK.OTF') format('opentype');
 }
 
 @font-face {
-  font-family: 'W_hosseini'; 
-  src: url('../../Fonts/ArabicUIDisplayThin.otf') format('opentype');
+  font-family: 'ArabicDisplayBold';
+  src: url('../../font/ARABICUIDISPLAYBOLD.OTF') format('opentype');
 }
 
-* { 
-  margin: 0; padding: 0; box-sizing: border-box;
-} 
+@font-face {
+  font-family: 'ArabicDisplayMedium';
+  src: url('../../font/ARABICUIDISPLAYMEDIUM.OTF') format('opentype');
+}
+
+@font-face {
+  font-family: 'Saba';
+  src: url('../../font/SABA-[@I_FONT].TTF') format('truetype');
+}
+
+/* تعریف کلاس‌های سفارشی */
+@layer utilities {
+  .font-arabic-bold {
+    font-family: 'ArabicDisplayBold';
+  }
+
+  .font-arabic-medium {
+    font-family: 'ArabicDisplayMedium';
+  }
+}
 
 
-body, html {
-   height: 100%;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body,
+html {
+  height: 100%;
 }
 
 
@@ -24,7 +54,8 @@ body, html {
   grid-template-columns: 720px 1fr;
   column-gap: 10px;
   width: 100%;
-  height: 100vh; /* تغییر به 100vh برای ارتفاع کل صفحه */
+  height: 100vh;
+  /* تغییر به 100vh برای ارتفاع کل صفحه */
 }
 
 .div_project_title {
@@ -36,7 +67,8 @@ body, html {
   direction: rtl;
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
-  height: 100%; /* تغییر به 100% برای اشغال کردن تمام ارتفاع والد */
+  height: 100%;
+  /* تغییر به 100% برای اشغال کردن تمام ارتفاع والد */
 }
 
 .div_login_form {
@@ -48,70 +80,88 @@ body, html {
   padding: 20px;
   direction: rtl;
   text-align: right;
-  height: 100%; /* اطمینان از اینکه این بخش هم 100% ارتفاع خواهد داشت */
+  height: 100%;
+  /* اطمینان از اینکه این بخش هم 100% ارتفاع خواهد داشت */
 }
 
-.div_group_content{
+.div_group_content {
   justify-content: center;
   align-items: center;
 }
 
-.div_welcome{
-  padding-right: 70px;
+.div_welcome {
+  display: flex; /* فعال کردن flexbox */
+  flex-direction: column; /* چینش آیتم‌ها به صورت عمودی */
+  justify-content: center; /* وسط‌چین کردن عمودی */
+  align-items: center; /* وسط‌چین کردن افقی */
 }
 
-.div_rememeber_me{
+
+
+.div_rememeber_me {
   margin-bottom: 35px;
   margin-top: 20px;
-  display: flex; align-items: center; justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.para_title{
+.para_title {
   font-size: 70px;
   font-weight: 700;
   font-family: 'Saba';
   line-height: 126px;
 }
 
-.para_enter_account{
+.para_enter_account {
   font-size: 26px;
   font-family: 'Saba';
   font-weight: 700;
   line-height: 47px;
   margin-bottom: 0;
   color: #101828;
+  display: flex; /* فعال کردن flexbox */
+  justify-content: center; /* وسط‌چین کردن افقی */
+  align-items: center; /* وسط‌چین کردن عمودی */
+  text-align: center; /* اطمینان از اینکه متن در داخل تگ هم وسط‌چین باشد */
 }
 
-.para_welcome{
+
+.para_welcome {
   font-size: 18px;
   line-height: 26px;
-  font-family: 'W_hosseini';
+  font-family: 'ArabicDisplayMedium';
   margin-top: 30px;
   margin-bottom: 0;
   margin-right: 30px;
   color: #1B1D1F;
+  display: flex; /* فعال کردن flexbox */
+  justify-content: center; /* وسط‌چین کردن افقی */
+  align-items: center; /* وسط‌چین کردن عمودی */
+  text-align: center; /* اطمینان از اینکه متن در داخل تگ هم وسط‌چین باش*/
 }
 
-.span_project_name{
+.span_project_name {
   color: rgb(51, 6, 51);
 }
 
-.span_project_name:hover{
+.span_project_name:hover {
   cursor: pointer;
   text-decoration: underline;
 }
 
-.para_username{
-  color: #495057;
-  font-family: 'W_hosseini';
-  size: 14px;
-  font-family: 'W_hosseini';
-  line-height: 23px;
-  margin-top: 60px;
-  margin-bottom: 7px;
+.relative_position {
+  position: relative;
+  display: flex;
+  align-items: center;
+  
+  /* برای تراز وسط عمودی */
 }
 
-.input_username{
+
+
+.input_password,
+.input_username {
   background-color: #F8F9FA;
   border: solid;
   border-radius: 5px;
@@ -123,37 +173,39 @@ body, html {
   padding-left: 10px;
   padding-right: 10px;
   font-size: 16px;
+  font-family: 'ArabicDisplayMedium';
 }
 
-.para_email,
+.input_password{
+  position: relative;
+  z-index: 1; /* آیکن را بالای فیلد قرار می‌دهد */
+
+}
+
+
+.input_wrapper .input_error {
+  border: 1.5px solid red;
+}
+
 .para_username,
 .para_password {
-   color: #495057;
-   font-family: 'W_hosseini';
-   size: 14px;
-   line-height: 23px;
-   margin-top: 20px;
-   margin-bottom: 7px;
-}
-
-.input_username,
-.input_password,
-.input_email {
-   background-color: #F8F9FA;
-   border: solid;
-   border-radius: 5px;
-   border-color: #BBC1C7;
-   width: 100%;
-   max-width: 400px;
-   height: 40px;
-   border-width: 1.5px;
-   padding-left: 10px;
-   padding-right: 10px;
-   font-size: 16px;
+  color: #495057;
+  font-family: 'ArabicDisplayMedium';
+  size: 14px;
+  line-height: 23px;
+  margin-top: 20px;
+  margin-bottom: 7px;
 }
 
 
-.checkbox_remember_me{
+.input_wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.checkbox_remember_me {
   height: 15px;
   width: 15px;
   border: solid;
@@ -163,195 +215,78 @@ body, html {
   margin-left: 5px;
 }
 
-.label_remember_me{
-  font-size: 14px;
+.label_remember_me {
+  font-size: 12px;
   line-height: 23px;
-  font-family: 'W_hosseini';
+  font-family: 'ArabicDisplayMedium';
   width: 87px;
   height: 23px;
 }
 
-.para_forgot_password{
+.para_forgot_password {
   margin-right: 150px;
   display: inline-block;
   width: 159px;
   height: 23px;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 23px;
-  font-family: 'W_hosseini';
+  font-family: 'ArabicDisplayMedium';
   color: #1B02B7;
 }
 
-.btn_login{
+.btn_login {
   background-color: #000B58;
-  width: 100%; /* Makes button responsive */
+  width: 100%;
+  /* Makes button responsive */
   max-width: 400px;
   height: 32px;
   border: none;
   border-radius: 5px;
   font-size: 16px;
   color: #F8F9FA;
-  font-family: 'W_hosseini';
+  font-family: 'ArabicDisplayMedium';
   margin-top: 20px;
 }
 
 
-.para_verification_code {
-  color: #495057;
-  font-family: 'W_hosseini';
-  font-size: 16px;
-  line-height: 26px;
-  margin-top: 20px;
-  margin-bottom: 7px;
-  text-align: center;
-}
 
-.input_code_container {
+.div_content {
   display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 20px;
+  flex-direction: column;
+  flex: 1;
 }
 
-.input_code {
-  border-top-right-radius: 50px;
-  border-bottom-right-radius: 50px;
-  width: 40px;
-  height: 40px;
-  border: 1.5px solid #BBC1C7;
-  border-radius: 5px;
-  text-align: center;
-  font-size: 18px;
-  font-family: 'Saba';
-  background-color: #F8F9FA;
-  color: #000;
+
+.register {
+  @apply mt-[20px] whitespace-nowrap font-arabic-medium text-[14px] text-[#969696];
 }
 
-.input_code:focus {
-  border-color: #000B58;
-  outline: none;
+.register_btn {
+  @apply mr-[5px] whitespace-nowrap text-[#1B02B7] font-bold;
 }
 
-.timer {
-  font-family: 'W_hosseini';
-  font-size: 12px;
-  color: #495057;
-  margin-top: 15px;
-  text-align: center;
+
+
+.eye_icon {
+  position: absolute;
+  left: 30px; /* تنظیم فاصله از سمت چپ */
+  top: 50%;
+  transform: translateY(-50%); /* مرکز عمودی آیکن */
+  cursor: pointer; /* تغییر ظاهر موس به اشاره‌گر */
+  z-index: 2; /* آیکن را بالای فیلد قرار می‌دهد */
 }
 
-.para_resend {
-  font-family: 'W_hosseini';
-  font-size: 14px;
-  color: #0d19c0;
-  text-align: center;
-  margin-top: 10px;
-  cursor: pointer;
-  text-decoration: underline;
+.eye {
+  @apply w-[20px] h-[20px];
 }
-
-.para_resend:hover {
-  color: #000B58;
-}
-
-.para_email{
-  color: #495057;
-  font-family: 'W_hosseini';
-  size: 14px;
-  font-family: 'W_hosseini';
-  line-height: 23px;
-  margin-top: 20px;
-  margin-bottom: 7px;
-}
-.input_email{
-  background-color: #F8F9FA;
-  border: solid;
-  border-radius: 5px;
-  border-color: #BBC1C7;
-  width: 100%;
-  max-width: 400px;
-  height: 40px;
-  border-width: 1.5px;
-  padding-left: 10px;
-  padding-right: 10px;
-  font-size: 16px;
-}
-
-.para_enter_account{
-  font-size: 26px;
-  font-family: 'Saba';
-  font-weight: 700;
-  line-height: 47px;
-  margin-bottom: 0;
-  color: #101828;
-}
-
-.para_verification_code {
-  color: #495057;
-  font-family: 'W_hosseini';
-  font-size: 16px;
-  line-height: 26px;
-  margin-top: 20px;
-  margin-bottom: 7px;
-  text-align: center;
-}
-
-.para_email {
-   color: #495057;
-   font-family: 'W_hosseini';
-   size: 14px;
-   line-height: 23px;
-   margin-top: 20px;
-   margin-bottom: 7px;
-}
-
-.input_email {
-   background-color: #F8F9FA;
-   border: solid;
-   border-radius: 5px;
-   border-color: #BBC1C7;
-   width: 100%;
-   max-width: 400px;
-   height: 40px;
-   border-width: 1.5px;
-   padding-left: 10px;
-   padding-right: 10px;
-   font-size: 16px;
-}
-
-/* صفحه وارد کردن کد تایید*/
-.para_resend {
-   color: black;
-   text-decoration: none;
-   margin-bottom: 40px;
-}
-
-.timer {
-   font-family: 'W_hosseini';
-   font-size: 12px;
-   color: #495057;
-   margin-top: 15px;
-   text-align: center;
-   margin-bottom: 40px;
-}
-
-.para_resend .resend_link {
-   color: #000B58;
-   text-decoration: none;
-   margin-bottom: 40px;
-}
-
-.para_resend:hover .resend_link {
-   color: #000B58;
-   margin-bottom: 40px;
-}
-
 
 /* صفحه جدید برای تایید کد اشتباه*/
 .div_verification_error {
   display: none;
   background-color: #f8d7da;
   color: red;
+  width: 100%;
+  max-width: 400px;
   padding: 10px;
   border-radius: 5px;
   border: 2px solid red;
@@ -360,11 +295,6 @@ body, html {
   margin-top: 10px;
 }
 
-.div_verification_error .error_icon {
-  margin-right: 15px;
-  font-size: 18px;
-  color: red;
-}
 
 .div_verification_error .error_message {
   margin: 0;
@@ -382,7 +312,7 @@ body, html {
 
 .error_container {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   margin-top: 5px;
   color: red;
 }
@@ -392,9 +322,11 @@ body, html {
 }
 
 .error_message {
-  font-size: 14px;
+  font-size: 12px;
   margin: 0;
+  font-family: 'ArabicDisplayMedium';
 }
+
 
 @media (max-width: 768px) {
   .div_frame1 { 
@@ -405,8 +337,9 @@ body, html {
       width: 100%;
   } 
   
-  .div_welcome {
-      padding-right: 20px; /* Adjust padding as needed */ 
+  .div_project_title {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
   }
 
   .para_title { 

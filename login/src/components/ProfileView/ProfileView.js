@@ -1,297 +1,233 @@
-import React from "react";
-import styles from "./ProfileView.module.css";
-import projectNegar from "./icons/projectNegar.png";
-import frame from "./icons/Frame 1000001430.png";
-import projects from "./icons/projects.png";
-import tasks from "./icons/tasks.png";
-import users from "./icons/users.png";
-import report from "./icons/report.png";
-import calendar from "./icons/calendar.png";
-import userImg from "./icons/0df984f5b0ca214b6596dd91ef682411.jfif";
-import search from "./icons/search-normal.png";
-import navIcon from "./icons/Group 33651.png";
-import chat from "./icons/chat.png";
-import status from "./icons/status.png";
-import hamburger_icon from "./icons/Frame 1000001439.png";
-import btn1 from "./icons/Group 33651.png";
-import profile from "./icons/profile dropdown.png";
-import home from "./icons/home-alt (1).png";
-import left from "./icons/chevron-left (1).png";
+import React, { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 
-export default function ProfileView(){
-  return (
-    <>
-    <link rel="stylesheet" href="./output.css"/>
+import styles from './ProfileView.module.css';
+import inputStyles from './input.css';
+import outputStyles from './output.module.css';
 
-    <div className={styles.container} style={{ direction: 'rtl' }}>
-      {/* Sidebar */}
-      <div className={styles.sidebar}>
-        <h2 className={styles.sidebarHeader}>
-          <img
-            src={projectNegar}
-            alt="Section Icon"
-            className={styles.icon}
-          />
-          پروژه نگار
-        </h2>
+import profile from "../../icons/profile.jfif";
+import home_alt from "../../icons/home-alt (1).png";
+import chevort_left from "../../icons/chevron-left (1).png";
+import maximize from "../../icons/maximise-frame.png";
+
+import Sidebar from '../Header and Sidebar/Sidebar'
+import Header from '../Header and Sidebar/Header'
 
 
-        <ul className={styles.menu}>
+export default function ProfileView() {
 
-          <li className={styles.dashboard_item}>
-            <img src={frame} alt="Dashboard" className={styles.dashboard_icon} />
-            داشبورد
-          </li>
-          <li className={styles.projects_item}>
-            <img src={projects} alt="Projects" className={styles.projects_icon}/>
-            پروژه ها
-          </li>
-          <li className={styles.tasks_item}>
-            <img src={tasks} alt="Tasks" className={styles.tasks_icon} />
-            وظایف
-          </li>
-          <li className={styles.users_item}>
-            <img src={users} alt="Users" className={styles.users_icon}/>
-            کاربران
-          </li>
-          <li className={styles.report_item}>
-            <img src={report} alt="Reports" className={styles.report_icon}/>
-            گزارش
-          </li>
-          <li className={styles.calendar_item}>
-            <img src={calendar} alt="Calendar" className={styles.calendar_icon}/>
-            تقویم
-          </li>
-        </ul>
+// State برای نمایش یا پنهان کردن منو
+const [isMenuVisible, setIsMenuVisible] = useState(false);
 
-        {/* <!-- کارت زیر منوی سمت راست --> */}
-        <div className={styles.userCard}>
-          <div className={styles.userImageWrapper}>
-
-          {/* <!-- عکس پروفایل --> */}
-            <img
-              src={userImg}
-              alt="icon"
-              className={styles.userImage}
-            />
-
-            {/* <!-- وضعیت آنلاین بودن --> */}
-            <div class={styles.status}><img src={status} alt="icon" className={styles.status_icon}/></div>
-          </div>
-          
-          {/* <!-- ایمیل و نام کاربر به صورت span تعریف شده --> */}
-          <div class={styles.div_span}>
-                <div class={styles.name_span}>
-                    <span>بیتا جوان</span>
-                </div>
-
-                <div class={styles.email_span}>
-                    <span>Bitaj@gmail.com</span>
-                </div>
-          </div>
-          {/* <!-- منوی همبرگر --> */}
-            <div class={styles.hamburger_menu}>
-                <button>
-                    <img src={hamburger_icon} alt="icon"/>
-                </button>
-            </div>
-        </div>
-      </div>
-
-      {/* Navigation Bar */}
-      <nav class={styles.navbar} style={{position:'fixed', top:'0', zIndex: 1000}}>
-
-      {/* <!-- کد مربوط به نوار جست و جو --> */}
-        <div className={styles.searchBar}>
-          <button className={styles.search_btn}>
-            <img src={search} alt="Search" className={styles.search_icon}/>
-          </button>
-          <input
-            type="text"
-            placeholder="اینجا جست و جو کنید...."
-            className={styles.searchInput}
-          />
-        </div>
-
-        {/* <!-- کد مربوط به آیکونهای سمت راست برنامه --> */}
-        <div class={styles.icon_grp}>
-            <button class={styles.icon_style}>
-                <img src={btn1} alt="Icon" class={styles.btn1_style}/> 
-            </button>
-        
-            <button class={styles.icon_style}>
-                <img src={chat} alt="Icon" class={styles.chat}/>
-            </button>
-             
-            <span class={styles.user_name}>بیتا جوان</span>
-
-            <button class={styles.icon_style}>
-                <img src={profile} alt="Icon" class={styles.profile}/> 
-            </button>
-        </div>
-        
-      </nav>
-
-
-      {/* <!--  محتوای اصلی برنامه div --> */}
-    <div class={styles.main_div}>
-
-        {/* <!-- navigation bar منوی زیر  --> */}
-        <div class={styles.sub_navbar}>
-
-            <button>
-                <img class={styles.home} src={home} alt="icon"/>
-            </button>
-    
-            <img class={styles.left} src={left} alt="icon"/>
-
-            <button class={styles.account}>
-                حساب کاربری
-            </button>
-
-            <img class={styles.left} src={left} alt="icon"/>
-
-            <button class={styles.personal_info}>
-                اطلاعات شخصی
-            </button>
-        </div>
-            
-        {/* <!-- فرم اطلاعات کاربر --> */}
-        <div class="flex flex-col w-[1140px] h-[480px] mt-[32px] mr-[268px] pr-[16px] border-[2px] rounded-[5px] border-[#E2E5E9] font-arabic-medium antialiased">
-
-            {/* <!-- اطلاعات شخصی و دکمه ادیت div --> */}
-            <div class="flex items-center justify-between w-[1108px] h-[40px]">
-
-                {/* <!-- اطلاعات شخصی div --> */}
-                <div class="flex items-center mt-[20px]">
-                    <div>
-                        <button>
-                            <img src="icons/maximise-frame.png"  class="h-[40px] w-[40px] ml-[16px]"/>
-                        </button>
-                    </div>
-            
-                    <div class="w-[222px] h-[40px] text-[24px] font-normal text-[#495057] ml-4 whitespace-nowrap">
-                        اطلاعات شخصی
-                    </div>
-                </div>
-
-                {/* <!-- منوی سه نقطه و دکمه ادیت div --> */}
-                <div class="flex flex-col items-end space-y-1">
-
-                    {/* <!-- دکمه سه نقطه  --> */}
-                    <button class="text-[#0D062D] text-[16px] mt-[64px]">
-                        ...
-                    </button>
-                        
-                    {/* <!-- دکمه ادیت --> */}
-                    <button class="w-[200px] h-[60px] border-[2px] rounded-[5px] border-[#E2E5E9] text-[14px] text-[#495057] font-semibold whitespace-nowrap">ویرایش اطلاعات شخصی</button>
-                </div>
-            </div>
-        
-            {/* <!-- عکس پروفایل و نام div --> */}
-            <div class="flex flex-row items-center gap-[32px] w-[1108px] mt-[40px] h-[138px]">
-
-                {/* <!-- عکس پروفایل --> */}
-                <div>
-                    <img
-                        src="icons/0df984f5b0ca214b6596dd91ef682411.jfif"
-                        class="h-auto max-w-full w-[126px] h-[126px] rounded-full border-[6px] border-[#000B58] z-0 relative"
-                        alt="profile" />
-                </div>
-        
-                {/* <!-- نام --> */}
-                <div class="w-[88px] h-[32px]">
-                    <span class="text-[24px] font-normal text-[#495057] whitespace-nowrap">
-                        بیتا جوان
-                    </span>
-                </div>
-            </div>
-        
-
-            {/* <!-- اطلاعات کاربر div --> */}
-            <div class="flex flex-col gap-[16px] w-[1108px] h-[302px] mt-[12px]">
-        
-                {/* <!-- نام کاربر div --> */}
-                <div class="flex flex-row items-center">
-
-                    {/* <!-- نام --> */}
-                    <div class="w-[19px] h-[24px] ml-[208px] font-bold text-[16px] text-[#495057] whitespace-nowrap">نام</div>
-        
-                    {/* <!-- نام span --> */}
-                    <div class="h-[24px] font-light text-[#1B1D1F] text-[16px]">
-                        <span>بیتا</span>
-                    </div>
-                </div>
-        
-                {/* <!-- نام خانوادگی div --> */}
-                <div class="flex flex-row items-center">
-
-                    {/* <!-- نام خانوادگی --> */}
-                    <div class="w-[83px] h-[24px] ml-[143px] font-bold text-[16px] text-[#495057] whitespace-nowrap">نام خانوادگی</div>
-        
-                    {/* <!-- نام خانوادگی span --> */}
-                    <div class="h-[30px] font-light text-[#1B1D1F] text-[16px]">
-                        <span>جوان</span>
-                    </div>
-                </div>
-        
-                {/* <!-- شماره موبایل div --> */}
-                <div class="flex flex-row items-center">
-
-                    {/* <!-- شماره تلفن همراه --> */}
-                    <div class="w-[116px] h-[24px] ml-[110px] font-bold text-[16px] text-[#495057] whitespace-nowrap">شماره تلفن همراه </div>
-        
-                    {/* <!-- شماره تلفن همراه  span --> */}
-                    <div class="h-[24px] font-light text-[#1B1D1F] text-[16px]">
-                        <span>09140000000</span>
-                    </div>
-                </div>
-        
-                {/* <!-- ایمیل div --> */}
-                <div class="flex flex-row items-center">
-
-                    {/* <!-- ایمیل --> */}
-                    <div class="w-[37px] h-[24px] ml-[189px] font-bold text-[16px] text-[#495057] whitespace-nowrap">ایمیل</div>
-        
-                    {/* <!-- ایمیل  span --> */}
-                    <div class="h-[24px] font-light text-[#1B1D1F] text-[16px]">
-                        <span>Bitaj@gmail.com</span>
-                    </div>
-                </div>
-        
-
-                {/* <!-- تخصص div --> */}
-                <div class="flex flex-row items-center">
-
-                    {/* <!-- تخصص --> */}
-                    <div class="w-[51px] h-[24px] ml-[175px] font-bold text-[16px] text-[#495057] whitespace-nowrap">تخصص</div>
-        
-                    {/* <!-- تخصص  span --> */}
-                    <div class="h-[24px] font-light text-[#1B1D1F] text-[16px]">
-                        <span>مدیر پروژه</span>
-                    </div>
-                </div>
-        
-                {/* <!-- توضیحات div --> */}
-                <div class="flex flex-row items-center">
-
-                    {/* <!-- توضیحات --> */}
-                    <div class="w-[65px] h-[24px] ml-[161px] font-bold text-[16px] text-[#495057] whitespace-nowrap">توضیحات</div>
-        
-                    {/* <!-- توضیحات  span --> */}
-                    <div class="h-[24px] font-light text-[#1B1D1F] text-[16px]">
-                        <span>این فیلد مربوط به توضیحات است</span>
-                    </div>
-                </div>
-        
-            </div>
-        
-        </div>
-    </div>
-
-      
-    </div>
-    </>
-  );
+// تابع برای تغییر وضعیت منو (نمایش یا پنهان کردن)
+const toggleMenu = () => {
+  setIsMenuVisible(prevState => !prevState);
 };
 
+// بستن منو هنگام کلیک در خارج
+useEffect(() => {
+  const handleClickOutside = (event) => {
+    if (!event.target.closest(`#btn-three-dots`) && !event.target.closest(`#dropdownMenu`)) {
+      setIsMenuVisible(false); // بستن منو اگر کلیک در خارج از منو باشد
+    }
+  };
+
+  // اضافه کردن event listener
+  window.addEventListener('click', handleClickOutside);
+      // پاک کردن event listener هنگام unmount شدن کامپوننت
+      return () => {
+        window.removeEventListener('click', handleClickOutside);
+      };
+    }, []);
+
+  const handleGoProfileEdit = (event) =>{
+        event.preventDefault();
+        window.location.href = 'profileedit'
+  }
+
+
+  return (
+    <>
+      <Helmet>
+        <title>صفحه پروفایل</title>
+        {/* <link rel="stylesheet" href="Edited_ProfileView.css" />
+        <link rel="stylesheet" href="header.css" />
+        <link rel="stylesheet" href="sidebar.css" /> */}
+        <style>
+          {`
+            body {
+              direction: rtl;
+              margin: 0;
+              padding-bottom: 30px;
+            }
+          `}
+        </style>
+      </Helmet>
+
+      <div className={styles.antialiased}>
+        <div class={styles.main_container}>
+
+          {/* <!--sidebar--> */}
+          <Sidebar/>
+          
+          {/* <!--end of sidebar--> */}
+
+          {/* <!--right container--> */}
+          <div class={`${styles.right_container} ${outputStyles.font_arabic_medium}`}>
+
+
+            {/* <!-- navigation bar --> */}
+            <Header/>
+            {/* <!--end of navigation bar--> */}
+
+            {/* <!-- navigation bar منوی زیر  --> */}
+            <div class={`flex flex-row gap-[10px] mt-[112px] items-center ${outputStyles.font_arabic_medium} ${outputStyles.font_semibold} pr-[32px]`}>
+              <button id="btn-home">
+                <img class={`w-[24px] h-[24px] text-[16px]`} src={home_alt} alt="icon" />
+              </button>
+
+              <img class={`w-[18px] h-[18px]`} src={chevort_left} alt="icon" />
+
+              <button id="btn-user-account" class={`text-[#B2B9C0] whitespace-nowrap`}>
+                حساب کاربری
+              </button>
+
+              <img class={`w-[18px] h-[18px]`} src={chevort_left} alt="icon" />
+
+              <button id="btn-personal-info" class={`text-[#495057] whitespace-nowrap`}>
+                اطلاعات شخصی
+              </button>
+            </div>
+
+            {/* <!-- فرم اطلاعات کاربر --> */}
+            <div class={`flex flex-col w-[1140px] mt-[32px] mr-[32px] px-[16px] pb-[16px] border-[2px] rounded-[5px] border-[#E2E5E9] ${outputStyles.font_arabic_medium}`}>
+
+              {/* <!-- اطلاعات شخصی و دکمه ادیت div --> */}
+              <div class={`flex justify-between w-[1108px] mt-[20px]`}>
+
+                {/* <!-- اطلاعات شخصی div --> */}
+                <div class={`flex items-center`}>
+                  <div>
+                    <img src={maximize} class={`w-[40px] h-[40px] ml-[16px]`} />
+                  </div>
+
+                  <div class={`h-[40px] text-[24px] ${outputStyles.font_semibold} text-[#495057] ml-4 whitespace-nowrap`}>
+                    اطلاعات شخصی
+                  </div>
+                </div>
+
+                {/* <!-- منوی سه نقطه و دکمه ها div --> */}
+                <div class={styles.menu_container}>
+
+                  {/* <!-- دکمه سه نقطه  --> */}
+                  <button id="btn-three-dots" class={styles.three_dots} onClick={toggleMenu}>
+                    ...
+                  </button>
+
+                  <div class={styles.dropdown_menu} id="dropdownMenu" style={{ display: isMenuVisible ? 'block' : 'none' }}>
+                    <ul>
+                      <li id="item-edit" onClick={handleGoProfileEdit}>ویرایش اطلاعات شخصی</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              {/* <!-- عکس پروفایل و نام div --> */}
+              <div class={`flex flex-row items-center gap-[32px] w-[1108px]`}>
+
+                {/* <!-- عکس پروفایل --> */}
+                <img id="img-profile"
+                  src={profile}
+                  class={`w-[126px] h-[126px] mt-[32px] rounded-full border-[8px] border-[#000B58] z-0 relative`}
+                  alt="profile" />
+
+                {/* <!-- نام --> */}
+                <span id="span-profile-name" class={`text-[24px] ${outputStyles.font_normal} text-[#495057] whitespace-nowrap`}>
+                  بیتا جوان
+                </span>
+              </div>
+
+              {/* <!-- اطلاعات کاربر div --> */}
+              <div class={`flex flex-col gap-[24px] w-[1108px] pt-[20px]`}>
+
+                {/* <!-- نام کاربر div --> */}
+                <div class={styles.information_container}>
+
+                  {/* <!-- نام --> */}
+                  <div class={`ml-[208px] ${styles.information_div}`}>نام</div>
+
+                  {/* <!-- نام span --> */}
+                  <div class={`${styles.information_span} whitespace-nowrap`}>
+                    <span id="span-firstname">بیتا</span>
+                  </div>
+                </div>
+
+                {/* <!-- نام خانوادگی div --> */}
+                <div class={styles.information_container}>
+
+                  {/* <!-- نام خانوادگی --> */}
+                  <div class={`ml-[143px] ${styles.information_div}`}>نام خانوادگی</div>
+
+                  {/* <!-- نام خانوادگی span --> */}
+                  <div class={`${styles.information_span} whitespace-nowrap`}>
+                    <span id="span-lastname">جوان</span>
+                  </div>
+                </div>
+
+                {/* <!-- شماره موبایل div --> */}
+                <div class={styles.information_container}>
+
+                  {/* <!-- شماره تلفن همراه --> */}
+                  <div class={`ml-[110px] ${styles.information_div}`}>شماره تلفن همراه </div>
+
+                  {/* <!-- شماره تلفن همراه  span --> */}
+                  <div class={`${styles.information_span} whitespace-nowrap`}>
+                    <span id="span-phone">09140000000</span>
+                  </div>
+                </div>
+
+                {/* <!-- ایمیل div --> */}
+                <div class={styles.information_container}>
+
+                  {/* <!-- ایمیل --> */}
+                  <div class={`ml-[189px] ${styles.information_div}`}>ایمیل</div>
+
+                  {/* <!-- ایمیل  span --> */}
+                  <div class={`${styles.information_span} whitespace-nowrap`}>
+                    <span id="span-email">Bitaj@gmail.com</span>
+                  </div>
+                </div>
+
+                {/* <!-- تخصص div --> */}
+                <div class={styles.information_container}>
+
+                  {/* <!-- تخصص --> */}
+                  <div class={`ml-[175px] ${styles.information_div}`}>تخصص</div>
+
+                  {/* <!-- تخصص  span --> */}
+                  <div class={`${styles.information_span} whitespace-nowrap`}>
+                    <span id="span-profession">مدیر پروژه</span>
+                  </div>
+                </div>
+
+                {/* <!-- توضیحات div --> */}
+                <div class={styles.information_container}>
+
+                  {/* <!-- توضیحات --> */}
+                  <div class={`ml-[161px] ${styles.information_div}`}>توضیحات</div>
+
+                  {/* <!-- توضیحات  span --> */}
+                  <div class={`${styles.information_span} pl-[16px] pb-[16px]`}>
+                    <span id="span-explanations" class={`whitespace-normal`}>
+                      پس توضیحات؟؟؟؟
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}

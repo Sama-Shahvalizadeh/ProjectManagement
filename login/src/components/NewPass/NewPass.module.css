@@ -177,12 +177,26 @@ body, html {
   border: 2px solid red; /* قرمز کردن کادر فیلد */
 }
 
-.error_message {
-  color: red;
-  font-size: 12px;
+
+.error_container {
+  display: flex;
+  align-items: center;
   margin-top: 5px;
-  display: inline-block;
+  color: red;
 }
+
+.icon_warning {
+  margin-right: 5px;
+}
+
+
+.main_enter_container{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 30px;
+}
+
 
 .div_general_error {
   display: flex;
@@ -195,5 +209,11 @@ body, html {
 .warning_icon {
   font-size: 14px;
   margin-right: 5px;
+  color: red;
+}
+
+.div_verification_error .error_message {
+  margin: 0;
+  font-size: 14px;
   color: red;
 }
