@@ -1,0 +1,181 @@
+
+.left_container{
+    display: flex;
+    flex-direction: column;
+    margin-right: 240px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    height: 100vh;
+    overflow: auto;
+}
+
+.dropdown-menuTableMember li span , .dropdown-menuTablePhase li span{
+    font-family: Arial;
+}
+
+.header_row_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+th,td {
+    border-bottom: none;
+    vertical-align: middle; 
+}
+
+th img{
+    width: 24px;
+    height: 24px;
+    margin-left: 16px;
+} 
+
+th:not(:last-child),
+td:not(:last-child) {
+    border-left: 2px solid #D9D9D9;
+}
+
+td:last-child {
+    text-align: center;
+}
+
+th{
+    font-size: 16px;
+    font-weight: bold;
+    color:#495057 ;
+    padding: 16px 0px;
+}
+
+tr {
+    border-bottom: none;
+}
+
+tr span {
+    font-size: 16px;
+    font-weight: normal;
+    color: #495057;
+}
+
+tr button{
+    color: #0D062D;
+}
+
+.checkbox_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.hidden_checkbox {
+    display: none; /* Hide the default checkbox */
+}
+
+.checkmark {
+    width: 20px; 
+    height: 20px; 
+    margin-left: 20px;
+    border: 2px solid #000B58; 
+    border-radius: 4px; 
+    position: relative;
+}
+
+.hidden-checkbox:checked + .checkmark {
+    background-color: #000B58; 
+}
+
+.hidden-checkbox:checked + .checkmark::after {
+    content: '';
+    position: absolute;
+    left: 5px; 
+    top: 0px; 
+    width: 6px; 
+    height: 12px; 
+    border: solid white;
+    border-width: 0 2px 2px 0; 
+    transform: rotate(45deg); 
+}
+
+.menu_container {
+    position: relative;
+    display: inline-block;
+}
+
+.three_dots, .three-dotsMember, .three_dotsPhase{
+    background: none;   
+    color: #0D062D;
+    font-size: 16px;
+}
+
+.dropdown-menuTableMember, .dropdown-menuTablePhase, .dropdown-menu{
+    width: 208px;
+    display: none; 
+    position: absolute; 
+    top: 27px; 
+    left: 16px; 
+    background: #FFFFFF; 
+    border: 2px solid #E2E5E9;
+    border-radius: 8px;
+    z-index: 1000;
+}
+
+.dropdown-menuRowMember, .dropdown_menuRowPhase{
+    width: 192px;
+    display: none;
+    position: absolute; 
+    background: #FFFFFF; 
+    border: 2px solid #E2E5E9; 
+    border-radius: 8px;
+    z-index: 1000; 
+}
+
+.dropdown-menuTableMember ul, .dropdown-menuRowMember ul, .dropdown-menu ul,
+.dropdown-menuTablePhase ul, .dropdown-menuRowPhase ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-menuTableMember li, .dropdown-menuTablePhase li{
+    padding: 12px;
+    font-weight: normal;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+    color: #495057;
+}
+
+.dropdown-menuRowMember li, .dropdown-menuRowPhase li {
+    padding: 12px 12px 12px 0px;
+    font-weight: normal;
+    font-size: 14px;
+    cursor: pointer;
+    color: #495057;
+    text-align: start;
+}
+
+.dropdown-menuTableMember li:last-child, .dropdown-menuTablePhase li:last-child{
+    color: #D92D20;
+}
+
+.dropdown-menuTableMember li:hover, .dropdown-menuRowMember li:hover, .dropdown-menu li:hover,
+.dropdown-menuTablePhase li:hover, .dropdown-menuRowPhase li:hover{
+    background-color: #f0f0f0;
+}
+
+tr:hover td{
+    background-color: #f3f4f6;
+    border-radius: 8px;
+}
+
+.btn-up-container{
+    direction: ltr;
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+}

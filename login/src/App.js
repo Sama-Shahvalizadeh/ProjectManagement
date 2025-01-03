@@ -11,6 +11,7 @@ import AddMember from "./components/AddMember/AddMember";
 import CreateProject from "./components/CreateProject/CreateProject";
 import ProfileView from "./components/ProfileView/ProfileView";
 import ProfileEdit from "./components/ProfileView/ProfileEdit";
+import ProjectInfoView from "./components/Project Info View/ProjectInfoView";
 
 
 
@@ -29,6 +30,7 @@ export default function App() {
 				<Route path="/createproject" element={<CreateProject/>}/>
 				<Route path="/profileview" element={<ProfileView/>}/>
 				<Route path="/profileedit" element={<ProfileEdit/>}/>
+				<Route path="/projectinfoview" element={<ProjectInfoView/>}/>
 
 
 			</Routes>

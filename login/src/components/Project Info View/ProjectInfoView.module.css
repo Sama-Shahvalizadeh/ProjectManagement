@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.button_bar{
+  @apply flex flex-row gap-[10px] items-center mt-[112px] pr-[32px] text-[16px] whitespace-nowrap;
+}
+
+
+.home{
+  @apply w-[24px] h-[24px];
+}
+
+.left{
+  @apply w-[18px] h-[18px];
+}
+
+.para_projects{
+  @apply text-[#B2B9C0];
+}
+
+.para_prj_info{
+  @apply text-[#495057];
+}
+
+.btn_shift{
+  @apply flex flex-row gap-[30px] items-center mt-[44px] pr-[32px] font-semibold text-[16px] whitespace-nowrap;
+}
+
+.btn_prj_info{
+  @apply text-[#000B58] underline underline-offset-[10px] decoration-[4px];
+}

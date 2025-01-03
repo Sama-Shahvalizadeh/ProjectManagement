@@ -1,0 +1,88 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.main_container{
+  @apply flex flex-col w-[1168px] mt-[32px] mr-[32px] px-[32px] pb-[16px] pt-[32px] border-[#B2B9C0] border-[1px] rounded-[16px];
+}
+
+.div_para_phases{
+  @apply flex items-center;
+}
+
+.maximise{
+  @apply h-[40px] w-[40px] ml-[16px];
+}
+
+.h2_phases{
+  @apply text-[24px] text-[#495057] whitespace-nowrap;
+}
+
+.main_content{
+  @apply w-[1104px] mt-[32px] pb-[16px] px-[16px] border-[1px] border-[#E2E5E9] rounded-[16px];
+}
+
+.div_btn_search{
+  @apply flex flex-row h-[72px] py-[16px] items-center justify-between;
+}
+
+.div_relative{
+  @apply relative;
+}
+
+.input_search{
+  @apply w-[320px] h-[40px] border-[#B2B9C0] border-[2px] pr-[56px] rounded-[8px] bg-[#F8F9FA] placeholder-[#495057];
+}
+
+.span_search{
+  @apply absolute inset-y-0 right-[16px] flex items-center;
+}
+
+.icon_search{
+  @apply h-[18px] w-[18px];
+}
+
+.btn_new{
+  @apply w-[120px] h-[32px] mr-[16px] bg-[#000B58] rounded-[5px] text-[#F8F9FA] text-[16px];
+}
+
+.table{
+  @apply w-[1072px] border-collapse mb-[20px];
+}
+
+.col1{
+  @apply w-[104px];
+}
+
+.col2{
+  @apply w-[160px];
+}
+
+.col3{
+  @apply w-[240px];
+}
+
+.col4{
+  @apply w-[78px];
+}
+
+#table_phase .header_container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#table_phase td:not(:last-child):not(:first-child){
+  text-align: center;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  padding: 19px 8px 19px 8px;
+}
+
+#table_phase .priority{
+  font-family: Arial;
+}
+
